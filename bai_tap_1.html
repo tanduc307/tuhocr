@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bài tập 1</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Bài tập 1">
+  <meta name="author" content="Duc Nguyen">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/hemisu-light.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  
+  <hgroup class="auto-fadein">
+    <h1>Bài tập 1</h1>
+    <h2>Các lệnh căn bản trong R</h2>
+    <p>Duc Nguyen<br/>www.tuhocr.com</p>
+  </hgroup>
+  
+  <article></article>  
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h1><span style="color: blue">Nội dung</span></h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Các lệnh cơ bản về vector, matrix, list, data frame.</li>
+<li>Các lệnh subset, trích xuất dữ liệu.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 1:</strong> Khi <code>x</code> được gán giá trị <code>5</code> thì <code>class(x)</code> thuộc loại nào? </p>
+
+<pre><code class="r">&gt; x &lt;- 5
+&gt; class(x) ?
+</code></pre>
+
+<ol>
+<li>integer</li>
+<li>vector</li>
+<li><em>numeric</em></li>
+<li>character</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p><em>Thông thường</em> con số (number) khi gán vào vector sẽ ở loại <code>numeric</code>.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <p><a href="https://tanduc307.github.io/tuhocr/peng-r.pdf#page=23">Chi tiết</a></p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 2:</strong> Khi <code>x</code> có các thành phần bên trong gồm chữ, số, giá trị logic thì <code>class(x)</code> thuộc loại nào?</p>
+
+<pre><code class="r">&gt; x &lt;- c(2, &quot;a&quot;, TRUE)
+&gt; print(x)
+[1] &quot;2&quot;    &quot;a&quot;    &quot;TRUE&quot;
+&gt; class(x) ?
+</code></pre>
+
+<ol>
+<li>integer</li>
+<li>vector</li>
+<li>numeric</li>
+<li><em>character</em></li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Chú ý các thành phần trong <code>x</code> khi được print ra sẽ ở trong dấu nháy kép, cho thấy nó thuộc class <code>character</code>.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <p>Khi có sự khác biệt giữa các thành phần trong vector thì class <code>character</code> là lớp sau cùng được chọn. </p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 3:</strong> Kết quả lệnh <code>rbind(x, y)</code> sẽ là ...</p>
+
+<pre><code class="r">&gt; x &lt;- c(1, 4, 7) 
+&gt; y &lt;- c(3, 2, 11)
+&gt; rbind(x, y) ?
+</code></pre>
+
+<ol>
+<li>vector</li>
+<li>matrix 3 hàng 2 cột</li>
+<li><em>matrix 2 hàng 3 cột</em></li>
+<li>data frame 2 hàng 3 cột</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <pre><code class="r">&gt; rbind(x, y)
+  [,1] [,2] [,3]
+x    1    4    7
+y    3    2   11
+&gt; rbind(x, y) -&gt; m
+&gt; class(m)
+[1] &quot;matrix&quot; &quot;array&quot;
+</code></pre>
+
+</div>
+
+<div class="quiz-explanation">
+  <p>Lệnh <code>rbind()</code> dùng để ghép các vector thành hàng (row) theo kiểu row-wise. <em>Thông thường</em> kết quả ghép nối (hàng hay cột) giữa các vector sẽ hình thành matrix.</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 4:</strong> Kết quả lệnh <code>x[[1]]</code> sẽ là ...</p>
+
+<pre><code class="r">&gt; x &lt;- list(12, &quot;a&quot;, &quot;b&quot;, TRUE) 
+&gt; x[[1]] ?
+</code></pre>
+
+<ol>
+<li>list con có chứa một thành phần có giá trị 12</li>
+<li>character vector có chứa một thành phần có giá trị 12</li>
+<li><em>numeric vector có chứa một thành phần có giá trị 12</em></li>
+<li>câu 2 và 3 đều đúng</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Khi subset list bằng <code>[[</code> thu được <em>element</em> ở vị trí tương ứng. <a href="https://tanduc307.github.io/tuhocr/peng-r.pdf#page=47">Chi tiết</a></p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; x &lt;- list(12, &quot;a&quot;, &quot;b&quot;, TRUE) 
+&gt; x[[1]]
+[1] 12
+&gt; x[[1]] -&gt; ddd
+&gt; class(ddd)
+[1] &quot;numeric&quot;
+&gt; is.vector(ddd)
+[1] TRUE
+# Lưu ý:
+&gt; x[1] # Nếu dùng `[` để subset từ list mẹ 
+[[1]]  # sẽ thu được list con
+[1] 12
+&gt; x[1] -&gt; jjj
+&gt; is.vector(jjj) # Vì list là một loại vector
+[1] TRUE
+&gt; is.list(jjj)
+[1] TRUE
+&gt; is.list(ddd) # Nhưng vector chưa chắc là list
+[1] FALSE
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 5:</strong> Kết quả lệnh <code>x + y</code> sẽ là...</p>
+
+<pre><code class="r">&gt; x &lt;- 1:4
+&gt; y &lt;- 2
+&gt; x + y ?
+</code></pre>
+
+<ol>
+<li>numeric vector có giá trị 3, 2, 3, 4</li>
+<li><em>numeric vector có giá trị 3, 4, 5, 6</em></li>
+<li>integer vector có giá trị 3, 4, 5, 6</li>
+<li>không có câu nào đúng</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Khi cộng hai vector không cùng <code>length</code> thì vector có <code>length</code> ngắn hơn sẽ cộng lần lượt vào các thành phần của vector có <code>length</code> dài hơn. <a href="https://tanduc307.github.io/tuhocr/r-intro.pdf#page=13">Khái niệm <strong>recycle</strong></a></p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; x
+[1] 1 2 3 4
+&gt; y
+[1] 2
+&gt; x + y
+[1] 3 4 5 6
+&gt; class(x + y)
+[1] &quot;numeric&quot;
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 6:</strong> Có vector <code>x &lt;- c(7, 14, 4, 5, 13, 12, 10)</code>. Ta dùng lệnh nào để thay thế các số lớn hơn <code>10</code> trong vector <code>x</code> chuyển thành số <code>6</code>?</p>
+
+<pre><code class="r">• Cách 1: x[x &gt; 10] == 6
+• Cách 2: x[x &gt; 6] &lt;- 10
+• Cách 3: x[x &gt;= 10] &lt;- 6
+• Cách 4: x[x &gt; 10] &lt;- 6
+</code></pre>
+
+<ol>
+<li>Cách 1</li>
+<li>Cách 2</li>
+<li>Cách 3</li>
+<li><em>Cách 4</em></li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Cần kiểm tra ý nghĩa từng <em>nhóm lệnh</em>  trong cú pháp. Ví dụ <code>x[x &gt; 10]</code> sẽ ra kết quả nào, sau đó gán giá trị <code>6</code> vào.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; x &lt;- c(7, 14, 4, 5, 13, 12, 10)
+&gt; x
+[1]  7 14  4  5 13 12 10
+&gt; x[x &gt; 10] # Subset các số lớn hơn 10 trong `x`
+[1] 14 13 12
+&gt; x[x &gt; 10] &lt;- 6 # Gán giá trị 6 vào các số này
+&gt; x
+[1]  7  6  4  5  6  6 10
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 7:</strong> Download <a href="https://tanduc307.github.io/tuhocr/quiz1_data.zip">dataset</a> từ đây về, sau đó giải nén. Đặt file <code>hw1_data.csv</code> vào thư mục làm việc <code>R</code>. Import file này vào <code>RStudio</code> bằng lệnh <code>read.csv()</code>, đặt tên là <code>hw1</code>. Liệt kê tên của các cột trong <code>hw1</code>. </p>
+
+<ol>
+<li>Month, Day, Temp, Wind</li>
+<li><em>Ozone, Solar.R, Wind, Temp, Month, Day</em></li>
+<li>1, 2, 3, 4, 5, 6</li>
+<li>Ozone, Solar.R, Wind</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Sử dụng lệnh <code>names()</code>.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">read.csv(&quot;homework/hw1_data.csv&quot;) -&gt; hw1
+&gt; class(hw1)
+[1] &quot;data.frame&quot;
+&gt; names(hw1)
+[1] &quot;Ozone&quot;   &quot;Solar.R&quot; &quot;Wind&quot;    &quot;Temp&quot;    &quot;Month&quot;   &quot;Day&quot; 
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 8:</strong> Subset 2 hàng đầu tiên của file <code>hw1_data.csv</code> và in ra kết quả ở console. </p>
+
+<pre><code class="r"># Kết quả 1:
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+
+# Kết quả 2:
+  Ozone Solar.R Wind Temp Month Day
+1     7      NA  6.9   74     5  11
+2    35     274 10.3   82     7  17
+</code></pre>
+
+<ol>
+<li><em>Kết quả 1</em></li>
+<li>Kết quả 2</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Sử dụng lệnh <code>hw1[1:2, ]</code> | <code>hw1[c(1:2), ]</code> | <code>hw1[c(1, 2), ]</code> | <code>head(hw1, n = 2)</code>.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; hw1[1:2, ]
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 9:</strong> Có bao nhiêu dòng (row) trong data frame <code>hw1</code>? </p>
+
+<ol>
+<li>45</li>
+<li><em>153</em></li>
+<li>129</li>
+<li>160</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Sử dụng lệnh <code>dim(hw1)</code> | <code>nrow(hw1)</code>. </p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; nrow(hw1)
+[1] 153
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 10:</strong> In 2 dòng cuối của data frame <code>hw1</code> ra console?</p>
+
+<pre><code class="r"># Kết quả 1:
+    Ozone Solar.R Wind Temp Month Day
+152    31     244 10.9   78     8  19
+153    29     127  9.7   82     6   7
+
+# Kết quả 2:
+    Ozone Solar.R Wind Temp Month Day
+152    18     131  8.0   76     9  29
+153    20     223 11.5   68     9  30
+</code></pre>
+
+<ol>
+<li>Kết quả 1</li>
+<li><em>Kết quả 2</em></li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Sử dụng lệnh <code>hw1[152:153, ]</code> | <code>tail(hw1, n = 2)</code></p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; tail(hw1, n = 2)
+    Ozone Solar.R Wind Temp Month Day
+152    18     131  8.0   76     9  29
+153    20     223 11.5   68     9  30
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 11:</strong> Giá trị ở dòng thứ 40 của cột <code>Ozone</code> là ...</p>
+
+<ol>
+<li>22</li>
+<li>NA</li>
+<li><em>71</em></li>
+<li>56</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Sử dụng lệnh <code>hw1$Ozone[40]</code> | <code>View(hw1)</code> rồi tìm thủ công. </p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; hw1$Ozone[40]
+[1] 71
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 12:</strong> Có bao nhiêu giá trị <code>NA</code> (missing value) trong cột <code>Ozone</code>?</p>
+
+<ol>
+<li>NA</li>
+<li><em>37</em></li>
+<li>34</li>
+<li>40</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Sử dụng lệnh <code>is.na(hw1$Ozone)</code> sau đó là <code>table()</code> | <code>summary(hw1$Ozone)</code> rồi tìm kết quả.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r"># Cách 1:
+&gt; is.na(hw1$Ozone) -&gt; ok
+&gt; table(ok)
+ok
+FALSE  TRUE 
+  116    37
+# Cách 2:
+&gt; summary(hw1$Ozone)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+   1.00   18.00   31.50   42.13   63.25  168.00      37
+&gt; summary(hw1$Ozone)[7]
+NA&#39;s 
+  37
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 13:</strong> Sau khi loại bỏ các giá trị <code>NA</code> trong cột <code>Ozone</code>, tính giá trị trung bình.</p>
+
+<ol>
+<li><em>42.13</em> </li>
+<li>41.13 </li>
+<li>52.19 </li>
+<li>52.20</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Sử dụng lệnh <code>complete.cases(hw1$Ozone)</code> sau đó subset loại bỏ <code>NA</code> rồi tính <code>mean()</code> | <code>summary(hw1$Ozone)</code> rồi tìm kết quả.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; mean(hw1$Ozone) # Tính trực tiếp trên vector
+[1] NA # có chứa giá trị NA lẫn con số sẽ ra NA.
+
+# Vì vậy cần subset ra vector mới chỉ chứa số 
+# (làm sạch dữ liệu)
+&gt; good &lt;- complete.cases(hw1$Ozone)
+&gt; hw1$Ozone[good] -&gt; well
+&gt; mean(well)
+[1] 42.12931
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 14:</strong> Chiết xuất ra những hàng trong data frame <code>hw1</code> mà có giá trị <code>Ozone</code> lớn hơn <code>31</code> <strong>và</strong> giá trị <code>Temp</code> lớn hơn <code>90</code>. Sau đó tính giá trị trung bình cho cột <code>Solar.R</code> của bảng số liệu con (subset) này.</p>
+
+<ol>
+<li><em>212.8</em></li>
+<li>334.0</li>
+<li>205.0 </li>
+<li>117.6</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Lọc dữ liệu theo kiểu logical cho <code>Ozone</code> và <code>Temp</code> sau đó làm cơ sở để subset trong <code>hw1</code>.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; hw1$Ozone &gt; 31 -&gt; ok1
+&gt; hw1$Temp &gt; 90 -&gt; ok2
+&gt; length(ok1)
+[1] 153
+&gt; length(ok2)
+[1] 153
+&gt; ok1 &amp; ok2 -&gt; ok3 # Gộp hai điều kiện
+&gt; length(ok3)
+[1] 153
+&gt; hw1[ok3, ] # Subset ra bảng dữ liệu mới
+     Ozone Solar.R Wind Temp Month Day
+NA      NA      NA   NA   NA    NA  NA
+NA.1    NA      NA   NA   NA    NA  NA
+69      97     267  6.3   92     7   8
+70      97     272  5.7   92     7   9
+NA.2    NA      NA   NA   NA    NA  NA
+NA.3    NA      NA   NA   NA    NA  NA
+120     76     203  9.7   97     8  28
+121    118     225  2.3   94     8  29
+122     84     237  6.3   96     8  30
+123     85     188  6.3   94     8  31
+124     96     167  6.9   91     9   1
+125     78     197  5.1   92     9   2
+126     73     183  2.8   93     9   3
+127     91     189  4.6   93     9   4
+&gt; hw1[ok3, ] -&gt; yes
+&gt; na.omit(yes) -&gt; final # Loại bỏ giá trị NA
+&gt; final 
+    Ozone Solar.R Wind Temp Month Day
+69     97     267  6.3   92     7   8
+70     97     272  5.7   92     7   9
+120    76     203  9.7   97     8  28
+121   118     225  2.3   94     8  29
+122    84     237  6.3   96     8  30
+123    85     188  6.3   94     8  31
+124    96     167  6.9   91     9   1
+125    78     197  5.1   92     9   2
+126    73     183  2.8   93     9   3
+127    91     189  4.6   93     9   4
+&gt; mean(final$Solar.R)
+[1] 212.8
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 15:</strong> Nhiệt độ trung bình của tháng 6 là bao nhiêu? </p>
+
+<ol>
+<li>75.2</li>
+<li>84.3</li>
+<li>69.4</li>
+<li><em>79.1</em></li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Subset riêng tháng 6 bằng lệnh <code>hw1[hw1$Month == 6, ]</code> sau đó tính <code>mean()</code> của <code>Temp</code>.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; hw1[hw1$Month == 6, ] -&gt; june
+&gt; mean(june$Temp) # Vì `Temp` trong june không có
+[1] 79.1     # giá trị NA nên ta tính mean trực tiếp
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p><strong>Câu 16:</strong> Trong tháng 5, giá trị cực đại maximum của <code>Ozone</code> là bao nhiêu?</p>
+
+<ol>
+<li>18</li>
+<li>97</li>
+<li><em>115</em></li>
+<li>100</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  
+<div class="quiz-hint">
+  <p>Subset riêng tháng 5 bằng lệnh <code>hw1[hw1$Month == 5, ]</code> sau đó lọc <code>NA</code> rồi tính <code>max()</code> của <code>Ozone</code>.</p>
+
+</div>
+
+<div class="quiz-explanation">
+  <pre><code class="r">&gt; hw1[hw1$Month == 5, ] -&gt; may
+&gt; na.omit(may) -&gt; sense
+&gt; sense
+   Ozone Solar.R Wind Temp Month Day
+1     41     190  7.4   67     5   1
+2     36     118  8.0   72     5   2
+3     12     149 12.6   74     5   3
+4     18     313 11.5   62     5   4
+7     23     299  8.6   65     5   7
+8     19      99 13.8   59     5   8
+9      8      19 20.1   61     5   9
+12    16     256  9.7   69     5  12
+13    11     290  9.2   66     5  13
+14    14     274 10.9   68     5  14
+15    18      65 13.2   58     5  15
+16    14     334 11.5   64     5  16
+17    34     307 12.0   66     5  17
+18     6      78 18.4   57     5  18
+19    30     322 11.5   68     5  19
+20    11      44  9.7   62     5  20
+21     1       8  9.7   59     5  21
+22    11     320 16.6   73     5  22
+23     4      25  9.7   61     5  23
+24    32      92 12.0   61     5  24
+28    23      13 12.0   67     5  28
+29    45     252 14.9   81     5  29
+30   115     223  5.7   79     5  30
+31    37     279  7.4   76     5  31
+&gt; max(sense$Ozone)
+[1] 115
+</code></pre>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='<span style="color: blue">Nội dung</span>'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='NA'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='NA'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='NA'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='NA'>
+         5
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='NA'>
+         6
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='NA'>
+         7
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='NA'>
+         8
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='NA'>
+         9
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='NA'>
+         10
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='NA'>
+         11
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='NA'>
+         12
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='NA'>
+         13
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='NA'>
+         14
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='NA'>
+         15
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='NA'>
+         16
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='NA'>
+         17
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+
+  
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
