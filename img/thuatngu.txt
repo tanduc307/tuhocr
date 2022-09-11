@@ -1,0 +1,62 @@
+
+> dulieu <- c("aaa", "bbb", "ccc")
+> dulieu
+[1] "aaa" "bbb" "ccc"
+> names(dulieu)
+NULL
+> attributes(dulieu)
+NULL
+> names(dulieu) <- c("i", "ii", "iii")
+> attributes(dulieu)
+$names
+[1] "i"   "ii"  "iii"
+> dulieu
+    i    ii   iii 
+"aaa" "bbb" "ccc"  
+
+> seq_along(dulieu)
+[1] 1 2 3
+> dulieu[2]
+   ii 
+"bbb"
+> dulieu[c(1,3)]
+    i   iii 
+"aaa" "ccc" 
+
+---
+
+> matran <- matrix(data = -2:12, nrow = 3, ncol = 5)
+> matran
+     [,1] [,2] [,3] [,4] [,5]
+[1,]   -2    1    4    7   10
+[2,]   -1    2    5    8   11
+[3,]    0    3    6    9   12
+> seq_along(matran)
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+> matran[10]
+[1] 7
+> matran[[10]]
+[1] 7
+> matran[1, 4]
+[1] 7
+> matran[[1, 4]]
+[1] 7
+> matran[1, ]
+[1] -2  1  4  7 10
+> matran[[1, ]]
+Error in matran[[1, ]] : subscript out of bounds
+> matran[, 4]
+[1] 7 8 9
+> matran[c(1, 4)]
+[1] -2  1
+> matran[c(1:4)]
+[1] -2 -1  0  1
+> matran[c(1:4, 10)]
+[1] -2 -1  0  1  7
+> matran[c(1:4, 111)]
+[1] -2 -1  0  1 NA
+
+
+
+
+

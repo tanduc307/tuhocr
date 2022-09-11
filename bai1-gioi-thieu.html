@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Bài 1: Giới thiệu R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Biên soạn: Duc Nguyen (Tự học R chấm com)" />
+    <script src="libs/header-attrs-2.15/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nhsr.css" type="text/css" />
+    <link rel="stylesheet" href="css/nhsr-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide, left, bottom, animated, fadeIn
+
+# Bài 1: Giới thiệu R
+----
+## **Khóa học: Các lệnh căn bản trong R**
+### Biên soạn: Duc Nguyen (Tự học R chấm com)
+### Đăng ký: tuhocr.com@gmail.com - Website: www.tuhocr.com
+
+---
+
+class: animated, fadeIn
+
+# R là gì?
+
+--
+
+* R là ngôn ngữ lập trình được dùng cho &lt;span style="color: red"&gt;**xử lý thống kê**&lt;/span&gt; và &lt;span style="color: blue"&gt;**biểu diễn dữ liệu qua đồ thị.**&lt;/span&gt;
+
+--
+
+* Dữ liệu cần &lt;span style="color: green"&gt;*thu thập*, *sắp xếp*, và *làm sạch*&lt;/span&gt; ***đúng cách*** trước khi đưa vào xử lý trong R.
+
+--
+
+* Việc &lt;span style="color: blue"&gt;**làm sạch dữ liệu**&lt;/span&gt; có thể sử dụng Excel (dữ liệu nhỏ, đơn giản) hoặc dùng **các lệnh cơ bản trong R** (dữ liệu lớn, phức tạp).
+
+---
+
+class: animated, fadeIn
+
+.pull-left[
+
+# Nguồn gốc
+
+John M. Chambers là người sáng tạo ra ngôn ngữ lập trình S, và là thành viên của R core team. [Tham khảo](https://tinyurl.com/5h57be65)
+
+Chambers, J. (2008). Software for Data Analysis: Programming with R. Springer New York.
+
+&lt;img src="img/jmc4.jpg" width="50%" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="img/r-la-gi.png" width="80%" /&gt;
+
+]
+
+---
+
+class: animated, fadeIn
+
+# Chương trình học
+
+# [TODO] Bổ sung sau
+
+---
+
+class: animated, fadeIn
+
+# Giáo trình
+
+1/ Wickham, H., &amp; Grolemund, G. (2022). R for Data Science. https://r4ds.had.co.nz/index.html
+
+2/ Venables, W. N., Smith, D. M., &amp; the R Core Team. (2022). An Introduction to R. https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf
+
+3/ Peng, R. D. (2022). R Programming for Data Science. Leanpub. &lt;span style="color: blue"&gt;[Lập trình R căn bản]&lt;/span&gt;
+
+4/ Leek, J. (2015). The Elements of Data Analytic Style. Leanpub. &lt;span style="color: blue"&gt;[Khái quát về data science]&lt;/span&gt;
+
+5/ de Vries, A., &amp; Meys, J. (2015). R For Dummies (2nd ed.). John Wiley &amp; Sons, Inc.
+
+6/ Chambers, J. M. (2008). Software for Data Analysis: Programming with R. Springer New York.
+
+7/ Douglas, A., Roos, D., Mancini, F., Couto, A., &amp; Lusseau, D. (2022). An Introduction to R. https://intro2r.com/
+
+---
+
+class: animated, fadeIn
+
+# Giáo trình
+
+8/ R Core Team. (2022). R Language Definition. https://cran.r-project.org/doc/manuals/r-release/R-lang.html &lt;span style="color: blue"&gt;[Tra cứu thuật ngữ]&lt;/span&gt;
+
+9/ Peng, R. D. (2020). Exploratory Data Analysis with R. Leanpub. &lt;span style="color: blue"&gt;[Vẽ đồ thị với R]&lt;/span&gt;
+ 
+10/ Johns Hopkins University. (2022). Data Science Specialization. Coursera. https://www.coursera.org/specializations/jhu-data-science 
+
+11/ Wickham, H. (2022). Advanced R. http://adv-r.had.co.nz/
+
+---
+
+class: animated, fadeIn
+
+# Kết quả đầu ra
+
+Việc nắm vững các lệnh cơ bản trong R sẽ giúp bạn có khả năng:
+
+--
+
+- Tự viết code để xử lý dữ liệu nghiên cứu, kinh doanh **nhanh hơn**
+
+--
+
+- Đặt nền tảng cho việc **tự động hóa** trong công việc, kết nối giữa dữ liệu offline và online
+
+--
+
+- Hiểu được **logic** của toán học, tin học, lập trình, mã nguồn mở để nâng cao khả năng thích ứng trong kỷ nguyên số 🌱
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(img/logo-blue.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
