@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Bài 1: Ghi chú việc cần làm</title>
+    <title>Bài 3: Làm quen với R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Biên soạn: Duc Nguyen (Tự học R chấm com)" />
     <script src="libs/header-attrs-2.15/header-attrs.js"></script>
@@ -18,98 +18,33 @@
 
 class: title-slide, left, bottom, animated, fadeIn
 
-# Bài 1: Ghi chú việc cần làm
+# Bài 3: Làm quen với R
 ----
-## **Khóa học: Củng cố kỹ năng R**
+## **Khóa học: Các lệnh căn bản trong R**
 ### Biên soạn: Duc Nguyen (Tự học R chấm com)
 ### Đăng ký: tuhocr.com@gmail.com - Website: www.tuhocr.com
 
 ---
 
-class: animated, fadeIn
+class: inverse, middle, center, animated, fadeIn
 
-# `TODO` là gì?
+# Appendix A - A sample session 
 
-Ý tưởng là khi bạn viết code trong `R` có những chỗ bạn cần ghi chú những việc cần làm để sau này quay trở lại hoàn thiện. Tất nhiên, khi ghi chú thì bạn dùng dấu `#` để comment, nhưng khi cần tìm kiếm những chỗ nào là *comment để hoàn thiện code* (to-do list) và chỗ nào *comment để chú thích đơn thuần* thì dễ bị trùng nhau.
+Venables, W. N., Smith, D. M., &amp; the R Core Team. (2022). An Introduction to R.  
+https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf
 
---
-
-Bạn cũng có thể tách riêng những chuyện to-do list này ra ngoài (ví dụ dùng Googe Notes) nhưng như vậy thì không hiệu quả về lâu dài. Tốt nhất có phương pháp nào đó để ghi trực tiếp những chuyện `TODO` này ngay tại đoạn code cần phát triển thêm thì sẽ tiện lợi hơn.
-
---
-
-Từ đây nảy sinh ra khái niệm:
-
-* Comment là chú thích, bình luận, làm rõ đoạn code nói chung
-
-* Note hay `TODO` là ghi chú chỗ cần phát triển code
-
----
-
-class: animated, fadeIn
-
-# Cách ghi `TODO` trong R 
-
-Nguồn: [https://stackoverflow.com/questions/31874127/todo-comments-in-rstudio](https://stackoverflow.com/questions/31874127/todo-comments-in-rstudio)
-
-- Khi chú thích thì *nên* theo cú pháp sau:
-
-```r
-     ↓ Marker
-# [TODO] Mô tả nội dung cần thực hiện #### ← Kết thúc bằng 4 dấu hash
-↑ Ký hiệu comment   ↑ Nội dung 
-```
-
---
-
-- Khi tìm kiếm các marker `[TODO]` trong project (thư mục làm việc) có hàng chục file code khác nhau thì dùng chức năng sau
-1. Go to `Edit -&gt; Find in Files...`
-2. Tick the checkbox `"Regular Expression"`
-3. Enter the following regular expression: `^\s*# \[TODO\]`
-4. Click `Find`
-
----
-
-class: animated, fadeIn
-
-# Giải thích regular expression
-
-Nguồn: [https://cheatography.com/davechild/cheat-sheets/regular-expressions/](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+Mở file [`sample-session.R`](https://tuhocr.netlify.app/sample-session.R)
 
 
-```r
-# Mục đích là tìm kiếm các marker [TODO] nằm lẫn trong các file viết code. 
-# Vì nếu search theo kiểu trực tiếp (case sensitive hay whole word) 
-# sẽ không ra chính xác kết quả.
-# Vì vậy cần search theo kiểu regular expression:
-
- ↓ Các ký tự ^\s* là đại diện cho những đoạn text phía trước marker [TODO]
-^\s*# \[TODO\] ← Dấu ngoặc vuông là escape character nên cần đặt sau dấu backslash
-    ↑ Ký hiệu comment
-
-# Kết quả sẽ trả về những dòng code có ký hiệu # [TODO] chứa ghi chú của bạn.
-```
-
----
-
-class: animated, fadeIn
-
-# Sử dụng package `todor` 
-
-Nguồn: [https://github.com/dokato/todor](https://github.com/dokato/todor)
 
 
-```r
-install.packages("todor") # Cài package
 
-# Khi muốn tìm kiếm [TODO] trong các file code thì có 2 cách:
 
-# Cách 1: Gõ 1 trong 2 lệnh này vào console
-todor::todor()
-todor::todor(c("TODO"))
 
-# Cách 2: Gọi lệnh ở mục Addins/TODOR/Find project TODOs
-```
+
+
+
+
 
 
 
