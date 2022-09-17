@@ -1,0 +1,43 @@
+THUẬT NGỮ TRONG R
+BIÊN SOẠN: DUC NGUYEN - WWW.TUHOCR.COM
+
+Lệnh == Command == Function
+
+Hàm == Function
+
+Gói == Thư viện == Package
+
+Thông số == Tham số == Argument == Parameter 
+
+Môi trường == Environment
+
+Đối tượng == Object
+
+Biến == Column (cột) == Variable
+
+Quan sát == Row (hàng) == Observation
+
+Thành phần == Element
+
+Index = Thứ tự theo vị trí
+
+Thành phần == Component (trong ngữ cảnh của List)
+
+Tên == Name
+
+Phiên làm việc == Session
+
+Không gian làm việc == Workspace
+
+Vector == Atomic vector == Vector 1 chiều
+
+Ma trận == Matrix == Vector 2 chiều
+
+Bảng == Table == Data frame
+
+Array = Vector đa chiều
+
+Ký tự == Character == Letter
+
+Văn bản == Text == String
+

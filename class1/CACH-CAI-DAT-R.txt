@@ -1,5 +1,5 @@
 BÀI: CÁCH CÀI ĐẶT R
-KHÓA HỌC: HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ SỐ LIỆU
+KHÓA HỌC: HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU
 BIÊN SOẠN: DUC NGUYEN - WWW.TUHOCR.COM
 
 1. CÀI ĐẶT R https://www.r-project.org/
@@ -7,5 +7,9 @@ BIÊN SOẠN: DUC NGUYEN - WWW.TUHOCR.COM
 3. VỊ TRÍ THƯ MỤC CÀI ĐẶT
 4. VỊ TRÍ THƯ MỤC CHỨA PACKAGE
 
-TEXT EDITOR	
-5. CÀI ĐẶT NOTEPAD++ https://notepad-plus-plus.org/
+HƯỚNG DẪN CHI TIẾT
+https://tuhocr.netlify.app/huong-dan-cai-dat.htm
+
+---
+
+
