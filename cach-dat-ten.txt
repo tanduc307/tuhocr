@@ -1,0 +1,8 @@
+CÁCH ĐẶT TÊN
+
+1/ HOW TO NAME FILES
+• https://speakerdeck.com/jennybc/how-to-name-files
+
+2/ CODING STANDARD: R STYLE GUIDE
+• https://google.github.io/styleguide/Rguide.html
+• https://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html 
