@@ -6,3 +6,6 @@ CÁCH ĐẶT TÊN
 2/ CODING STANDARD: R STYLE GUIDE
 • https://google.github.io/styleguide/Rguide.html
 • https://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html 
+
+3/ An Introduction to R
+• https://tuhocr.netlify.app/r-intro.pdf#page=10
