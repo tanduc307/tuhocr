@@ -21,11 +21,12 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				ĐANG EDIT
 	• LỆNH help(), example() và demo()
 
-09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				CHƯA QUAY
+09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				ĐANG EDIT
 	• Lệnh read.table(), read.csv()
 	• Lệnh kiểm tra args() liệt kê tham số
 
-10. PACKAGE DATASET VÀ CÁCH XUẤT DỮ LIỆU RA BÊN NGOÀI
+10. PACKAGE DATASET						ĐANG EDIT
+	• Lệnh data(), write.csv()
 
 11. CẤU TRÚC LỆNH TRONG R					CHƯA QUAY
 	• KHÁI NIỆM ENVIRONMENT, NAMESPACE, DẤU :: VÀ :::
