@@ -1,5 +1,6 @@
 KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
 
 	NỘI DUNG						TIẾN ĐỘ
 	
@@ -19,7 +20,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	• CÁCH GÁN GIÁ TRỊ
 
 08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				ĐANG EDIT
-	• LỆNH help(), example() và demo()
+	• LỆNH help(), example(), demo()
 
 09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				ĐANG EDIT
 	• Lệnh read.table(), read.csv()
@@ -28,14 +29,38 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 10. PACKAGE DATASET						ĐANG EDIT
 	• Lệnh data(), write.csv()
 
-11. CẤU TRÚC LỆNH TRONG R					CHƯA QUAY
+11. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 1)				ĐANG EDIT
 	• KHÁI NIỆM ENVIRONMENT, NAMESPACE, DẤU :: VÀ :::
-	• SCOPING RULE
-	• CÁC LỆNH PHIÊN LÀM VIỆC
+
+12. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 2)				ĐANG EDIT
+	• LỆNH attach(), detach()
+	• LỆNH system.time, getAnywhere(), argsAnywhere()
+
+13. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 3)
+
+
+COMMAND ON INLINE ;
+FUNCTION () {
+}
+
+options(prompt = "*** ")
+options(scipen = 7, digits = 3)
+
+14. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 4)
+
+
+LS()
+RM()
+
+SAVE
+LOAD
+HISTORY
+SOURCE
+
 
 11. CÁCH TẠO VECTOR, MATRIX, LIST, DATAFRAME			CHƯA QUAY
 	• CÁC LỆNH KIỂM TRA OBJECT
-	• CÁCH ÁP ĐẶT (COERCION) TRONG R
+	• CÁCH ÁP ĐẶT (COERCION) TRONG R / CONVERT
 
 12. NUMERIC VECTOR						CHƯA QUAY
 	• KHÁI NIỆM LOOP VÀ VECTORIZE
@@ -58,13 +83,18 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 19. LOOP
 20. APPLY
 21. FUNCTION
+	• METHOD, SCOPING RULE
 22. BASE PLOT
 23. LATTICE PLOT
 24. GGPLOT2 
 
 
 25. CÁC LỆNH THỐNG KÊ
+
+
 26. CÁC LỆNH TOÁN HỌC
+
+
 27. XỬ LÝ DỮ LIỆU TRỐNG
 
 28. RPUB
