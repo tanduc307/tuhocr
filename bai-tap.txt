@@ -1,0 +1,9 @@
+KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+BÀI TẬP KÈM LỜI GIẢI
+
+1/ DATASET AIR POLLUTION
+• Vẽ đồ thị sử dụng base-R và ggplot2
+https://tinyurl.com/2s4823d3
