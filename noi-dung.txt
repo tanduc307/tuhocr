@@ -2,7 +2,9 @@ KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
+=========================================================================
 	NỘI DUNG						TIẾN ĐỘ
+=========================================================================
 	
 01. GIỚI THIỆU R						CHƯA QUAY
 
@@ -29,49 +31,20 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 10. PACKAGE DATASET						ĐANG EDIT
 	• Lệnh data(), write.csv()
 
-11. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 1)				ĐANG EDIT
+11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		ĐANG EDIT
+
+12. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 1)				XONG
 	• KHÁI NIỆM ENVIRONMENT, NAMESPACE, DẤU :: VÀ :::
 
-12. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 2)				ĐANG EDIT
+13. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 2)				ĐANG EDIT
 	• LỆNH attach(), detach()
 	• LỆNH system.time, getAnywhere(), argsAnywhere()
 
-13. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		ĐANG EDIT
+14. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 3)				ĐANG EDIT
+	• Lệnh thay đổi dấu prompt
+	• Lệnh save(), load(), source()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 3)				CHƯA QUAY
-
-COMMAND ON INLINE ;
-FUNCTION () {
-}
-
-options(prompt = "*** ")
-
-14. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 4)
-
-
-LS()
-RM()
-
-SAVE
-LOAD
-HISTORY
-SOURCE
+=========================================================================
 
 
 11. CÁCH TẠO VECTOR, MATRIX, LIST, DATAFRAME			CHƯA QUAY
@@ -100,10 +73,14 @@ SOURCE
 20. APPLY
 21. FUNCTION
 	• METHOD, SCOPING RULE
+
+=========================================================================
+
 22. BASE PLOT
 23. LATTICE PLOT
 24. GGPLOT2 
 
+=========================================================================
 
 25. CÁC LỆNH THỐNG KÊ
 
@@ -112,6 +89,8 @@ SOURCE
 
 
 27. XỬ LÝ DỮ LIỆU TRỐNG
+
+=========================================================================
 
 28. RPUB
 29. GITHUB
@@ -122,6 +101,8 @@ SOURCE
 33. CLUSTER
 
 34. REGULAR EXPRESSION
+
+=========================================================================
 
 
 EXTRA:
@@ -134,7 +115,8 @@ CASE-STUDY:
 C01. BÀI TẬP AIR QUALITY
 C02. BÀI TẬP PLOTTING
 C03. BÀI TẬP STORM
- 
+
+lệnh dput dget
 	
 
 
