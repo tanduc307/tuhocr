@@ -16,19 +16,19 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 05. CẤU TRÚC DỮ LIỆU TRONG R  					XONG
 
-06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					ĐANG EDIT
+06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					.
 
-07. CÁCH ĐẶT TÊN TRONG R 					ĐANG EDIT
+07. CÁCH ĐẶT TÊN TRONG R 					.
 	• CÁCH GÁN GIÁ TRỊ
 
-08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				ĐANG EDIT
+08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				.
 	• LỆNH help(), example(), demo()
 
-09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				ĐANG EDIT
+09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				.
 	• Lệnh read.table(), read.csv()
 	• Lệnh kiểm tra args() liệt kê tham số
 
-10. PACKAGE DATASET						ĐANG EDIT
+10. PACKAGE DATASET						.
 	• Lệnh data(), write.csv()
 
 11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		XONG
@@ -47,11 +47,11 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 =========================================================================
 
 
-15. VECTOR TRONG R						CHƯA QUAY
+15. VECTOR TRONG R						.
 	• CÁC LỆNH KIỂM TRA OBJECT
 	• CÁCH ÁP ĐẶT (COERCION) TRONG R / CONVERT
 
-12. NUMERIC VECTOR						CHƯA QUAY
+12. NUMERIC VECTOR						.
 	• KHÁI NIỆM LOOP VÀ VECTORIZE
 	• CÁC PHÉP TÍNH TRÊN VECTOR
 	• LOGICAL
