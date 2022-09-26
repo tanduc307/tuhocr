@@ -31,23 +31,23 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 10. PACKAGE DATASET						ĐANG EDIT
 	• Lệnh data(), write.csv()
 
-11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		ĐANG EDIT
+11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		XONG
 
 12. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 1)				XONG
 	• KHÁI NIỆM ENVIRONMENT, NAMESPACE, DẤU :: VÀ :::
 
-13. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 2)				ĐANG EDIT
+13. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 2)				XONG
 	• LỆNH attach(), detach()
 	• LỆNH system.time, getAnywhere(), argsAnywhere()
 
-14. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 3)				ĐANG EDIT
+14. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 3)				XONG
 	• Lệnh thay đổi dấu prompt
 	• Lệnh save(), load(), source()
 
 =========================================================================
 
 
-11. CÁCH TẠO VECTOR, MATRIX, LIST, DATAFRAME			CHƯA QUAY
+15. VECTOR TRONG R						CHƯA QUAY
 	• CÁC LỆNH KIỂM TRA OBJECT
 	• CÁCH ÁP ĐẶT (COERCION) TRONG R / CONVERT
 
@@ -117,6 +117,10 @@ C02. BÀI TẬP PLOTTING
 C03. BÀI TẬP STORM
 
 lệnh dput dget
-	
+
+DEBUG
+
+NÓI VỀ R KHI GẶP LỖI LÀ HƯ CẢ SESSION
+CÁCH STOP KHI LỆNH LỖI	
 
 
