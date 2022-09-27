@@ -1,0 +1,39 @@
+KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+TÀI LIỆU THAM KHẢO:
+Dấu * cho thấy tài liệu đó được đề cập nhiều trong khóa học này.
+
+		[A] HƯỚNG DẪN R CĂN BẢN
+		1. 
+		2.
+***		3. de Vries, A., & Meys, J. (2015). R For Dummies (2nd ed.). John Wiley & Sons, Inc. https://www.dummies.com/category/articles/r-33607/ 
+
+**		4. Grolemund, G. (2014). Hands-On Programming with R. https://rstudio-education.github.io/hopr/
+			• Ngắn gọn, rõ ràng, dễ hiểu.
+*		5. Douglas, A., Roos, D., Mancini, F., Couto, A., & Lusseau, D. (2022). An Introduction to R. https://intro2r.com/
+			• Bao quát R markdown và version control GitHub
+		6. Chambers, J. M. (2008). Software for Data Analysis: Programming with R. Springer New York. 
+			• 
+
+
+		[B] HƯỚNG DẪN R DỰA TRÊN TIDYVERSE PACKAGE
+**		1. Wickham, H., & Grolemund, G. (2022). R for Data Science. https://r4ds.had.co.nz/index.html
+			• Cách tiếp cận tập trung ở tabular data. Đi từ ví dụ minh họa plotting sau đó mới quay về lệnh căn bản.
+
+		[C] HƯỚNG DẪN R NÂNG CAO
+		1.
+
+
+		[D] DATA SCIENCE
+*		1. Johns Hopkins University. (2022). Data Science Specialization. Coursera. https://www.coursera.org/specializations/jhu-data-science
+
+
+		[E] CHEATSHEET
+		1.
+
+		[F]. XÁC SUẤT THỐNG KÊ VÀ PHÂN TÍCH DỮ LIỆU VỚI R
+		1.
+		2.
+		3.

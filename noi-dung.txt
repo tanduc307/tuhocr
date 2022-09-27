@@ -8,20 +8,20 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	
 01. GIỚI THIỆU R						CHƯA QUAY
 
-02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					ĐANG EDIT
+02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
 
-03. HƯỚNG DẪN CÁCH TẠO PROJECT 					ĐANG EDIT
+03. HƯỚNG DẪN CÁCH TẠO PROJECT 					XONG
 
-04. GIAO DIỆN RSTUDIO 						ĐANG EDIT
+04. GIAO DIỆN RSTUDIO 						XONG
 
 05. CẤU TRÚC DỮ LIỆU TRONG R  					XONG
 
-06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					.
+06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					EDIT
 
-07. CÁCH ĐẶT TÊN TRONG R 					.
+07. CÁCH ĐẶT TÊN TRONG R 					EDIT
 	• CÁCH GÁN GIÁ TRỊ
 
-08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				.
+08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				EDIT
 	• LỆNH help(), example(), demo()
 
 09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				.
@@ -44,31 +44,39 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	• LỆNH THAY ĐỔI DẤU PROMPT
 	• LỆNH save(), load(), source()
 
-15. CÁCH LÀM TRÒN SỐ						.
-	• LỆNH round(), signif()
-
 =========================================================================
 
 15. VECTOR TRONG R						.
 	• CÁC LỆNH KIỂM TRA OBJECT
 
+16. CÁCH LÀM TRÒN SỐ						.
+	• LỆNH round(), signif()
+
+17. NUMERIC VECTOR						.
+	• CÁC PHÉP TÍNH ĐẠI SỐ
+	• GIÁ TRỊ Inf, NaN, NA
+
+18. DOUBLE VÀ INTEGER VECTOR
+
+19. LOGICAL VECTOR
+
+20. CHARACTER VECTOR
+
+21. DATE VÀ TIME VECTOR
+
+22. FACTOR (VECTOR)
 
 16. CHUYỂN ĐỔI CLASS TRONG R					.	
 
 
+	• which(), with(), setdif(), match()
+
 17.
 
+coercion
 
 
-
-
-
-
-17. NUMERIC VECTOR						.
-
-	• CÁC PHÉP TÍNH TRÊN VECTOR
-	• LOGICAL
-	• which(), with(), setdif(), match()
+lệnh print() và cat()
 
 13. FACTOR
 
