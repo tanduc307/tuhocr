@@ -5,7 +5,9 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 TÀI LIỆU THAM KHẢO:
 Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa học này.
 
+===================================================================	
 	[A] HƯỚNG DẪN R CĂN BẢN
+===================================================================	
 **	1. 
 *	2.
 ***	3. de Vries, A., & Meys, J. (2015). R For Dummies (2nd ed.). John Wiley & Sons, Inc. https://www.dummies.com/category/articles/r-33607/ 
@@ -18,29 +20,39 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 *	7. Peng, R. D. (2022). R Programming for Data Science. Leanpub.
 *	8. Peng, R. D. (2020). Exploratory Data Analysis with R. Leanpub.
 
+===================================================================	
 	[B] HƯỚNG DẪN R DỰA TRÊN TIDYVERSE PACKAGE
+===================================================================		
 **	1. Wickham, H., & Grolemund, G. (2022). R for Data Science. https://r4ds.had.co.nz/index.html
 		• Cách tiếp cận tập trung ở tabular data. Đi từ ví dụ minh họa plotting sau đó mới quay về lệnh căn bản.
 
+===================================================================	
 	[C] HƯỚNG DẪN R NÂNG CAO
+===================================================================		
 *	1. Wickham, H. (2011). The Split-Apply-Combine Strategy for Data Analysis. Journal of Statistical Software, 40, 1–29.
 		• Cách tiếp cận chia để trị khi xử lý dữ liệu.
 	2. Xie, Y., Dervieux, C., & Riederer, E. (2022). R Markdown Cookbook. https://bookdown.org/yihui/rmarkdown-cookbook/
 		• Hướng dẫn sử dụng R markdown
 	3. Peng, R. D. (2019). Report Writing for Data Science in R. Leanpub.
-	
+
+===================================================================		
 	[D]. XÁC SUẤT THỐNG KÊ VÀ PHÂN TÍCH DỮ LIỆU VỚI R
+===================================================================		
 	1.
 	2.
 	3.
-	
+
+===================================================================		
 	[E] DATA SCIENCE
+===================================================================		
 *	1. Johns Hopkins University. (2022). Data Science Specialization. Coursera. https://www.coursera.org/specializations/jhu-data-science
 *	2. Leek, J. (2015). The Elements of Data Analytic Style. Leanpub.
 		• Giới thiệu data science căn bản
 	3. Leek, J. (2016). How to be a modern scientist. Leanpub.
 	4. Peng, R. D., & Matsui, E. (2018). The Art of Data Science. Leanpub.
 	5. Peng, R. D., & Parker, H. (2016). Conversations On Data Science. Leanpub.
-	
+
+===================================================================		
 	[F] CHEATSHEET
+===================================================================		
 	1.
