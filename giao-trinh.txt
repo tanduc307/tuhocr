@@ -23,7 +23,7 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 		• Cách tiếp cận tập trung ở tabular data. Đi từ ví dụ minh họa plotting sau đó mới quay về lệnh căn bản.
 
 	[C] HƯỚNG DẪN R NÂNG CAO
-	1. Wickham, H. (2011). The Split-Apply-Combine Strategy for Data Analysis. Journal of Statistical Software, 40, 1–29.
+*	1. Wickham, H. (2011). The Split-Apply-Combine Strategy for Data Analysis. Journal of Statistical Software, 40, 1–29.
 		• Cách tiếp cận chia để trị khi xử lý dữ liệu.
 	2. Xie, Y., Dervieux, C., & Riederer, E. (2022). R Markdown Cookbook. https://bookdown.org/yihui/rmarkdown-cookbook/
 		• Hướng dẫn sử dụng R markdown
