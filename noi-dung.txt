@@ -8,7 +8,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	
 01. GIỚI THIỆU R						CHƯA QUAY
 
-02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
+02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					SỬA
 
 03. HƯỚNG DẪN CÁCH TẠO PROJECT 					XONG
 
@@ -16,15 +16,15 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 05. CẤU TRÚC DỮ LIỆU TRONG R  					XONG
 
-06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					EDIT
+06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					XONG
 
-07. CÁCH ĐẶT TÊN TRONG R 					EDIT
+07. CÁCH ĐẶT TÊN TRONG R 					XONG
 	• CÁCH GÁN GIÁ TRỊ
 
-08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				EDIT
+08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				SỬA
 	• LỆNH help(), example(), demo()
 
-09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				.
+09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				EDIT
 	• LỆNH read.table(), read.csv()
 	• LỆNH args() LIỆT KÊ THAM SỐ
 
@@ -56,11 +56,15 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	• CÁC PHÉP TÍNH ĐẠI SỐ
 	• GIÁ TRỊ Inf, NaN, NA
 
-18. DOUBLE VÀ INTEGER VECTOR
+18. DOUBLE VÀ INTEGER VECTOR					.
 
-19. LOGICAL VECTOR
+19. LOGICAL VECTOR						. 
 
 20. CHARACTER VECTOR
+
+
+
+34. REGULAR EXPRESSION
 
 21. DATE VÀ TIME VECTOR
 
@@ -88,7 +92,23 @@ lệnh print() và cat()
 
 17. LIST
 
+diff()
+prod(x)
+min(x)
+max(x)
+cumsum(x)
+cumprod(x)
+cummin(x)
+cummax(x)
+
+=========================================================================
+27. XỬ LÝ DỮ LIỆU TRỐNG
+
+
+
 18. CÁC LỆNH SUBSET
+
+31. RANDOM NUMBER
 
 19. LOOP
 20. APPLY
@@ -98,44 +118,60 @@ lệnh print() và cat()
 =========================================================================
 
 22. BASE PLOT
+
+
+
 23. LATTICE PLOT
+
+
+
+
+
 24. GGPLOT2 
 
+
+
+
+
+
+
 =========================================================================
 
-25. CÁC LỆNH THỐNG KÊ
 
 
-26. CÁC LỆNH TOÁN HỌC
 
 
-27. XỬ LÝ DỮ LIỆU TRỐNG
 
-=========================================================================
+
+
+
+EXTRA:
+
+E02. CÁCH VẼ CÂY THƯ MỤC
+E03. Lệnh edit.dataframe
+E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
+
+LỆNH DATA.TABLE KHI XỬ LÝ BIG DATA
+
+E05. COMPLEX VECTOR
+E06. ARRAY
 
 28. RPUB
 29. GITHUB
 30. RMARKDOWN
-31. RANDOM NUMBER
 
 32. HEATMAP
 33. CLUSTER
-
-34. REGULAR EXPRESSION
-
-=========================================================================
-
-
-EXTRA:
-E01. CÁCH TÁCH CỬA SỔ PLOT VÀ SCRIPT
-E02. CÁCH VẼ CÂY THƯ MỤC
-E03. Lệnh edit.dataframe
-E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 
 CASE-STUDY:
 C01. BÀI TẬP AIR QUALITY
 C02. BÀI TẬP PLOTTING
 C03. BÀI TẬP STORM
+
+25. CÁC LỆNH THỐNG KÊ
+
+
+26. CÁC LỆNH TOÁN HỌC
 
 lệnh dput dget
 
