@@ -8,7 +8,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	
 01. GIỚI THIỆU R						CHƯA QUAY
 
-02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					SỬA
+02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
 
 03. HƯỚNG DẪN CÁCH TẠO PROJECT 					XONG
 
@@ -21,14 +21,14 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 07. CÁCH ĐẶT TÊN TRONG R 					XONG
 	• CÁCH GÁN GIÁ TRỊ
 
-08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				SỬA
+08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				XONG
 	• LỆNH help(), example(), demo()
 
-09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				EDIT
+09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				XONG
 	• LỆNH read.table(), read.csv()
 	• LỆNH args() LIỆT KÊ THAM SỐ
 
-10. PACKAGE DATASET						.
+10. PACKAGE DATASET						EDIT
 	• LỆNH data(), write.csv()
 
 11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		XONG
@@ -46,10 +46,10 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 =========================================================================
 
-15. VECTOR TRONG R						.
+15. VECTOR TRONG R						EDIT
 	• CÁC LỆNH KIỂM TRA OBJECT
 
-16. CÁCH LÀM TRÒN SỐ						.
+16. CÁCH LÀM TRÒN SỐ						EDIT
 	• LỆNH round(), signif()
 
 17. NUMERIC VECTOR						.
@@ -121,9 +121,15 @@ cummax(x)
 
 
 
+=========================================================================
+
+
+
 23. LATTICE PLOT
 
 
+
+=========================================================================
 
 
 
