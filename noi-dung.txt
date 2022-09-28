@@ -60,7 +60,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 19. LOGICAL VECTOR						. 
 
-20. CHARACTER VECTOR
+20. CHARACTER VECTOR - TIẾNG VIỆT TRONG R
 
 
 
@@ -92,6 +92,8 @@ lệnh print() và cat()
 
 17. LIST
 
+26. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+
 diff()
 prod(x)
 min(x)
@@ -118,6 +120,14 @@ cummax(x)
 =========================================================================
 
 22. BASE PLOT
+
+FONT
+windowsFonts(A = windowsFont("Times New Roman"))
+thay đổi font đồ thị, nói rõ hơn lệnh windowsFonts
+install.packages("extrafont")
+
+library(xkcd)
+vignette("xkcd-intro")
 
 
 
@@ -177,7 +187,7 @@ C03. BÀI TẬP STORM
 25. CÁC LỆNH THỐNG KÊ
 
 
-26. CÁC LỆNH TOÁN HỌC
+
 
 lệnh dput dget
 
