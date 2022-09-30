@@ -28,7 +28,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	• LỆNH read.table(), read.csv()
 	• LỆNH args() LIỆT KÊ THAM SỐ
 
-10. PACKAGE DATASET						EDIT
+10. PACKAGE DATASET						XONG
 	• LỆNH data(), write.csv()
 
 11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		XONG
@@ -46,19 +46,19 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 =========================================================================
 
-15. VECTOR TRONG R						EDIT
+15. VECTOR TRONG R						XONG
 	• CÁC LỆNH KIỂM TRA OBJECT
 
-16. CÁCH LÀM TRÒN SỐ						EDIT
+16. CÁCH LÀM TRÒN SỐ						XONG
 	• LỆNH round(), signif()
 
-17. NUMERIC VECTOR						.
+17. NUMERIC VECTOR						EDIT
 	• CÁC PHÉP TÍNH ĐẠI SỐ
 	• GIÁ TRỊ Inf, NaN, NA
 
-18. DOUBLE VÀ INTEGER VECTOR					.
+18. DOUBLE VÀ INTEGER VECTOR					EDIT
 
-19. LOGICAL VECTOR						. 
+19. LOGICAL VECTOR						EDIT 
 
 20. CHARACTER VECTOR - TIẾNG VIỆT TRONG R			.
 
