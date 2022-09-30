@@ -6,6 +6,9 @@ VÍ DỤ MINH HỌA
 1/ CHARACTER VECTOR - TIẾNG VIỆT TRONG R
 • File excel để test tiếng Việt
 https://tinyurl.com/mw933afs
+2/ CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG 
+• File excel dummy
+https://tinyurl.com/4mr6abjc
 
 BÀI TẬP KÈM LỜI GIẢI
 

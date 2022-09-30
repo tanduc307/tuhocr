@@ -60,9 +60,11 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 19. LOGICAL VECTOR						. 
 
-20. CHARACTER VECTOR - TIẾNG VIỆT TRONG R
+20. CHARACTER VECTOR - TIẾNG VIỆT TRONG R			.
 
+21. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG 			.
 
+22. CHARACTER VECTOR - REGULAR EXPRESSION			.
 
 34. REGULAR EXPRESSION
 
@@ -73,7 +75,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 16. CHUYỂN ĐỔI CLASS TRONG R					.	
 
 
-	• which(), with(), setdif(), match()
+• which(), with(), setdif(), match()
 
 17.
 
@@ -102,6 +104,13 @@ cumsum(x)
 cumprod(x)
 cummin(x)
 cummax(x)
+=========================================================================
+
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU DÂN CƯ
+
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NÔNG NGHIỆP
+
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
 
 =========================================================================
 27. XỬ LÝ DỮ LIỆU TRỐNG
@@ -128,6 +137,11 @@ install.packages("extrafont")
 
 library(xkcd)
 vignette("xkcd-intro")
+
+CÁCH SAVE PLOT CHỨA TIẾNG VIỆT
+png
+pdf
+cairo_pdf()
 
 
 
