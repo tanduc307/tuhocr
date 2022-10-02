@@ -1,0 +1,43 @@
+1/ Extract last word in string in R
+https://stackoverflow.com/questions/17658216/extract-last-word-in-string-in-r
+
+Cách 1:
+library(stringr)
+sentence <- "The quick brown fox"
+word(sentence, -1)
+
+Cách 2:
+tail(strsplit('this is a sentence',split = " ")[[1]], 1)
+
+#################################################################################
+
+2/ Sort full name in alphabetical order in R
+https://stackoverflow.com/questions/45152858/sort-full-name-in-alphabetical-order-in-r
+
+Cách 1:
+library(tidyverse)
+library(stringr)
+
+
+# ↓ Nhớ chuyển qua data frame
+data %>%                # ↓ Tên cột trong object 'data'
+    arrange(str_extract(Names,'\\s.*$'))
+
+Cách 2:
+library(dplyr)
+
+# ↓ Nhớ chuyển qua data frame
+data %>%                    # ↓ Tên cột trong object 'data'
+  arrange(gsub(".*\\s", "", Names))
+
+#################################################################################
+
+3/ R: Sort elements in a named vector by names
+https://stackoverflow.com/questions/64466694/r-sort-elements-in-a-named-vector-by-names
+
+Cách 1:
+# ↓ vector có 'names' cần sort
+vec[sort(names(vec))]
+
+Cách 2: 
+vec[order(names(vec))]
