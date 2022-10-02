@@ -88,33 +88,7 @@ paste(e_2, collapse = " ") # kết dính các thành phần trong e_2 cách nhau
 
 paste(e_2, collapse = ".")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#############################
 
 paste("Mẫu", 1:5)
 

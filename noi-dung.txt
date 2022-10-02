@@ -19,42 +19,43 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					XONG
 
 07. CÁCH ĐẶT TÊN TRONG R 					XONG
-	• CÁCH GÁN GIÁ TRỊ
+	• Cách gán giá trị
 
 08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				XONG
-	• LỆNH help(), example(), demo()
+	• Lệnh help(), example(), demo()
 
 09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				XONG
-	• LỆNH read.table(), read.csv()
-	• LỆNH args() LIỆT KÊ THAM SỐ
+	• Lệnh read.table(), read.csv()
+	• Lệnh args() liệt kê tham số
 
 10. PACKAGE DATASET						XONG
-	• LỆNH data(), write.csv()
+	• Lệnh data(), write.csv()
 
 11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		XONG
 
 12. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 1)				XONG
-	• KHÁI NIỆM ENVIRONMENT, NAMESPACE, DẤU :: VÀ :::
+	• Khái niệm environment, namespace
+	• Dấu :: và :::
 
 13. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 2)				XONG
-	• LỆNH attach(), detach()
-	• LỆNH system.time, getAnywhere(), argsAnywhere()
+	• Lệnh attach(), detach()
+	• Lệnh system.time, getAnywhere(), argsAnywhere()
 
 14. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 3)				XONG
-	• LỆNH THAY ĐỔI DẤU PROMPT
-	• LỆNH save(), load(), source()
+	• Lệnh thay đổi dấu prompt
+	• Lệnh save(), load(), source()
 
 =========================================================================
 
 15. VECTOR TRONG R						XONG
-	• CÁC LỆNH KIỂM TRA OBJECT
+	• Các lệnh kiểm tra object
 
-16. CÁCH LÀM TRÒN SỐ						XONG
-	• LỆNH round(), signif()
+16. CÁCH LÀM TRÒN SỐ TRONG R					XONG
+	• Lệnh round(), signif()
 
 17. NUMERIC VECTOR						XONG
-	• CÁC PHÉP TÍNH ĐẠI SỐ
-	• GIÁ TRỊ Inf, NaN, NA
+	• Các phép tính đại số
+	• Giá trị Inf, NaN, NA
 
 18. DOUBLE VÀ INTEGER VECTOR					XONG
 
@@ -64,9 +65,16 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 21. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1)		XONG
 
-22. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		.
+22. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		XONG
 
-23. CHARACTER VECTOR - REGULAR EXPRESSION
+23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		.
+	• Lệnh sort(), print(), cat()
+
+
+
+
+
+24. CHARACTER VECTOR - REGULAR EXPRESSION
 	• Lệnh sort(), gsub()
 
 
