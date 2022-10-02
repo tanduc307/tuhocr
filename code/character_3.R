@@ -1,3 +1,5 @@
+# CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)
+
 # String theory
 #
 # xâu == chuỗi == text == string

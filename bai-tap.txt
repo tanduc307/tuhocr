@@ -2,11 +2,14 @@ KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
+CODE SỬ DỤNG 
+https://github.com/tanduc307/tuhocr/tree/main/code
+
 VÍ DỤ MINH HỌA
 1/ CHARACTER VECTOR - TIẾNG VIỆT TRONG R
 • File excel để test tiếng Việt
 https://tinyurl.com/mw933afs
-2/ CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG 
+2/ CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1) 
 • File excel dummy
 https://tinyurl.com/4mr6abjc
 

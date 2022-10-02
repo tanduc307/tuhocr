@@ -1,3 +1,5 @@
+# CHARACTER VECTOR - TIẾNG VIỆT TRONG R
+
 a <- "HUONG DAN SU DUNG R DE XU LY DU LIEU"
 b <- "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 c <- c("R manual", "R intro", "R blogger")

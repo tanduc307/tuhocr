@@ -1,3 +1,5 @@
+# CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1)
+
 library(readxl)
 nhanvien <- read_excel("nhanvien.xlsx")
 paste(nhanvien$Họ, nhanvien$Tên) -> oke
