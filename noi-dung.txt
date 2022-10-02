@@ -6,7 +6,13 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 	
-01. GIỚI THIỆU R						CHƯA QUAY
+01a. GIỚI THIỆU R						CHƯA QUAY
+
+01b. HƯỚNG DẪN KHÓA HỌC						CHƯA QUAY
+	• Cách download dataset
+	• Cách download code
+	• Cách xem video
+	• Giáo trình sử dụng
 
 02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
 
@@ -59,65 +65,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 18. DOUBLE VÀ INTEGER VECTOR					XONG
 
-19. LOGICAL VECTOR						XONG
-
-20. CHARACTER VECTOR - TIẾNG VIỆT TRONG R			XONG
-
-21. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1)		XONG
-
-22. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		XONG
-
-23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		.
-	• Lệnh sort(), print(), cat()
-
-
-
-
-
-24. CHARACTER VECTOR - REGULAR EXPRESSION
-	• Lệnh sort(), gsub()
-
-
-
-22. CHARACTER VECTOR - 			.
-
-
-c_1 <- c("Kỹ năng R", "xử lý dữ liệu", "xác suất thống kê", "aaabbb")
-
-
-
-
-21. DATE VÀ TIME VECTOR
-
-22. FACTOR (VECTOR)
-
-16. CHUYỂN ĐỔI CLASS TRONG R					.	
-
-
-• which(), with(), setdif(), match()
-
-17.
-
-coercion
-
-
-lệnh print() và cat()
-
-13. FACTOR
-
-14. DATETIME VECTOR
-
-15. MATRIX
-
-16. DATA FRAME
-
-17. LIST
-MAXIMUM NESTED LIST LEVEL
-
-ARRAY MẢNG
-SCALAR VÔ HƯỚNG
-
-26. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+19. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
 diff()
 prod(x)
@@ -127,31 +75,70 @@ cumsum(x)
 cumprod(x)
 cummin(x)
 cummax(x)
+mean()
+median()
+var()
+
+20. LOGICAL VECTOR						XONG
+
+21. CHARACTER VECTOR - TIẾNG VIỆT TRONG R			XONG
+
+22. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1)		XONG
+
+23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		XONG
+
+24. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		.
+	• Lệnh sort(), print(), cat()
+
+25. CHARACTER VECTOR - REGULAR EXPRESSION
+	• Lệnh gsub()
+
+26. FACTOR (VECTOR)
+
+27. CHUYỂN ĐỔI CLASS TRONG R
+coercion
+
+28. DATE-TIME VECTOR					
+
+29. MATRIX
+
+31. LIST
+MAXIMUM NESTED LIST LEVEL
+Lệnh data.tree liệt kê list
+
+32. DATA FRAME
+So sánh data frame và tibble và matrix và data table
+E03. Lệnh edit.dataframe
+E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
+lệnh dput dget
+
 =========================================================================
 
-CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU DÂN CƯ
+33. CÁC LỆNH CƠ BẢN (PHẦN 1)
 
-CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NÔNG NGHIỆP
+• which(), with(), setdif(), match(), transform(), within(), table() bảng tần số
 
-CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
+33. CÁC LỆNH CƠ BẢN (PHẦN 2)
+
+34. CÁC LỆNH SUBSET
+
+35. XỬ LÝ DỮ LIỆU TRỐNG
 
 =========================================================================
-27. XỬ LÝ DỮ LIỆU TRỐNG
 
-
-
-18. CÁC LỆNH SUBSET
-
-31. RANDOM NUMBER
-
-19. LOOP
-20. APPLY
-21. FUNCTION
+36. LOOP
+37. APPLY
+38. FUNCTION
 	• METHOD, SCOPING RULE
 
 =========================================================================
 
-22. BASE PLOT
+39. RANDOM NUMBER
+40. CÁC LỆNH THỐNG KÊ
+
+=========================================================================
+
+41. BASE PLOT
 
 FONT
 windowsFonts(A = windowsFont("Times New Roman"))
@@ -172,7 +159,7 @@ cairo_pdf()
 
 
 
-23. LATTICE PLOT
+42. LATTICE PLOT
 
 
 
@@ -180,7 +167,7 @@ cairo_pdf()
 
 
 
-24. GGPLOT2 
+43. GGPLOT2 
 
 
 
@@ -189,25 +176,19 @@ cairo_pdf()
 
 
 =========================================================================
-
-
-
-
-
-
-
-
-
-EXTRA:
 
 E02. CÁCH VẼ CÂY THƯ MỤC
-E03. Lệnh edit.dataframe
-E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 
 LỆNH DATA.TABLE KHI XỬ LÝ BIG DATA
 
 E05. COMPLEX VECTOR
-E06. ARRAY
+
+30. ARRAY MẢNG
+SCALAR VÔ HƯỚNG
+
+DEBUG
+NÓI VỀ R KHI GẶP LỖI LÀ HƯ CẢ SESSION
+CÁCH STOP KHI LỆNH LỖI
 
 28. RPUB
 29. GITHUB
@@ -221,16 +202,10 @@ C01. BÀI TẬP AIR QUALITY
 C02. BÀI TẬP PLOTTING
 C03. BÀI TẬP STORM
 
-25. CÁC LỆNH THỐNG KÊ
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU DÂN CƯ
 
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NÔNG NGHIỆP
 
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
 
-
-lệnh dput dget
-
-DEBUG
-
-NÓI VỀ R KHI GẶP LỖI LÀ HƯ CẢ SESSION
-CÁCH STOP KHI LỆNH LỖI	
-
-
+=========================================================================
