@@ -43,4 +43,34 @@ yes_1 == yes_2
 
 table(yes_1)
 
+################
+library(dplyr)
+
+homework_df <- as.data.frame(homework)
+
+homework_df %>%                
+    arrange(gsub(".*\\s", "", homework_df$homework)) -> kq_1
+
+
+###
+
+kq_1$homework -> kq_2
+
+kq_2
+
+sort(kq_2) -> kq_2
+
+kq_2
+
+identical(kq_2, yes_3)
+
+names(yes_3) <- NULL
+
+identical(kq_2, yes_3)
+
+
+gsub(".*\\s", "", homework_df$homework)
+
+# Giải thích regular expression https://regexr.com/
+
 

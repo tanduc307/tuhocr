@@ -87,8 +87,10 @@ var()
 
 23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		XONG
 
-24. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		.
+24. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		XONG
 	• Lệnh sort(), print(), cat()
+
+25. BÀI TẬP - CÁCH SẮP XẾP HỌ TÊN THEO ALPHABET			.
 
 25. CHARACTER VECTOR - REGULAR EXPRESSION
 	• Lệnh gsub()
@@ -209,3 +211,7 @@ CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NÔNG NGHIỆP
 CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
 
 =========================================================================
+
+ECOSYSTEM AUTOMATE QUY TRÌNH NGHIÊN CỨU
+
+CASE STUDY BÀI BÁO HẤP PHỤ XỬ LÝ R CHUYỂN THÀNH PDF
