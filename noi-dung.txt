@@ -65,6 +65,54 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 18. DOUBLE VÀ INTEGER VECTOR					XONG
 
+19. LOGICAL VECTOR						XONG
+
+20. CHARACTER VECTOR - TIẾNG VIỆT TRONG R			XONG
+
+21. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1)		XONG
+
+22. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		XONG
+
+23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		XONG
+
+24. BÀI TẬP - CÁCH SẮP XẾP HỌ TÊN THEO ALPHABET			XONG
+
+25. REGULAR EXPRESSION TRONG R (PHẦN 1)				XONG
+
+26. REGULAR EXPRESSION TRONG R (PHẦN 2)				XONG
+
+
+
+
+27. METACHARACTER VÀ ESCAPE CHARACTER
+
+
+
+
+
+
+
+
+
+
+
+26. FACTOR 
+
+
+
+27. CHUYỂN ĐỔI CLASS TRONG R
+coercion
+
+
+
+28. DATE-TIME VECTOR	
+
+	
+
+34. CÁC LỆNH SUBSET VECTOR
+
+
+
 19. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
 diff()
@@ -79,40 +127,37 @@ mean()
 median()
 var()
 
-20. LOGICAL VECTOR						XONG
 
-21. CHARACTER VECTOR - TIẾNG VIỆT TRONG R			XONG
+=========================================================================
 
-22. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1)		XONG
-
-23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		XONG
-
-24. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		XONG
-	• Lệnh sort(), print(), cat()
-
-25. BÀI TẬP - CÁCH SẮP XẾP HỌ TÊN THEO ALPHABET			.
-
-25. CHARACTER VECTOR - REGULAR EXPRESSION
-	• Lệnh gsub()
-
-26. FACTOR (VECTOR)
-
-27. CHUYỂN ĐỔI CLASS TRONG R
-coercion
-
-28. DATE-TIME VECTOR					
+			
 
 29. MATRIX
+
+34. CÁC LỆNH SUBSET MA TRẬN
+
+
+
+=========================================================================
+
+
 
 31. LIST
 MAXIMUM NESTED LIST LEVEL
 Lệnh data.tree liệt kê list
+
+34. CÁC LỆNH SUBSET LIST
+
+=========================================================================
 
 32. DATA FRAME
 So sánh data frame và tibble và matrix và data table
 E03. Lệnh edit.dataframe
 E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 lệnh dput dget
+
+
+34. CÁC LỆNH SUBSET DATA FRAME
 
 =========================================================================
 
@@ -122,9 +167,11 @@ lệnh dput dget
 
 33. CÁC LỆNH CƠ BẢN (PHẦN 2)
 
-34. CÁC LỆNH SUBSET
-
 35. XỬ LÝ DỮ LIỆU TRỐNG
+
+
+
+
 
 =========================================================================
 
