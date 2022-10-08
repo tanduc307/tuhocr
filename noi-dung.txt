@@ -2,6 +2,8 @@ KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
+SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý CHÍNH CỦA MỖI BÀI NHÉ!!!
+
 =========================================================================
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
@@ -81,22 +83,12 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 26. REGULAR EXPRESSION TRONG R (PHẦN 2)				XONG
 
+27. METACHARACTER VÀ ESCAPE CHARACTER				XONG
+
+28. FACTOR 
 
 
 
-27. METACHARACTER VÀ ESCAPE CHARACTER
-
-
-
-
-
-
-
-
-
-
-
-26. FACTOR 
 
 
 
@@ -225,6 +217,21 @@ cairo_pdf()
 
 
 =========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 E02. CÁCH VẼ CÂY THƯ MỤC
 
