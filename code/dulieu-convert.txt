@@ -1,0 +1,11 @@
+weight	group
+4.17	ctrl
+5.33	ctrl
+5.14	ctrl
+4.81	trt1
+4.17	trt1
+6.03	trt1
+6.31	trt2
+5.12	trt2
+6.15	trt2
+

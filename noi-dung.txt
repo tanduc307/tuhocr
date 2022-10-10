@@ -58,7 +58,7 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 15. VECTOR TRONG R						XONG
 	• Các lệnh kiểm tra object
 
-16. CÁCH LÀM TRÒN SỐ TRONG R					XONG
+16. CÁCH LÀM TRÒN SỐ TRONG R					.
 	• Lệnh round(), signif()
 
 17. NUMERIC VECTOR						XONG
@@ -85,27 +85,62 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 27. METACHARACTER VÀ ESCAPE CHARACTER				XONG
 
-28. FACTOR 
+28. BIẾN YẾU TỐ - FACTOR TRONG R 				XONG
 
+29. CÁCH CHUYỂN ĐỔI CLASS TRONG R
 
+30. CÁC LỆNH SUBSET VECTOR
 
+=========================================================================
+		
+31. MATRIX
+	• Cách tạo matrix
+	• Các lệnh subset matrix 
 
+=========================================================================
 
+32. LIST
+	• Cách tạo list
+	• Các lệnh subset list
 
-27. CHUYỂN ĐỔI CLASS TRONG R
-coercion
+=========================================================================
 
+33. DATA FRAME
+	• Cách tạo data frame
+	• Các lệnh subset data frame
 
+So sánh data frame và tibble và matrix và data table
+E03. Lệnh edit.dataframe
 
-28. DATE-TIME VECTOR	
+34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
+lệnh dput dget
 
-	
+35. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
 
-34. CÁC LỆNH SUBSET VECTOR
+=========================================================================
 
+***36. CÁC LỆNH CƠ BẢN 
 
+• which(), with(), setdif(), match(), transform(), within(), table() bảng tần số
 
-19. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+37. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE)
+
+38. DATE-TIME VECTOR	
+
+39. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
+
+========================================================================
+
+38. IF ELSE
+
+39 FOR LOOP
+
+40. FUNCTION
+	• METHOD, SCOPING RULE
+
+41. CÁC LỆNH HỌ APPLY
+
+*** 46. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
 diff()
 prod(x)
@@ -119,67 +154,11 @@ mean()
 median()
 var()
 
+*** 47. RANDOM NUMBER
 
 =========================================================================
 
-			
-
-29. MATRIX
-
-34. CÁC LỆNH SUBSET MA TRẬN
-
-
-
-=========================================================================
-
-
-
-31. LIST
-MAXIMUM NESTED LIST LEVEL
-Lệnh data.tree liệt kê list
-
-34. CÁC LỆNH SUBSET LIST
-
-=========================================================================
-
-32. DATA FRAME
-So sánh data frame và tibble và matrix và data table
-E03. Lệnh edit.dataframe
-E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
-lệnh dput dget
-
-
-34. CÁC LỆNH SUBSET DATA FRAME
-
-=========================================================================
-
-33. CÁC LỆNH CƠ BẢN (PHẦN 1)
-
-• which(), with(), setdif(), match(), transform(), within(), table() bảng tần số
-
-33. CÁC LỆNH CƠ BẢN (PHẦN 2)
-
-35. XỬ LÝ DỮ LIỆU TRỐNG
-
-
-
-
-
-=========================================================================
-
-36. LOOP
-37. APPLY
-38. FUNCTION
-	• METHOD, SCOPING RULE
-
-=========================================================================
-
-39. RANDOM NUMBER
-40. CÁC LỆNH THỐNG KÊ
-
-=========================================================================
-
-41. BASE PLOT
+42. BASE PLOT
 
 FONT
 windowsFonts(A = windowsFont("Times New Roman"))
@@ -194,29 +173,18 @@ png
 pdf
 cairo_pdf()
 
+=========================================================================
+
+43. LATTICE PLOT
 
 
 =========================================================================
 
 
-
-42. LATTICE PLOT
-
+44. GGPLOT2 
 
 
-=========================================================================
-
-
-
-43. GGPLOT2 
-
-
-
-
-
-
-
-=========================================================================
+=======================================================================
 
 
 
@@ -230,6 +198,34 @@ cairo_pdf()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================
+
+
+
+
+***49. IMPUTATION TRONG R
+
+*** 49. CÁC LỆNH THỐNG KÊ CƠ BẢN
+
+MAXIMUM NESTED LIST LEVEL
+Lệnh data.tree liệt kê list
 
 
 
@@ -269,3 +265,13 @@ CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
 ECOSYSTEM AUTOMATE QUY TRÌNH NGHIÊN CỨU
 
 CASE STUDY BÀI BÁO HẤP PHỤ XỬ LÝ R CHUYỂN THÀNH PDF
+
+
+PACKAGE STRINGR
+
+========================================================================
+
+
+KHÓA HỌC: CỦNG CỐ KỸ NĂNG XỬ LÝ DỮ LIỆU VỚI R
+
+FACTOR: ĐỪNG MIXED UP (TRANG 207 DUMMIES)
