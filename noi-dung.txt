@@ -107,10 +107,12 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 33. DATA FRAME
 	• Cách tạo data frame
-	• Các lệnh subset data frame
+	• Các lệnh subset data frame subset()
 
 So sánh data frame và tibble và matrix và data table
 E03. Lệnh edit.dataframe
+
+CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
 
 34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 lệnh dput dget
@@ -119,9 +121,13 @@ lệnh dput dget
 
 =========================================================================
 
-***36. CÁC LỆNH CƠ BẢN 
+36. CÁC LỆNH CƠ BẢN 
 
 • which(), with(), setdif(), match(), transform(), within(), table() bảng tần số
+
+sample()
+
+str()
 
 37. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE)
 
@@ -229,25 +235,7 @@ Lệnh data.tree liệt kê list
 
 
 
-E02. CÁCH VẼ CÂY THƯ MỤC
 
-LỆNH DATA.TABLE KHI XỬ LÝ BIG DATA
-
-E05. COMPLEX VECTOR
-
-30. ARRAY MẢNG
-SCALAR VÔ HƯỚNG
-
-DEBUG
-NÓI VỀ R KHI GẶP LỖI LÀ HƯ CẢ SESSION
-CÁCH STOP KHI LỆNH LỖI
-
-28. RPUB
-29. GITHUB
-30. RMARKDOWN
-
-32. HEATMAP
-33. CLUSTER
 
 CASE-STUDY:
 C01. BÀI TẬP AIR QUALITY
@@ -272,6 +260,64 @@ PACKAGE STRINGR
 ========================================================================
 
 
-KHÓA HỌC: CỦNG CỐ KỸ NĂNG XỬ LÝ DỮ LIỆU VỚI R
+KHÓA HỌC: "CỦNG CỐ KỸ NĂNG R ĐỂ XỬ LÝ DỮ LIỆU"
 
 FACTOR: ĐỪNG MIXED UP (TRANG 207 DUMMIES)
+
+MATRIX: CÁC PHÉP TÍNH TRÊN MA TRẬN
+
+E05. COMPLEX VECTOR
+
+30. ARRAY MẢNG
+SCALAR VÔ HƯỚNG
+
+
+E02. CÁCH VẼ CÂY THƯ MỤC
+
+LỆNH DATA.TABLE KHI XỬ LÝ BIG DATA
+
+
+
+
+
+DEBUG
+NÓI VỀ R KHI GẶP LỖI LÀ HƯ CẢ SESSION
+CÁCH STOP KHI LỆNH LỖI
+
+28. RPUB
+29. GITHUB
+30. RMARKDOWN
+
+32. HEATMAP
+33. CLUSTER
+
+========================================================================
+
+
+KHÓA HỌC: "HỌC XÁC SUẤT THỐNG KÊ VỚI PHẦN MỀM R"
+
+
+
+========================================================================
+
+KHÓA HỌC: "ỨNG DỤNG R TRONG PHÂN TÍCH DỮ LIỆU"
+
+
+
+========================================================================
+
+KHÓA HỌC: "NÂNG CAO KỸ NĂNG R ĐỂ XỬ LÝ DỮ LIỆU"
+
+
+
+========================================================================
+
+
+
+
+
+
+
+
+
+
