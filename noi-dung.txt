@@ -58,7 +58,7 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 15. VECTOR TRONG R						XONG
 	• Các lệnh kiểm tra object
 
-16. CÁCH LÀM TRÒN SỐ TRONG R					.
+16. CÁCH LÀM TRÒN SỐ TRONG R					XONG
 	• Lệnh round(), signif()
 
 17. NUMERIC VECTOR						XONG
@@ -87,21 +87,22 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 28. BIẾN YẾU TỐ - FACTOR TRONG R 				XONG
 
-29. CÁCH CHUYỂN ĐỔI CLASS TRONG R
+29. CÁCH CHUYỂN ĐỔI CLASS TRONG R				XONG
 
-30. CÁC LỆNH SUBSET VECTOR
+30. CÁC LỆNH SUBSET VECTOR (PHẦN 1)				XONG
+
+31. CÁC LỆNH SUBSET VECTOR (PHẦN 2)				XONG
 
 =========================================================================
 		
-31. MATRIX
+32. MATRIX TRONG R
 	• Cách tạo matrix
 	• Các lệnh subset matrix 
 
-=========================================================================
+33. CÁC LỆNH SUBSET MATRIX
 
-32. LIST
-	• Cách tạo list
-	• Các lệnh subset list
+34. CÁC PHÉP TÍNH TRÊN MA TRẬN
+
 
 =========================================================================
 
@@ -114,12 +115,20 @@ E03. Lệnh edit.dataframe
 
 CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
 
+=========================================================================
+
+32. LIST
+	• Cách tạo list
+	• Các lệnh subset list
+
+=========================================================================
+
+
 34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 lệnh dput dget
 
 35. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
 
-=========================================================================
 
 36. CÁC LỆNH CƠ BẢN 
 
@@ -137,12 +146,14 @@ str()
 
 ========================================================================
 
-38. IF ELSE
 
-39 FOR LOOP
 
 40. FUNCTION
 	• METHOD, SCOPING RULE
+
+38. IF ELSE
+
+39 FOR LOOP
 
 41. CÁC LỆNH HỌ APPLY
 
@@ -218,7 +229,9 @@ cairo_pdf()
 
 
 
+BOD COD ĐỒ THỊ TIME SERIES
 
+COMPOST SERIES
 
 
 ========================================================================
