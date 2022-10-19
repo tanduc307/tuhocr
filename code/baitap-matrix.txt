@@ -1,4 +1,4 @@
-################### BÀI TẬP
+################### BÀI TẬP MATRIX
 
 # 1) GIỮ LẠI SỐ -2 VÀ 17 VÀ TẤT CẢ SỐ CÒN LẠI BẰNG 0
 mt_1 <- matrix(-2:17, nrow = 4)
@@ -11,6 +11,9 @@ mt_1
 # [4,]    0    0    0    0   17
 
 # 2) TẠO MA TRẬN CON 
+
+mt_1 <- matrix(-2:17, nrow = 4)
+mt_1
 
 #      [,1] [,2]
 # [1,]    3   11
