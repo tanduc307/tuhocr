@@ -95,14 +95,17 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 =========================================================================
 		
-32. MATRIX TRONG R
-	• Cách tạo matrix
-	• Các lệnh subset matrix 
+32. MATRIX TRONG R						XONG
 
-33. CÁC LỆNH SUBSET MATRIX
+33. CÁC LỆNH CẤU TRÚC MATRIX					EDIT  
 
-34. CÁC PHÉP TÍNH TRÊN MA TRẬN
+34. CÁC LỆNH SUBSET MATRIX					EDIT
 
+35. BÀI TẬP SUBSET MATRIX
+
+36. GIẢI BÀI TẬP SUBSET MATRIX
+
+37. CÁC PHÉP TÍNH TRÊN MATRIX
 
 =========================================================================
 
