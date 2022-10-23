@@ -209,7 +209,6 @@ mt_1
 
 mt_aaa <- matrix(c(72, 72, 72, 72), 2)
 mt_aaa
-
 mt_1[2:3, 3:4] <- mt_aaa
 mt_1
 
@@ -231,6 +230,17 @@ mt_1[mt_3]
 # http://adv-r.had.co.nz/Subsetting.html
 
 
+
+
+
+
+
+
+
+
+
+
+
 ################### BÀI TẬP
 
 # 1) GIỮ LẠI SỐ -2 VÀ 17 VÀ TẤT CẢ SỐ CÒN LẠI BẰNG 0
@@ -244,7 +254,8 @@ mt_1
 # [4,]    0    0    0    0   17
 
 # 2) TẠO MA TRẬN CON 
-
+mt_1 <- matrix(-2:17, nrow = 4)
+mt_1
 #      [,1] [,2]
 # [1,]    3   11
 # [2,]    4   12
@@ -266,6 +277,7 @@ t(x)
 
 a <- matrix(1:16, nrow = 4, ncol = 4)
 a
+diag(a)
 diag(a) <- NA
 a
 
@@ -289,6 +301,8 @@ matrix_data
 # [4,]    4    9   14  100   24
 # [5,]    5   10   15   20  100
 
+# dùng cách khác: diag(matrix_data) <- 100
+
 # 6) THAY ĐỔI ĐƯỜNG CHÉO SECONDARY
 y <- matrix(10:18, 3, 3)
 y
@@ -299,6 +313,29 @@ y
 # [3,]   4   15   18
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ##################
 # solution 1)
 seq_along(mt_1)
@@ -306,36 +343,50 @@ mt_1[c(1, 20)]
 mt_1[c(-1, -20)] <- 0
 mt_1
 
-# solution 2)
+# CÁCH TÌM VỊ TRÍ INDEX CỦA 1 CON SỐ BẤT KỲ
+mt_1 <- matrix(-2:17, nrow = 4)
+mt_1
+seq_along(mt_1)
+which(mt_1 == 11)
+which(mt_1 == 11, arr.ind = TRUE)
+?which
 
+
+
+# solution 2)
+mt_1 <- matrix(-2:17, nrow = 4)
 mt_1[c(2, 3), c(2, 4)]
 
 # solution 3)
+x <- matrix(11:19, 3, 3)
+x
 x[, 3:1]
-nrow(x):1
-x[, nrow(x):1]
+ncol(x):1
+x[, ncol(x):1]
 
 # solution 4)
 
 a <- matrix(a[which(!is.na(a))], nrow = 3, ncol = 4)
 a
-a[which(!is.na(a))
+a[which(!is.na(a))]
 a[!is.na(a)]
 
 # solution 5a)
-
+matrix_data <- matrix(1:25, nrow = 5, ncol = 5)
+matrix_data
 matrix_data[row(matrix_data) == col(matrix_data)] <- 100
 matrix_data
-
+row(matrix_data)
 col(matrix_data)
+row(matrix_data) == col(matrix_data)
 
 # solution 5b)
-diag(matrix_data) <- 1
+diag(matrix_data) <- 100
 matrix_data
 
 # solution 6)
 
-# 1 SUBSET THEO diag()
+# 1 SUBSET THEO diag() cách 1
 y <- matrix(10:18, 3, 3)
 y
 y[, nrow(y):1]
@@ -343,25 +394,53 @@ diag(y[, nrow(y):1])
 diag(y[, nrow(y):1]) <- c(6, 5, 4)
 y
 
-# 2 SUBSET THEO LOGICAL
-rev(y[row(y) + col(y) == nrow(y) + 1])
+# 2 SUBSET THEO diag() cách 2
+y <- matrix(10:18, 3, 3)
+y
 
-y[row(y) + col(y) == nrow(y) + 1]
+diag(y[1:3, 3:1])
+diag(y[1:nrow(y), ncol(y):1]) <- c(6, 5, 4)
+y
 
+# 3 SUBSET THEO LOGICAL
+y <- matrix(10:18, 3, 3)
+y
+# rev(y[row(y) + col(y) == nrow(y) + 1]) <- c(6, 5, 4) ## ko assign được giá trị
+
+y[row(y) + col(y) == nrow(y) + 1] <- c(4, 5, 6)
+y
 row(y)
 col(y)
 row(y) + col(y)
 
 nrow(y) + 1
+row(y) + col(y) == nrow(y) + 1
 
-# 3 SUBSET THEO VỊ TRÍ INDEX 
+# 4 SUBSET THEO VỊ TRÍ INDEX 
 y <- matrix(10:18, 3, 3)
 y
 
-y[seq(to = nrow(y), by = 1 - nrow(y), length = nrow(y))]
+which(y == 16)
 
-# 4
+which(y == 14)
 
+which(y == 12)
+
+
+y[seq(to = nrow(y), by = 1 - nrow(y), length = nrow(y))] <- c(6, 5, 4)
+y
+
+########
+
+y <- matrix(1:20, 4)
+y
+seq(to = nrow(y), by = 1 - nrow(y), length = nrow(y))
+seq(to = nrow(y) + nrow(y), by = 1 - nrow(y), length = nrow(y))
+
+
+# 5 chỉ trích xuất số liệu theo đường chéo secondary
+y <- matrix(10:18, 3, 3)
+y
 as.data.frame(y)
 
 rev(as.data.frame(y))
@@ -369,22 +448,43 @@ rev(as.data.frame(y))
 as.matrix(rev(as.data.frame(y)))
 # as.matrix(rev(as.matrix(y)))
 
-diag(as.matrix(rev(as.data.frame(y))))
-
-# 5
-
-diag(y[1:3, 3:1])
-diag(y[1:nrow(y), ncol(y):1])
+diag(as.matrix(rev(as.data.frame(y)))) 
 
 # 6 SUBSET THEO MA TRẬN
-
-y[cbind(1:nrow(y), ncol(y):1)]
+y <- matrix(10:18, 3, 3)
+y
+y[cbind(1:nrow(y), ncol(y):1)] <- c(6, 5, 4)
 cbind(1:nrow(y), ncol(y):1)
+y
+
+y <- matrix(1:20, 4)
+y
+
+cbind(1:nrow(y), nrow(y):1)
+cbind(1:nrow(y), ncol(y):2)
+
+y[cbind(1:nrow(y), nrow(y):1)] <- 1000
+y
+y[cbind(1:nrow(y), ncol(y):2)] <- 999
+y
 
 # https://stat.ethz.ch/pipermail/r-help/2010-September/251766.html
 
 
 ######################
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ĐƯỜNG CHÉO TRONG MA TRẬN
 
@@ -417,9 +517,7 @@ mt_2[ , ] <- 0
 mt_2 <- 0
 mt_2
 
-
-
-
+#################################
 # Ma trận khả nghịch
 # Invert matrix
 t(mt_2)
