@@ -230,17 +230,6 @@ mt_1[mt_3]
 # http://adv-r.had.co.nz/Subsetting.html
 
 
-
-
-
-
-
-
-
-
-
-
-
 ################### BÀI TẬP
 
 # 1) GIỮ LẠI SỐ -2 VÀ 17 VÀ TẤT CẢ SỐ CÒN LẠI BẰNG 0
@@ -311,30 +300,6 @@ y
 # [1,]   10   13   6
 # [2,]   11   5   17
 # [3,]   4   15   18
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ##################
 # solution 1)
@@ -473,65 +438,182 @@ y
 
 ######################
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ĐƯỜNG CHÉO TRONG MA TRẬN
 
 # Primary diagonal == left == Major, Principal, leading, main
 # Secondary diagonal == right == Minor, Counter, lagging, anti-
 
-mt_2 <- matrix(c(-2:10, 3, -2, 3), nrow = 4)
-mt_2
+diag(1, 3, 3)
+diag(1, 3, 4)
+diag(1, 4, 3)
 
-diag(mt_2)
+mt_1 <- matrix(1:16, nrow = 4)
+mt_1
 
-diag(10, 3, 4)
+diag(mt_1)
 
-lower.tri(mt_2, diag = FALSE) -> ok_1
+lower.tri(mt_1, diag = TRUE) -> ok_1
 ok_1
-# diag(ok_1) <- TRUE
-# ok_1
-mt_2[ok_1]
-mt_2[!ok_1] <- 0
-mt_2
 
-upper.tri(mt_2, diag = FALSE) -> ok_2
+
+lower.tri(mt_1, diag = FALSE) -> ok_2
 ok_2
-mt_2[ok_2]
-mt_2[!ok_2] <- 0
-mt_2
 
-mt_2[ , ] <- 0
+mt_1[ok_1]
+mt_1[!ok_1] <- 0
+mt_1
 
-mt_2 <- 0
-mt_2
+mt_1[ok_2]
+mt_1[!ok_2] <- 0
+mt_1
 
-#################################
-# Ma trận khả nghịch
-# Invert matrix
-t(mt_2)
+upper.tri(mt_1, diag = TRUE) -> ok_3
+ok_3
+
+upper.tri(mt_1, diag = FALSE) -> ok_4
+ok_4
 
 #######################
 
 # CÁC PHÉP TÍNH TRÊN MA TRẬN
+mt_1 <- matrix(1:16, nrow = 4)
+mt_1
+
+mt_1 + 3
+
+##########################
+
+mt_1 <- matrix(1:16, nrow = 4)
+mt_1
+mt_4 <- matrix(1:9, nrow = 3)
+mt_4
+
+mt_1 + mt_4
+mt_1 * mt_4
+
+dim(mt_1)
+dim(mt_4)
+identical(dim(mt_1), dim(mt_4))
+
+##############################
+
+mt_2 <- matrix(12:27, nrow = 4)
+mt_2
+identical(dim(mt_1), dim(mt_2))
+mt_1 + mt_2
+mt_1 - mt_2
+
+mt_1 * mt_2
+mt_1 %*% mt_2
+?'%*%'
+1*12 + 5*13 + 9*14 + 13*15
+mt_1 / mt_2
+mt_1[seq_along(mt_1)] * 16
+
+##################################
+
+mt_1 <- matrix(1:16, nrow = 4)
+mt_1
+mt_1 + 9:12
+mt_1
+
+mt_1 + 9:11
+mt_1
+
+mt_1 * 9:11
+mt_1
+
+mt_1 * 9:12
+mt_1
+
+mt_1 %*% 9:11
+
+mt_1 %*% 9:12
+1*9 + 5*10 + 9*11 + 13*12
+
+mt_5 <- matrix(9:12, 4)
+mt_5
+
+mt_1 * mt_5
+mt_1 %*% mt_5
+mt_5 %*% mt_1
+
+mt_6 <- matrix(9:12, 1, 4)
+mt_6
+
+mt_6 %*% mt_1
+mt_1 %*% mt_6
+
+1*9 + 2*10 + 3*11 + 4*12
+
+
+#################################
+# Chuyển vị ma trận Transpose
+
+mt_1 <- matrix(1:16, nrow = 4)
+mt_1
 
 t(mt_1)
+
+1:10
+
+t(1:10)
+t(t(1:10))
+
+mt_1[, 2]
+mt_1[, 2, drop = FALSE]
+t(mt_1[, 2])
+
+################################
+
+# tính định thức ở ma trận vuông
+
+mt <- matrix(1:4, 2, 2)
+mt
+det(mt)
+1*4 - 3*2
+
+mt_1 <- matrix(1:16, nrow = 4)
+mt_1
 det(mt_1)
-?det
-?col
 
-# https://matrixcalc.org/vi/det.html
+mt_3 <- matrix(c(3, 2, 1, 3:7, 5, 3, -1:4), nrow = 4)
+mt_3
+det(mt_3)
 
 
+# https://matrixcalc.org/vi/
+
+# Invert matrix
+
+square.matrix <- matrix(c(1, 0, 3, 2, 2, 4, 3, 2, 1), ncol = 3)
+square.matrix
+
+solve(square.matrix)
+
+det(square.matrix)
+
+t(square.matrix)
+
+adjoint(square.matrix)
+
+(1/det(square.matrix)) * adjoint(square.matrix)
+
+?solve
+
+square.matrix^(-1)
+# install.packages("RConics")
+library("RConics")
+adjoint(square.matrix)
+
+square.matrix %*% b
+
+# Định thức ma trận / Determinant of matrix
+# Ma trận khả nghịch / invertible matrix
+# Ma trận phụ hợp / adjunct matrix
+# Ma trận chuyển vị / transposing matrix
+
+
+# https://youtu.be/jBZCUfGGRRw
+# https://sami.hust.edu.vn/wp-content/uploads/03-Ma-tran-nghich-dao1.pdf
 

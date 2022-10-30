@@ -1,8 +1,4 @@
-
-
-
-
-KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
+ KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
@@ -109,60 +105,85 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 36. GIẢI BÀI TẬP MATRIX						XONG
 
-37. CÁC PHÉP TÍNH TRÊN MATRIX
+37. CÁC PHÉP TÍNH TRÊN MATRIX					XONG
 
 =========================================================================
 
-33. DATA FRAME
-	• Cách tạo data frame
-	• Các lệnh subset data frame subset()
+38. CẤU TRÚC DATA FRAME						XONG
+	• Lệnh dput()
 
-So sánh data frame và tibble và matrix và data table
-E03. Lệnh edit.dataframe
-
-CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
+39. CÁC LỆNH SUBSET DATA FRAME					XONG
+	• Sử dụng toán tử == và %in%
 
 =========================================================================
 
-32. LIST
-	• Cách tạo list
-	• Các lệnh subset list
+40. CẤU TRÚC LIST						XONG
+
+41. CÁC LỆNH SUBSET LIST					EDIT
 
 =========================================================================
 
+42. BÀI TẬP SUBSET						EDIT
 
-34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
-lệnh dput dget
+=========================================================================
 
-35. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
+43. DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN	
 
+44. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE)
 
-36. CÁC LỆNH CƠ BẢN 
+=======================================================================
 
-• which(), with(), setdif(), match(), transform(), within(), table() bảng tần số
-
-sample()
-
-str()
-
-37. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE)
-
-38. DATE-TIME VECTOR	
-
-39. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
-
-========================================================================
-
-
-
-40. FUNCTION
+45. FUNCTION
 	• METHOD, SCOPING RULE
 
-38. IF ELSE
 
-39 FOR LOOP
+=======================================================================
 
-41. CÁC LỆNH HỌ APPLY
+42. BASE PLOT
+
+FONT
+windowsFonts(A = windowsFont("Times New Roman"))
+thay đổi font đồ thị, nói rõ hơn lệnh windowsFonts
+install.packages("extrafont")
+
+library(xkcd)
+vignette("xkcd-intro")
+
+CÁCH SAVE PLOT CHỨA TIẾNG VIỆT
+png
+pdf
+cairo_pdf()
+
+43. BÀI TẬP
+=========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======================================================================
+
+***44. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
+
+***45. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
+
 
 *** 46. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
@@ -180,60 +201,73 @@ var()
 
 *** 47. RANDOM NUMBER
 
-=========================================================================
+36. CÁC LỆNH CƠ BẢN 
 
-42. BASE PLOT
+• which(), with(), setdif(), match(), transform(), within(), table() bảng tần số
 
-FONT
-windowsFonts(A = windowsFont("Times New Roman"))
-thay đổi font đồ thị, nói rõ hơn lệnh windowsFonts
-install.packages("extrafont")
+sample() ANY()
 
-library(xkcd)
-vignette("xkcd-intro")
 
-CÁCH SAVE PLOT CHỨA TIẾNG VIỆT
-png
-pdf
-cairo_pdf()
+34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 
-=========================================================================
+CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
+
+====================================================================
+
+48. IF ELSE
+
+49 FOR LOOP
+
+50. CÁC LỆNH HỌ APPLY
+
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 43. LATTICE PLOT
 
-
+43. BÀI TẬP
 =========================================================================
 
 
 44. GGPLOT2 
 
-
+43. BÀI TẬP
 =======================================================================
 
 
 
+***49. IMPUTATION TRONG R
 
+*** 49. CÁC LỆNH THỐNG KÊ CƠ BẢN
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+=========================================================================
 
 
 BOD COD ĐỒ THỊ TIME SERIES
@@ -242,20 +276,6 @@ COMPOST SERIES
 
 
 ========================================================================
-
-
-
-
-***49. IMPUTATION TRONG R
-
-*** 49. CÁC LỆNH THỐNG KÊ CƠ BẢN
-
-MAXIMUM NESTED LIST LEVEL
-Lệnh data.tree liệt kê list
-
-
-
-
 
 CASE-STUDY:
 C01. BÀI TẬP AIR QUALITY
