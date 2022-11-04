@@ -140,25 +140,16 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 =========================================================================
 
-45. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE)
+45. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 1)
 
-46. XỬ LÝ DỮ LIỆU ĐẦU VÀO (MISSING VALUE)
-
-
-
-
-
-
-
-
-
+46. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 2)
 
 =========================================================================
-48. IF ELSE
+47. IF ELSE
 
-49 FOR LOOP
+48 FOR LOOP
 
-45. FUNCTION
+49. FUNCTION
 	• METHOD, SCOPING RULE
 
 
@@ -166,7 +157,7 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 ========================================================================
 
-42. BASE PLOT
+51. BASE PLOT
 
 FONT
 windowsFonts(A = windowsFont("Times New Roman"))
@@ -181,20 +172,7 @@ png
 pdf
 cairo_pdf()
 
-43. BÀI TẬP
-
-
-
-
-
-
-
-
-
-
-
-
-
+52. BÀI TẬP
 
 
 =========================================================================
@@ -227,63 +205,14 @@ var()
 
 36. CÁC LỆNH CƠ BẢN 
 
-• which(), with(), setdif(), match(), transform(), within(), table() bảng tần số
+with(), setdif(), match(), transform(), within(), table() bảng tần số
 
-sample() ANY()
+sample() 
 
 
 34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 
 CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
