@@ -1,4 +1,9 @@
- KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
+<p><iframe width="1920" height="1080" src="https://video.khoaamita.com/streamer/embed.php?v=NjUy" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><span style="font-family: arial, helvetica, sans-serif;"><code></code></span></p>
+
+
+
+KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
@@ -119,25 +124,47 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 40. CẤU TRÚC LIST						XONG
 
-41. CÁC LỆNH SUBSET LIST					EDIT
+41. CÁC LỆNH SUBSET LIST					XONG
 
 =========================================================================
 
-42. BÀI TẬP SUBSET						EDIT
+42. BÀI TẬP SUBSET						XONG
 
 =========================================================================
 
-43. DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN	
+43. DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN (PHẦN 1)	XONG	
 
-44. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE)
+44. DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN (PHẦN 2)	XONG	
 
-=======================================================================
+45. HƯỚNG DẪN GỘP CỘT VECTOR NGÀY THÁNG TRONG DATASET		XONG
+
+=========================================================================
+
+45. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE)
+
+46. XỬ LÝ DỮ LIỆU ĐẦU VÀO (MISSING VALUE)
+
+
+
+
+
+
+
+
+
+
+=========================================================================
+48. IF ELSE
+
+49 FOR LOOP
 
 45. FUNCTION
 	• METHOD, SCOPING RULE
 
 
-=======================================================================
+50. CÁC LỆNH HỌ APPLY
+
+========================================================================
 
 42. BASE PLOT
 
@@ -155,35 +182,32 @@ pdf
 cairo_pdf()
 
 43. BÀI TẬP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 =========================================================================
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+CÁC LỆNH CỦNG CỐ KỸ NĂNG R
 =======================================================================
 
 ***44. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
 
 ***45. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
 
+
+=======================================================================
 
 *** 46. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
@@ -212,15 +236,31 @@ sample() ANY()
 
 CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
 
-====================================================================
 
-48. IF ELSE
 
-49 FOR LOOP
 
-50. CÁC LỆNH HỌ APPLY
 
-========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
