@@ -1,7 +1,10 @@
-<p><iframe width="1920" height="1080" src="https://video.khoaamita.com/streamer/embed.php?v=NjUy" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><iframe width="1920" height="1080" src="https://video.khoaamita.com/streamer/embed.php?v=NjU3" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
 <p><span style="font-family: arial, helvetica, sans-serif;"><code></code></span></p>
 
+<p><iframe width="1920" height="1080" src="https://drive.google.com/file/d/1ERBxEAOiUj9ufIg_H5lInzlwgjGmK2o6/preview" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><span style="font-family: arial, helvetica, sans-serif;"><code></code></span></p>
 
+https://drive.google.com/file/d/1ERBxEAOiUj9ufIg_H5lInzlwgjGmK2o6/view?usp=sharing
 
 KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
@@ -140,17 +143,27 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 =========================================================================
 
-45. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 1)
+46. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 1)
 
-46. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 2)
+47. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 2)
 
 =========================================================================
+
+48. LÝ DO HỌC CÁCH XÂY DỰNG HÀM TRONG R
+
+49. ĐỊNH NGHĨA FUNCTION VÀ CÁC THUẬT NGỮ LIÊN QUAN
+
+50. CÁC LỆNH PHÂN TÍCH CẤU TRÚC FUNCTION
+
+51. CÁCH XÂY DỰNG FUNCTION ĐƠN GIẢN
+
+51. 
+
+
 47. IF ELSE
 
 48 FOR LOOP
 
-49. FUNCTION
-	• METHOD, SCOPING RULE
 
 
 50. CÁC LỆNH HỌ APPLY
