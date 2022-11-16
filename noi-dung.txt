@@ -145,20 +145,17 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 49. ĐỊNH NGHĨA FUNCTION VÀ CÁC THUẬT NGỮ LIÊN QUAN
 
-50. CÁC LỆNH PHÂN TÍCH CẤU TRÚC FUNCTION
+50. PHÂN LOẠI FUNCTION VÀ CÁC LỆNH PHÂN TÍCH CẤU TRÚC
 
-51. CÁCH XÂY DỰNG FUNCTION ĐƠN GIẢN
+51. CÁCH XÂY DỰNG FUNCTION
 
-51. 
+========================================================================= 
 
+52. IF ELSE
 
-47. IF ELSE
+53. FOR LOOP
 
-48 FOR LOOP
-
-
-
-50. CÁC LỆNH HỌ APPLY
+54. CÁC LỆNH HỌ APPLY
 
 ========================================================================
 
