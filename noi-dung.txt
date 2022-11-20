@@ -2,15 +2,13 @@ KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
-SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý CHÍNH CỦA MỖI BÀI NHÉ!!!
-
 =========================================================================
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 	
-01a. GIỚI THIỆU R						CHƯA QUAY
+01. GIỚI THIỆU R						CHƯA QUAY
 
-01b. HƯỚNG DẪN KHÓA HỌC						CHƯA QUAY
+HƯỚNG DẪN KHÓA HỌC						CHƯA QUAY
 	• Cách download dataset
 	• Cách download code
 	• Cách xem video
@@ -135,35 +133,43 @@ SẼ CÓ 1 ĐOẠN LÀ COI LẠI TỪ ĐẦU ĐẾN CUỐI ĐỂ NOTE NHỮNG Ý
 
 =========================================================================
 
-46. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 1)
+46. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 1)		XONG
 
-47. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 2)
+47. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 2)		XONG
 
 =========================================================================
 
-48. LÝ DO HỌC CÁCH XÂY DỰNG HÀM TRONG R
+48. LÝ DO HỌC CÁCH XÂY DỰNG HÀM TRONG R				XONG
 
-49. ĐỊNH NGHĨA FUNCTION VÀ CÁC THUẬT NGỮ LIÊN QUAN
+49. ĐỊNH NGHĨA FUNCTION VÀ CÁC THUẬT NGỮ LIÊN QUAN		XONG
 
-50. PHÂN LOẠI FUNCTION VÀ CÁC LỆNH PHÂN TÍCH CẤU TRÚC
+50. PHÂN LOẠI FUNCTION VÀ CÁC LỆNH PHÂN TÍCH CẤU TRÚC		XONG
 
-51. CÁCH XÂY DỰNG FUNCTION 
+51. CÁCH XÂY DỰNG FUNCTION 					XONG
 
-52. CÁCH CẢI TIẾN FUNCTION
+52. HƯỚNG DẪN CẢI TIẾN FUNCTION TRONG R				XONG
 
-53. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION
+53. CÁC LỆNH LOGIC IF ELSE FOR LOOP***************
 
-========================================================================= 
+54. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET
 
-52. IF ELSE
+55. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION
 
-53. FOR LOOP
+56. CÁC LỆNH HỌ APPLY
 
-54. CÁC LỆNH HỌ APPLY
+57. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+
+58. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
 
 ========================================================================
 
-51. BASE PLOT
+59. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+
+60. CÁC LỆNH CĂN BẢN TRONG R
+
+
+========================================================================
+61. BASE PLOT 
 
 FONT
 windowsFonts(A = windowsFont("Times New Roman"))
@@ -179,6 +185,17 @@ pdf
 cairo_pdf()
 
 52. BÀI TẬP
+
+
+
+
+
+
+
+
+
+
+
 
 
 =========================================================================
@@ -219,6 +236,17 @@ sample()
 34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
 
 CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
+
+
+
+
+mẹo vặt để xếp thứ tự dataset
+https://youtu.be/4gJaFNEbxrk
+
+
+
+
+
 
 
 
@@ -328,6 +356,10 @@ KHÓA HỌC: "NÂNG CAO KỸ NĂNG R ĐỂ XỬ LÝ DỮ LIỆU"
 ========================================================================
 
 
+KHÓA HỌC: TRỰC QUAN HÓA DỮ LIỆU VỚI GGPLOT2
+
+Vẽ đồ thị nhiều đường
+RStudio ggplot2 tutorial (multi-line timeline)
 
 
 
