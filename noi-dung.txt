@@ -149,24 +149,28 @@ HƯỚNG DẪN KHÓA HỌC						CHƯA QUAY
 
 52. HƯỚNG DẪN CẢI TIẾN FUNCTION TRONG R				XONG
 
-53. CÁC LỆNH LOGIC IF ELSE FOR LOOP***************
+=========================================================================
 
-54. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET
+53. CÁC LỆNH LOGIC IF-ELSE, FOR-LOOP
 
-55. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION
+55. GIẢI BÀI TẬP XẾP LOẠI KẾT QUẢ HỌC SINH
 
-56. CÁC LỆNH HỌ APPLY
+54. MỞ RỘNG CÁC LỆNH LOGIC 
 
-57. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+56. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET
 
-58. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+57. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION
 
-========================================================================
+=========================================================================
 
-59. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+58. CÁC LỆNH HỌ APPLY
 
-60. CÁC LỆNH CĂN BẢN TRONG R
+=========================================================================
 
+59. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+	• Dùng lệnh list file cho for-loop
+
+60. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
 
 ========================================================================
 61. BASE PLOT 
@@ -184,31 +188,16 @@ png
 pdf
 cairo_pdf()
 
-52. BÀI TẬP
+62. BÀI TẬP
 
 
 
-
-
-
-
-
-
-
-
-
-
+=======================================================================
 =========================================================================
 
-CÁC LỆNH CỦNG CỐ KỸ NĂNG R
-=======================================================================
+61. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
-***44. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
-
-***45. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
-
-
-=======================================================================
+62. CÁC LỆNH CĂN BẢN TRONG R
 
 *** 46. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
@@ -223,6 +212,32 @@ cummax(x)
 mean()
 median()
 var()
+
+CHUYÊN ĐỀ CÁC LỆNH THỐNG KÊ CƠ BẢN
+
+
+
+
+
+=======================================================================
+
+CÁC LỆNH CỦNG CỐ KỸ NĂNG R
+=======================================================================
+
+***44. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
+
+***45. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
+
+
+
+
+
+
+
+
+=======================================================================
+
+
 
 *** 47. RANDOM NUMBER
 
