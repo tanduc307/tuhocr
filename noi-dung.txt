@@ -5,15 +5,9 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 =========================================================================
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
+
+01. GIỚI THIỆU R VÀ KHÓA HỌC ===================================
 	
-01. GIỚI THIỆU R						CHƯA QUAY
-
-HƯỚNG DẪN KHÓA HỌC						CHƯA QUAY
-	• Cách download dataset
-	• Cách download code
-	• Cách xem video
-	• Giáo trình sử dụng
-
 02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
 
 03. HƯỚNG DẪN CÁCH TẠO PROJECT 					XONG
@@ -149,15 +143,21 @@ HƯỚNG DẪN KHÓA HỌC						CHƯA QUAY
 
 52. HƯỚNG DẪN CẢI TIẾN FUNCTION TRONG R				XONG
 
-=========================================================================
+53. CÁC LỆNH LOGIC IF-ELSE, FOR-LOOP				XONG
 
-53. CÁC LỆNH LOGIC IF-ELSE, FOR-LOOP
+54. GIẢI BÀI TẬP XẾP LOẠI KẾT QUẢ HỌC SINH			XONG
 
-55. GIẢI BÀI TẬP XẾP LOẠI KẾT QUẢ HỌC SINH
+55. HƯỚNG DẪN XỬ LÝ CÙNG LÚC NHIỀU FILE TRONG R			XONG
+
+56. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET
+
+
+
+
 
 54. MỞ RỘNG CÁC LỆNH LOGIC 
 
-56. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET
+
 
 57. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION
 
@@ -168,7 +168,7 @@ HƯỚNG DẪN KHÓA HỌC						CHƯA QUAY
 =========================================================================
 
 59. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
-	• Dùng lệnh list file cho for-loop
+	• Dùng LỆNH DO.CALL
 
 60. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
 
@@ -189,6 +189,29 @@ pdf
 cairo_pdf()
 
 62. BÀI TẬP
+
+
+
+
+
+
+
+
+
+##########################################
+SHORT
+
+1. VÌ SAO R KHÓ TIẾP CẬN VỚI NGƯỜI MỚI BẮT ĐẦU?
+
+
+
+
+
+
+
+
+
+
 
 
 
