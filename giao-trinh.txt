@@ -1,6 +1,6 @@
 KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
-BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
-ĐĂNG KÝ: tuhocr.com@gmail.com
+BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com | WEBSITE: www.tuhocr.com 
 
 TÀI LIỆU THAM KHẢO:
 Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa học này.
@@ -36,14 +36,7 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 	3. Peng, R. D. (2019). Report Writing for Data Science in R. Leanpub.
 
 ===================================================================		
-	[D]. XÁC SUẤT THỐNG KÊ VÀ PHÂN TÍCH DỮ LIỆU VỚI R
-===================================================================		
-	1.
-	2.
-	3.
-
-===================================================================		
-	[E] DATA SCIENCE
+	[D] DATA SCIENCE
 ===================================================================		
 *	1. Johns Hopkins University. (2022). Data Science Specialization. Coursera. https://www.coursera.org/specializations/jhu-data-science
 *	2. Leek, J. (2015). The Elements of Data Analytic Style. Leanpub.
@@ -52,7 +45,3 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 	4. Peng, R. D., & Matsui, E. (2018). The Art of Data Science. Leanpub.
 	5. Peng, R. D., & Parker, H. (2016). Conversations On Data Science. Leanpub.
 
-===================================================================		
-	[F] CHEATSHEET
-===================================================================		
-	1.

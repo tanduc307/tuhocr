@@ -149,28 +149,27 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 55. HƯỚNG DẪN XỬ LÝ CÙNG LÚC NHIỀU FILE TRONG R			XONG
 
-56. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET		EDIT
+56. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET		XONG
 
 57. ỨNG DỤNG FUNCTION FILTER DATASET TRONG VẼ ĐỒ THỊ		
 
+58. MỞ RỘNG CÁC LỆNH LOGIC 
 
-
-54. MỞ RỘNG CÁC LỆNH LOGIC 
-
-
-
-57. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION
+59. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION tình huống interset chọn ra data trong 2 cái filter trùng và ko trùng nhau!!! chẳng hạn!!!!
 
 =========================================================================
 
-58. CÁC LỆNH HỌ APPLY
+60. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+
+=========================================================================
+61. CÁC LỆNH HỌ APPLY
 
 =========================================================================
 
-59. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+62. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
 	• Dùng LỆNH DO.CALL
 
-60. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+63. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
 
 
 
@@ -242,7 +241,7 @@ SHORT
 =======================================================================
 =========================================================================
 
-61. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+
 
 62. CÁC LỆNH CĂN BẢN TRONG R
 
