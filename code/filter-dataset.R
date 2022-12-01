@@ -62,9 +62,9 @@
 
 
 ############################
-airquality
+head(airquality)
 
-filter_theo_ngay_thang <- function(ngay = 1:nrow(data_1), thang = 0){
+filter_theo_ngay_thang <- function(ngay = 1:31, thang = 0){
     if(!(0 %in% thang)){
         data_1 <- airquality[airquality$Month %in% thang, ]
         kq <- data_1[data_1$Day %in% ngay, ]
@@ -77,8 +77,8 @@ filter_theo_ngay_thang <- function(ngay = 1:nrow(data_1), thang = 0){
 ########### TEST HÀM
 filter_theo_ngay_thang(12, )
 filter_theo_ngay_thang(15:30, 8)
+filter_theo_ngay_thang(, )
 filter_theo_ngay_thang(, 8)
-filter_theo_ngay_thang(, ) # test luôn tình huống này
 filter_theo_ngay_thang(c(3, 14), 8)
 filter_theo_ngay_thang(c(3, 14), 6:8)
 filter_theo_ngay_thang(12:14, 1:10)
@@ -549,6 +549,7 @@ legend("topright",
 #######################################################
 
 # PHÁT HIỆN LỖI FUNCTION
+head(airquality)
 
 ###### FUNCTION 1: FILTER BAO GỒM CẢ MISSING VALUE
 
@@ -715,8 +716,8 @@ a7 <- filter_theo_ngay_thang_final(22:30, , , TRUE)
 a8 <- filter_theo_ngay_thang_final_ver2(22:30, , , TRUE)
 
 
-a9 <-filter_theo_ngay_thang_final(22:30, 7:9, , TRUE)
-a10 <-filter_theo_ngay_thang_final_ver2(22:30, 7:9, , TRUE)
+a9 <- filter_theo_ngay_thang_final(22:30, 7:9, , TRUE)
+a10 <- filter_theo_ngay_thang_final_ver2(22:30, 7:9, , TRUE)
 
 a11 <- filter_theo_ngay_thang_final(22:30, 7:9)
 a12 <- filter_theo_ngay_thang_final_ver2(22:30, 7:9)
@@ -724,7 +725,7 @@ a12 <- filter_theo_ngay_thang_final_ver2(22:30, 7:9)
 chat_luong_khong_khi_2022 <- read.csv("D:/tuhocr/chat_luong_khong_khi_2022.csv")
 
 a13 <- filter_theo_ngay_thang_final(ngay = 12:28, thang = 11, chat_luong_khong_khi_2022)
-a14 <-filter_theo_ngay_thang_final_ver2(ngay = 12:28, thang = 11, chat_luong_khong_khi_2022)
+a14 <- filter_theo_ngay_thang_final_ver2(ngay = 12:28, thang = 11, chat_luong_khong_khi_2022)
 
 
 a15 <- filter_theo_ngay_thang_final(ngay = 12:28, 
@@ -733,8 +734,7 @@ a15 <- filter_theo_ngay_thang_final(ngay = 12:28,
                                     TRUE)
 
 a16 <- filter_theo_ngay_thang_final_ver2(ngay = 12:28, 
-                                         thang = 11, 
-                                         chat_luong_khong_khi_2022, 
+                                         thang = 11,                                      chat_luong_khong_khi_2022, 
                                          TRUE)
 
 identical(a1, a2)
@@ -762,13 +762,15 @@ e6 <- filter_theo_ngay_thang_final_ver2(6, )
 
 
 chat_luong_khong_khi_2022 <- read.csv("D:/tuhocr/chat_luong_khong_khi_2022.csv")
-e7 <- filter_theo_ngay_thang_final(, 1:3 , chat_luong_khong_khi_2022)
+e7 <- filter_theo_ngay_thang_final(, 1:3, chat_luong_khong_khi_2022)
 
-e8 <- filter_theo_ngay_thang_final_ver2(, 1:3 , chat_luong_khong_khi_2022)
+e8 <- filter_theo_ngay_thang_final_ver2(, 1:3, chat_luong_khong_khi_2022)
 
 e9 <- filter_theo_ngay_thang_final(, , chat_luong_khong_khi_2022)
 
 e10 <- filter_theo_ngay_thang_final_ver2(, , chat_luong_khong_khi_2022)
+
+str(e10)
 
 identical(e3, e4)
 identical(e5, e6)
@@ -786,11 +788,11 @@ identical(e9, e10)
 
 chat_luong_khong_khi_2022 <- read.csv("D:/tuhocr/chat_luong_khong_khi_2022.csv")
 
-ok_1 <- filter_theo_ngay_thang_final(, thang = 8, chat_luong_khong_khi_2022)
+ok_1 <- filter_theo_ngay_thang_final(10:25, thang = 6, chat_luong_khong_khi_2022)
 
 chat_luong_khong_khi_1992 <- read.csv("D:/tuhocr/chat_luong_khong_khi_1992.csv")
 
-ok_2 <- filter_theo_ngay_thang_final(, thang = 8, chat_luong_khong_khi_1992)
+ok_2 <- filter_theo_ngay_thang_final(10:25, thang = 6, chat_luong_khong_khi_1992)
 
 plot(POLLUTION ~ Day, 
      ok_1, 
@@ -810,7 +812,7 @@ points(POLLUTION ~ Day,
 legend("topright", 
        lty = 1, 
        col = c("blue", "red"), 
-       legend = c("8/2022", "8/1992"),
+       legend = c("6/2022", "6/1992"),
        cex = 1)
 
 ##############################
@@ -917,3 +919,9 @@ mtext("Mức độ ô nhiễm không khí theo tháng giữa các năm",
       outer = TRUE)
 
 par(old.par)
+
+# CODE FORMAT
+# https://rpubs.com/tuhocr/filter-dataset-month-day
+
+
+

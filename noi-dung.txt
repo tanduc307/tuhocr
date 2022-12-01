@@ -143,6 +143,8 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 52. HƯỚNG DẪN CẢI TIẾN FUNCTION TRONG R				XONG
 
+=========================================================================
+
 53. CÁC LỆNH LOGIC IF-ELSE, FOR-LOOP				XONG
 
 54. GIẢI BÀI TẬP XẾP LOẠI KẾT QUẢ HỌC SINH			XONG
@@ -151,9 +153,12 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 56. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET		XONG
 
-57. ỨNG DỤNG FUNCTION FILTER DATASET TRONG VẼ ĐỒ THỊ		
+57. ỨNG DỤNG FUNCTION FILTER DATASET TRONG VẼ ĐỒ THỊ		XONG       		
 
-58. MỞ RỘNG CÁC LỆNH LOGIC 
+58. MỞ RỘNG CÁC LỆNH LOGIC					ĐANG LÀM
+	• Lệnh switch(), rank()
+
+========================================================================= 
 
 59. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION tình huống interset chọn ra data trong 2 cái filter trùng và ko trùng nhau!!! chẳng hạn!!!!
 
