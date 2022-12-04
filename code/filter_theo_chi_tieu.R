@@ -12,6 +12,7 @@
     
     for(i in seq_along(files_list)) { 
         tmp_working[[i]] <- read.csv(files_list[i])
+        tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%m/%d/%Y")
     }
     # find min value     
     
@@ -41,6 +42,7 @@
     
     for(i in seq_along(files_list)) { 
         tmp_working[[i]] <- read.csv(files_list[i])
+        tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%m/%d/%Y")
     }
     # find min value     
     
@@ -72,6 +74,7 @@
     
     for(i in seq_along(files_list)){ 
         tmp_working[[i]] <- read.csv(files_list[i])
+        tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%m/%d/%Y")
     }
     
     # tìm trong khoảng
