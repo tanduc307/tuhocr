@@ -155,26 +155,46 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 57. ỨNG DỤNG FUNCTION FILTER DATASET TRONG VẼ ĐỒ THỊ		XONG       		
 
-58. MỞ RỘNG CÁC LỆNH LOGIC					ĐANG LÀM
+58. MỞ RỘNG CÁC LỆNH LOGIC					XONG 
 	• Lệnh switch(), rank()
 
 ========================================================================= 
 
-59. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION tình huống interset chọn ra data trong 2 cái filter trùng và ko trùng nhau!!! chẳng hạn!!!!
+59. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 1)		. 
+
+60. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 2)		. 
 
 =========================================================================
 
-60. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+61. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
+
+TRÊN VECTOR
+TRÊN MATRIX
+TÍNH ROW MEAN, COL MEAN TRONG MATRIX
+
+diff()
+prod(x)
+min(x)
+max(x)
+cumsum(x)
+cumprod(x)
+cummin(x)
+cummax(x)
+mean()
+median()
+var()
 
 =========================================================================
-61. CÁC LỆNH HỌ APPLY
+
+62. CÁC LỆNH HỌ APPLY
+TÍNH ROW MEAN, COL MEAN TRONG MATRIX
 
 =========================================================================
 
-62. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
-	• Dùng LỆNH DO.CALL
+63. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+	• Dùng LỆNH DO.CALL gợi ý coi ppt for loop
 
-63. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+64. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
 
 
 
@@ -252,17 +272,7 @@ SHORT
 
 *** 46. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
 
-diff()
-prod(x)
-min(x)
-max(x)
-cumsum(x)
-cumprod(x)
-cummin(x)
-cummax(x)
-mean()
-median()
-var()
+
 
 CHUYÊN ĐỀ CÁC LỆNH THỐNG KÊ CƠ BẢN
 
