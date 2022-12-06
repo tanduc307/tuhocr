@@ -25,8 +25,7 @@
         ### trích xuất ra vị trí index
         vi_tri <- which(get(chi_tieu, tmp_working[[min_i]]) == gia_tri_min)
         
-        ket_qua_min <- rbind(c(ket_qua_min, tmp_working[[min_i]][vi_tri, ]))
-    }
+        ket_qua_min <- rbind(ket_qua_min, tmp_working[[min_i]][vi_tri, ])}
     print(paste("Kết quả lọc theo giá trị MIN của", chi_tieu, "là:"))
     return(ket_qua_min)    
 }
