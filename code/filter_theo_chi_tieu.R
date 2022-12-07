@@ -55,7 +55,7 @@
         ### trích xuất ra vị trí index
         vi_tri <- which(get(chi_tieu, tmp_working[[max_i]]) == gia_tri_max)
         
-        ket_qua_max <- rbind(c(ket_qua_max, tmp_working[[max_i]][vi_tri, ]))
+        ket_qua_max <- rbind(ket_qua_max, tmp_working[[max_i]][vi_tri, ])
     } 
     #### THÊM DÒNG THÔNG BÁO
     print(paste("Kết quả lọc theo giá trị MAX của", chi_tieu, "là:"))
@@ -85,7 +85,7 @@
         
         ket_qua_tim_trong_khoang <- which(get(chi_tieu, tmp_working[[range_i]]) >= a[1] & get(chi_tieu, tmp_working[[range_i]]) <= a[2])
         
-        ket_qua_range <- rbind(c(ket_qua_range, tmp_working[[range_i]][ket_qua_tim_trong_khoang, ]))
+        ket_qua_range <- rbind(ket_qua_range, tmp_working[[range_i]][ket_qua_tim_trong_khoang, ])
         
     }
     print(paste("Kết quả lọc trong khoảng, từ", a[1], "đến", a[2], "của", chi_tieu, "là:"))
