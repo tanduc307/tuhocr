@@ -174,7 +174,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 63. CÁC LỆNH HỌ APPLY (PHẦN 1) | 5 cách tìm tên function trong R
 
-64. CÁC LỆNH HỌ APPLY (PHẦN 2)
+64. CÁC LỆNH HỌ APPLY (PHẦN 2) | Lệnh apply(), sapply() | Các phép tính trên matrix
 
 65. CÁC LỆNH HỌ APPLY (PHẦN 3)
 
