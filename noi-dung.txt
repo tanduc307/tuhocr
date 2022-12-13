@@ -162,39 +162,32 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 59. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 1)		XONG
 
-60. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 2)		. 
+60. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 2)		XONG
+
+61. HƯỚNG DẪN CẢI TIẾN FUNCTION STEP-BY-STEP     		. 
 
 =========================================================================
 
-61. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
-
-TRÊN VECTOR
-TRÊN MATRIX
-TÍNH ROW MEAN, COL MEAN TRONG MATRIX
-
-diff()
-prod(x)
-min(x)
-max(x)
-cumsum(x)
-cumprod(x)
-cummin(x)
-cummax(x)
-mean()
-median()
-var()
+62. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG | set.seed random number
 
 =========================================================================
 
-62. CÁC LỆNH HỌ APPLY
-TÍNH ROW MEAN, COL MEAN TRONG MATRIX
+63. CÁC LỆNH HỌ APPLY (PHẦN 1) | 5 cách tìm tên function trong R
+
+64. CÁC LỆNH HỌ APPLY (PHẦN 2)
+
+65. CÁC LỆNH HỌ APPLY (PHẦN 3)
+
+66. CÁC LỆNH HỌ APPLY (PHẦN 4)
+
+67. CÁC LỆNH HỌ APPLY (PHẦN 5)
 
 =========================================================================
 
-63. BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+68. BÀI TẬP XÂY DỰNG FUNCTION
 	• Dùng LỆNH DO.CALL gợi ý coi ppt for loop
 
-64. GIẢI BÀI TẬP XÂY DỰNG FUNCTION XỬ LÝ NHIỀU FILE CSV
+69. GIẢI BÀI TẬP XÂY DỰNG FUNCTION
 
 
 
@@ -208,7 +201,7 @@ TÍNH ROW MEAN, COL MEAN TRONG MATRIX
 
 
 
-
+HƯỚNG DẪN HIGHLIGHT CODE
 
 
 
@@ -436,10 +429,6 @@ KHÓA HỌC: TRỰC QUAN HÓA DỮ LIỆU VỚI GGPLOT2
 
 Vẽ đồ thị nhiều đường
 RStudio ggplot2 tutorial (multi-line timeline)
-
-
-
-
 
 
 

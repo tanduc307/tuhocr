@@ -44,7 +44,7 @@
         tmp_working[[i]] <- read.csv(files_list[i])
         tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%m/%d/%Y")
     }
-    # find min value     
+    # find max value     
     
     ket_qua_max <- data.frame()
     
