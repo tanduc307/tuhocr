@@ -6,7 +6,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-01. GIỚI THIỆU R VÀ KHÓA HỌC ===================================
+01. GIỚI THIỆU R VÀ KHÓA HỌC CODING IN R			..........
 	
 02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
 
@@ -164,30 +164,55 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 
 60. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 2)		XONG
 
-61. HƯỚNG DẪN CẢI TIẾN FUNCTION STEP-BY-STEP     		. 
+61. HƯỚNG DẪN CẢI TIẾN FUNCTION STEP-BY-STEP     		XONG 
 
 =========================================================================
 
-62. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG | set.seed random number
+62. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG | set.seed random number	XONG
 
 =========================================================================
 
-63. CÁC LỆNH HỌ APPLY (PHẦN 1) | 5 cách tìm tên function trong R
+63. CÁC LỆNH HỌ APPLY (PHẦN 1)					XONG 
+| 5 cách tìm tên function trong R
 
-64. CÁC LỆNH HỌ APPLY (PHẦN 2) | Lệnh apply(), sapply() | Các phép tính trên matrix
+64. CÁC LỆNH HỌ APPLY (PHẦN 2) 					XONG
+| Lệnh apply(), lapply(), sapply(), do.call() 
+| Các phép tính trên matrix
 
-65. CÁC LỆNH HỌ APPLY (PHẦN 3)
+65. CÁC LỆNH HỌ APPLY (PHẦN 3) 					XONG
+| So sánh lệnh lapply() và do.call()
 
-66. CÁC LỆNH HỌ APPLY (PHẦN 4)
-
-67. CÁC LỆNH HỌ APPLY (PHẦN 5)
+66. CÁC LỆNH HỌ APPLY (PHẦN 4) 					EDIT
+| Lệnh rapply(), vapply(), tapply(), mapply() | Cách chuyển tên class hàng loạt
 
 =========================================================================
 
-68. BÀI TẬP XÂY DỰNG FUNCTION
-	• Dùng LỆNH DO.CALL gợi ý coi ppt for loop
+67. BÀI TẬP XÂY DỰNG FUNCTION
 
-69. GIẢI BÀI TẬP XÂY DỰNG FUNCTION
+68. GIẢI BÀI TẬP XÂY DỰNG FUNCTION
+
+Dài ngắn không quan trọng, miễn sao làm ra kết quả yêu cầu rồi.
+
+Sau đó chúng ta sẽ tìm cách code lại những chỗ hơi bị thủ công sao cho thông minh hơn.
+
+LÀM ĐƯỢC
+LÀM ĐÚNG
+LÀM ĐẸP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
