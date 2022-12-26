@@ -1,4 +1,4 @@
-KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
+KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU | CHUYÊN ĐỀ LẬP TRÌNH XÂY DỰNG HÀM - CODING IN R"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
@@ -6,7 +6,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-01. GIỚI THIỆU R VÀ KHÓA HỌC CODING IN R			..........
+01. GIỚI THIỆU R VÀ KHÓA HỌC CODING IN R			1PH30S
 	
 02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
 
@@ -182,33 +182,76 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 65. CÁC LỆNH HỌ APPLY (PHẦN 3) 					XONG
 | So sánh lệnh lapply() và do.call()
 
-66. CÁC LỆNH HỌ APPLY (PHẦN 4) 					EDIT
+66. CÁC LỆNH HỌ APPLY (PHẦN 4) 					XONG
 | Lệnh rapply(), vapply(), tapply(), mapply() | Cách chuyển tên class hàng loạt
 
 =========================================================================
 
-67. BÀI TẬP XÂY DỰNG FUNCTION
+67. BÀI TẬP CHUYÊN ĐỀ CODING IN R			        XONG
+https://rpubs.com/tuhocr/projectcdr
 
-68. GIẢI BÀI TẬP XÂY DỰNG FUNCTION
+68. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R
+https://rpubs.com/tanduc307/projectcdr-solution
 
-Dài ngắn không quan trọng, miễn sao làm ra kết quả yêu cầu rồi.
+69. KẾT THÚC KHÓA HỌC CODING IN R ~ nói các bạn làm survey!!!	1PH30S
 
-Sau đó chúng ta sẽ tìm cách code lại những chỗ hơi bị thủ công sao cho thông minh hơn.
+dplyr
+lubridate vignette
+swirl package
+========================================================================
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU | TRỰC QUAN HÓA DỮ LIỆU TRONG R - DATA VISUALIZATION IN R"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+=========================================================================
+	NỘI DUNG						TIẾN ĐỘ
+=========================================================================
+
+01. GIỚI THIỆU R VÀ KHÓA HỌC DATA VISUALIZATION IN R		...
+	
+02. R BASE, LACTICCE, GGPLOT2, GGPUBR				...
+
+
+
+
+
+
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+
+
+
+
+
+KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU | BÁO CÁO KHẢ LẬP TRONG R - REPRODUCIBLE REPORT IN R"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+=========================================================================
+	NỘI DUNG						TIẾN ĐỘ
+=========================================================================
 
 LÀM ĐƯỢC
-LÀM ĐÚNG
+
+01. R MARKDOWN, GITHUB		...
+	
+02. CACHED CHO NHANH			...
+
 LÀM ĐẸP
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -261,37 +304,6 @@ cairo_pdf()
 
 
 
-
-
-
-##########################################
-SHORT
-
-1. VÌ SAO R KHÓ TIẾP CẬN VỚI NGƯỜI MỚI BẮT ĐẦU?
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======================================================================
-=========================================================================
-
-
-
-62. CÁC LỆNH CĂN BẢN TRONG R
-
-*** 46. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG
-
-
-
 CHUYÊN ĐỀ CÁC LỆNH THỐNG KÊ CƠ BẢN
 
 
@@ -322,17 +334,12 @@ CÁC LỆNH CỦNG CỐ KỸ NĂNG R
 
 36. CÁC LỆNH CƠ BẢN 
 
-with(), setdif(), match(), transform(), within(), table() bảng tần số
+with(), match(), transform(), within(), table() bảng tần số
 
 sample() 
 
 
 34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
-
-CÁCH CHUYỂN NHIỀU CỘT CLASS CÙNG LÚC
-
-
-
 
 mẹo vặt để xếp thứ tự dataset
 https://youtu.be/4gJaFNEbxrk

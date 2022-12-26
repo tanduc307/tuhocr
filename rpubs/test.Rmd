@@ -1,0 +1,25 @@
+---
+output: html_document
+---
+
+```{css}
+.badCode {
+background-color: red;
+}
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(flair)
+library(dplyr)
+```
+
+
+```{r mtcars}
+summary(mtcars)
+```
+
+
+```{r cars, class.source="badCode"}
+summary(cars)
+```

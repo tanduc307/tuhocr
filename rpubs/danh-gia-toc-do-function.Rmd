@@ -1,0 +1,335 @@
+---
+title: Hướng dẫn đánh giá tốc độ function trong R
+author: Duc Nguyen | Chuyên đào tạo kỹ năng R | `www.tuhocr.com`
+date: Dec 21, 2022
+output:
+  html_document:
+    highlight: pygments
+---
+
+### Tình huống
+
+Bạn có folder này chứa 332 file `.csv` tương ứng 332 cảm biến theo dõi chỉ tiêu sulfate và nitrate chất lượng nước ở các địa điểm khác nhau (số liệu mô phỏng, không có thực). Nguồn dataset từ Coursera/Data Science Specialization. 
+
+**Download [dataset](https://tinyurl.com/4sm9ce76) sau đó giải nén ra folder `specdata` rồi đặt trong folder project R.**
+
+Cấu trúc của 1 file `.csv` như sau:
+
+```{r}
+
+data_020 <- read.csv("specdata/020.csv")
+head(data_020) # xem 6 dòng đầu tiên
+dim(data_020) # kiểm tra số hàng và cột
+sapply(data_020, class) # kiểm tra `class` từng cột
+summary(data_020) # tóm tắt dataset
+
+```
+
+## Câu hỏi
+
+Trong dataset này có hai chỉ tiêu `sulfate` và `nitrate` được cảm biến đo độc lập nhau. Có những ngày ghi nhận được giá trị `sulfate` hoặc `nitrate`, có những ngày không ghi nhận giá trị gì cả (missing value), cũng như có ngày ghi nhận đầy đủ cả 2 giá trị `sulfate` và `nitrate`. 
+
+Bạn hãy xây dựng 2 function khác nhau để tìm ra có bao nhiêu giá trị quan sát đầy đủ tương ứng ở từng cảm biến, để làm cơ sở đánh giá xem các cảm biến ở những vị trí khác nhau thì số lượng kết quả theo dõi có đồng đều nhau hay không.
+
+***Sau đó so sánh tốc độ xử lý, trả kết quả của hai function này.***
+
+## <span style="color: blue">Cách 1</span>
+
+Cách tiếp cận function `complete_1` này sử dụng hàm `for` loop để đọc file `.csv` gom trong 1 list master sau đó gom chung lại thành 1 dataset master rồi mới lọc dữ liệu những dòng nào chứa đủ cả 2 giá trị quan sát ở từng dataset con, sau đó trả về kết quả chung.
+
+```{r}
+
+complete_1 <- function(directory = "specdata", id) {
+    
+  # import dataset    
+  files_list <- list.files(directory, full.names = TRUE)
+  tmp <- files_list[c(id)] # Đây là chỗ tùy chọn
+  tmp_working <- vector(mode = "list", length = length(tmp))
+
+  for (i in seq_along(tmp)) {
+    tmp_working[[i]] <- read.csv(tmp[[i]]) # Kiểu subset của tmp_working là dạng list tách ra dạng bảng
+  }
+  
+  # gom chung các dataset lại làm 1 dataset master 
+  output_tmp_working <- do.call(rbind, tmp_working)
+
+  y <- unique(output_tmp_working$ID) # Đếm số lần xuất hiện (number of occurences for each unique value)
+
+  extract_data <- data.frame(matrix(ncol = 2, nrow = 0))
+
+  for (uu in seq_along(y)) {
+    happy <- output_tmp_working[which(output_tmp_working[, "ID"] == y[uu]), ]
+
+    sul <- happy[, 2]
+    nit <- happy[, 3]
+    tot <- sul + nit
+    sum(is.na(tot)) # Hàm đếm missing values trong vector
+    nobs <- length(tot) - sum(is.na(tot))
+    extract_data <- rbind(extract_data, c(y[uu], nobs))
+  }
+  # trả kết quả
+  x <- c("cam_bien", "full_quan_sat")
+  colnames(extract_data) <- x
+  return(extract_data)
+  
+}
+
+```
+
+**Test hàm `complete_1` kiểm tra các dataset `id` từ 20 đến 40.**
+
+```{r}
+
+complete_1(directory = "specdata", id = 20:40)
+
+```
+
+## <span style="color: blue">Cách 2</span>
+
+Cách tiếp cận function `complete_2` sử dụng hàm `lapply` loop để đọc file `.csv` gom trong 1 list master. Sau đó tạo 1 hàm con trong này để đếm ngày quan sát chỉ tiêu `sulfate` và `nitrate` trùng nhau (tức là quan sát full chỉ tiêu), rồi xuất ra kết quả thông qua lệnh `sapply`. Như vậy sẽ tiết kiệm thời gian hơn gom chung 1 dataset master như cách 1.
+
+```{r}
+
+complete_2 <- function(directory = "specdata", id) {
+    
+  # import dataset
+  files_list <- list.files(directory,
+    full.names = TRUE,
+    pattern = ".csv"
+  ) # set này để chọn riêng file .csv
+
+  tmp_working <- lapply(files_list[id], read.csv)
+
+  # function con để check giá trị full quan sát 2 chỉ tiêu
+  check_full_quan_sat <- function(check_id) {
+    raw <- tmp_working[[check_id]]
+
+    check_1 <- which(!is.na(raw$nitrate))
+    check_2 <- which(!is.na(raw$sulfate))
+
+    ra_soat <- intersect(check_1, check_2)
+
+    length(ra_soat)
+  }
+
+  # áp dụng sapply cho seq_along(tmp_working)
+  full_quan_sat <- sapply(seq_along(tmp_working), check_full_quan_sat)
+
+  full_quan_sat <- as.data.frame(full_quan_sat) # sapply trả về matrix, cần convert qua lại data frame
+  
+  # trả kết quả
+  ket_qua <- cbind(cam_bien = id, full_quan_sat)
+
+  return(ket_qua)
+}
+
+```
+
+**Test hàm `complete_2` kiểm tra các dataset `id` từ 20 đến 40.**
+
+```{r}
+
+complete_2(directory = "specdata", id = 20:40)
+
+```
+
+## <span style="color: red">So sánh 2 function</span>
+
+Việc giải bài toán trong R thường đi từ các cách tiếp cận khác nhau phụ thuộc vào mức độ am hiểu với những câu lệnh nào mà chúng ta biết. Mục tiêu vẫn là trả được kết quả như yêu cầu đề bài. Tuy nhiên khi xử lý những tình huống phức tạp, thì các function nào xây dựng dựa trên những dòng lệnh an toàn (ví dụ dùng các lệnh họ `apply` thay vì dùng `for` loop để tránh bị trùng biến trung gian) và thông minh (xử lý theo yêu cầu thay vì gom lại tổng thể rồi subset) sẽ giúp tăng tốc độ trả về kết quả, nhanh chóng có câu trả lời.
+
+Vì vậy việc đánh giá hiệu suất giữa hai function là cần thiết để chúng ta có cơ sở nên dùng function nào, và cách tiếp cận nào phù hợp với từng tình huống cụ thể.
+
+Tiêu chí đánh giá function trong R, theo mình, dựa vào các chỉ tiêu sau:
+
+1/ Các câu lệnh sử dụng không xuất hiện biến trung gian (nếu có), vì khi xây dựng một đoạn code lớn thì khả năng trùng tên biến khá cao. Nếu am hiểu lệnh họ `apply` thì các bạn có thể dùng thay thế `for` loop.
+
+2/ Cách giải quyết bài toán trực tiếp theo kiểu lazy function, tức là khi nào cần thì mới gọi ra xử lý (như cách 2, vì dataset nằm trong list master), thay vì gom lại 1 dataset master (như cách 1) thì gây tốn thời gian và CPU máy tính.
+
+3/ Độ dài ngắn của script code thì không nói lên điều gì về mức độ đoạn code đó hiệu quả hay không. Mà chủ yếu cách trình bày format script code có comment dễ hiểu, giúp chúng ta nhìn vào hiểu được ý tưởng của từng code block trong đó, thay vì phải mất time suy luận coi đoạn code này giải quyết vấn đề gì. Tất nhiên, một đoạn code ngắn gọn, súc tích, đáp ứng tiêu chí 1/ và 2/ sẽ hiệu quả hơn là cách viết code rườm rà (vì càng cồng kềnh thì khả năng xảy ra lỗi càng cao, đôi khi chỉ là thiếu dấu `{}` đóng mở ngoặc).
+
+### <span style="color: green">**Sử dụng lệnh `identical()` so sánh kết quả**</span>
+
+Sau khi xây dựng function thì việc test hàm ở các tình huống khác nhau là rất cần thiết để dự trù trước hầu như mọi chuyện sẽ xảy ra khi áp dụng function trong thực tế. Nếu bạn có hai function với cách tiếp cận khác nhau nhưng để đảm bảo cả 2 function này hoạt động trả về cùng kết quả y chang nhau (nghĩa là nó có cùng chức năng) thì việc dùng hàm `identical` sẽ là khâu confirm quyết định sự thành công của function *cải tiến* so với function *chuẩn ban đầu*.
+
+Ở đây chúng ta sẽ test các tình huống đọc dữ liệu các dataset từ 1 đến 332 (toàn bộ file .csv) để xem kết quả của hai function này ra sao. 
+
+```{r, class.source="bg-success", message=FALSE, warning=FALSE}
+
+library(DT) # xuất kết quả dạng bảng pagination
+
+full_1 <- complete_1(directory = "specdata", id = 1:332)
+
+full_2 <- complete_2(directory = "specdata", id = 1:332)
+
+datatable(full_1, options = list(pageLength = 5))
+
+datatable(full_2, options = list(pageLength = 5))
+
+# nếu kết quả lệnh `identical()` là TRUE thì cho thấy kết quả xuất ra từ hai function này y chang nhau.
+identical(complete_1(directory = "specdata", id = 1:332),
+          complete_2(directory = "specdata", id = 1:332))
+
+```
+
+### <span style="color: red">**Sử dụng lệnh `system.time()` để đo tốc độ xử lý**</span>
+
+Sau khi xác định được function `complete_1` và `complete_2` có khả năng như nhau, thì việc lựa chọn function nào phụ thuộc vào thời gian trả kết quả của function đó nhanh hay chậm.
+
+Ta áp dụng một trong hai cách sau <span style="color: red">lệnh `system.time()`</span> hoặc <span style="color: blue">R profiler</span> để đánh giá hiệu suất xử lý. 
+
+```{css, echo=FALSE}
+.color_1Code {
+background-color: #7bfebc;
+}
+```
+
+```{r, class.source="color_1Code"}
+
+# thời gian để thực thi function `complete_1`
+time_1 <- system.time(complete_1(directory = "specdata", id = 1:332))
+time_1
+
+```
+
+```{css, echo=FALSE}
+.color_2Code {
+background-color: #fe987b;
+}
+```
+
+```{r, class.source="color_1Code"}
+
+# thời gian để thực thi function `complete_2`
+time_2 <- system.time(complete_2(directory = "specdata", id = 1:332))
+time_2
+
+```
+
+Các bạn so sánh `user time` là thời gian CPU máy tính chạy để thực thi function cũng như `elapsed time` là tổng thời gian thực thi câu lệnh của hai function này, kết quả là function `complete_2` **chạy nhanh hơn `r round(unclass(time_1)[3]/unclass(time_2)[3], digits = 2)` lần** so với function `complete_1`. 
+
+### <span style="color: red">**Sử dụng lệnh `Rprof()` để phân tích tốc độ xử lý**</span>
+
+Nếu chúng ta muốn biết chính xác trong nội bộ từng lệnh nhỏ ở trong từng function hoạt động nhanh, chậm ra sao, khâu nào là chậm nhất (để có cơ sở cải tiến đoạn code đó), thì ta áp dụng R profiler, với cách tiếp cận là:
+
+1/ Gọi lệnh `Rprof()` để báo cho R console biết là sẽ theo dõi các function sắp gọi ra.
+2/ Gọi function cần thực thi
+3/ Xuất kết quả profiling (theo dõi function) bằng lệnh `summaryRprof()`
+
+Ở đây, ta sẽ kiểm tra xem ở trong từng function `complete_1` và `complete_2` thì cụ thể những lệnh nào thực thi bao lâu, tổng thời gian thực thi như thế nào (kết quả này sẽ khác đôi chút với cách tiếp cận dùng lệnh `system.time()` ở trên. 
+
+**Kết quả profiling function `complete_1`**
+
+```{r, warning=FALSE, message=FALSE, class.source="color_2Code"}
+
+Rprof() # theo dõi function
+profile_1 <- complete_1(directory = "specdata", id = 1:332) # gọi function, đưa kết quả vào dataset
+report_1 <- summaryRprof() # xuất báo cáo tốc độ xử lý từng hàm con trong function
+report_1
+
+```
+
+**Kết quả profiling function `complete_2`**
+
+```{r, warning=FALSE, message=FALSE, class.source="color_2Code"}
+
+Rprof()
+profile_2 <- complete_2(directory = "specdata", id = 1:332)
+report_2 <- summaryRprof()
+report_2
+
+```
+
+<mark>**Kết quả thời gian `sampling.time` xem như đại diện cho tổng thời gian thực thi câu lệnh trong function `complete_1` là `r report_1$sampling.time` (tính theo giây) lâu hơn trong function `complete_2` là `r report_2$sampling.time`, hay nói cách khác function `complete_2` có thời gian xử lý kết quả nhanh hơn function `complete_1`.**</mark>
+
+### Biểu đồ so sánh tốc độ xử lý
+
+**Gom kết quả vào matrix để vẽ đồ thị cột**
+
+```{r}
+
+# tạo matrix
+
+f1 <- c(unclass(time_1)[1], unclass(time_1)[2], unclass(time_1)[3], report_1$sampling.time)
+
+f2 <- c(unclass(time_2)[1], unclass(time_2)[2], unclass(time_2)[3], report_2$sampling.time)
+
+barplot_data <- cbind(f1, f2)
+
+colnames(barplot_data) <- c("complete_1", "complete_2")
+rownames(barplot_data) <- c("user time", "system time", "elapsed time", "sampling time")
+
+barplot_data
+
+```
+
+**Vẽ đồ thị cột**
+
+Lưu ý là mỗi lần ta render file `.Rmd` thì R sẽ chạy lại toàn bộ các lệnh đo lường tốc độ xử lý nên kết quả thu được sẽ khác biệt nhau tùy vào tốc độ CPU ở thời điểm đó.
+
+```{r, echo=FALSE}
+max(barplot_data) + 2 -> yes
+```
+
+
+```{r}
+
+# Define a set of colors
+my_colors <- c("palegreen1", "yellow1", "salmon1", "cornsilk")
+
+# Bar plot
+barplot(barplot_data, 
+  col = my_colors,
+  beside = TRUE,
+  ylim = c(0, yes),
+  xlab = "Chỉ tiêu theo dõi",
+  ylab = "Thời gian (giây)",
+  main = "So sánh tốc độ xử lý giữa hai function | tuhocr.com",
+  las = 1
+)
+
+# Add legend
+legend("top",
+  legend = rownames(barplot_data),
+  horiz = TRUE,
+  fill = my_colors,
+  box.lty = 0,
+  cex = 1
+)
+
+# Đưa đường baseline
+abline(h = max(barplot_data[, 2]), col = "red", lty = 2, lwd = 2)
+
+# Ghi thêm text trên abline
+text(8,
+     max(barplot_data[, 2]),
+     "Thời gian xử lý của complete_2 \n luôn thấp hơn complete_1",
+     srt = 0,
+     pos = 3,
+     cex = 1,
+     col = "blue")
+
+```
+
+**Như vậy, function `complete_2` có tốc độ xử lý nhanh hơn function `complete_1` nhờ áp dụng các lệnh `apply` cũng như tiếp cận theo cách subset dữ liệu từ list master thay vì gom chung thành data frame master.**
+
+### Sơ kết
+
+Trên đây là ví dụ minh họa cho bài giảng ***Cách đánh giá tốc độ function*** trong <span style="color: green">**khóa học "HDSD R để xử lý dữ liệu | Chuyên đề Coding in R"**<span style="color: blue">, **sau 20 giờ học, bạn sẽ có nền tảng vững chắc về R căn bản và cách xây dựng function cho riêng mình!**
+
+<span style="color: red">**Nội dung khóa học: `www.tuhocr.com` **</span>
+
+<span style="color: red">**Hành trình ngàn dặm bắt đầu từ bước chân đầu tiên.**</span>
+
+<span style="color: blue">**ĐĂNG KÝ NGAY: `https://www.tuhocr.com/register`**</span>
+
+![](D:/tuhocr/tuhocr.png)
+
+### Session info
+
+```{r}
+sessionInfo()
+```
+
+
+
+

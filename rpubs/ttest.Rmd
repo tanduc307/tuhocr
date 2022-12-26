@@ -1,0 +1,56 @@
+Hướng dẫn cải tiến function step-by-step
+===============================================
+
+<span style="color: green">**Biên soạn: Duc Nguyen | Chuyên đào tạo kỹ năng xử lý dữ liệu sử dụng phần mềm R | Website: `www.tuhocr.com`**</span> 
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+library(flair)
+library(dplyr)
+```
+
+
+```{r}
+# Perorm pairwise comparisons
+compare_means(len ~ dose,  data = ToothGrowth)
+# A tibble: 3 x 8
+    .y. group1 group2            p        p.adj p.format p.signif   method
+  <chr>  <chr>  <chr>        <dbl>        <dbl>    <chr>    <chr>    <chr>
+1   len    0.5      1 7.020855e-06 1.404171e-05  7.0e-06     **** Wilcoxon
+2   len    0.5      2 8.406447e-08 2.521934e-07  8.4e-08     **** Wilcoxon
+3   len      1      2 1.772382e-04 1.772382e-04  0.00018      *** Wilcoxon
+# Visualize: Specify the comparisons you want
+my_comparisons <- list( c("0.5", "1"), c("1", "2"), c("0.5", "2") )
+ggboxplot(ToothGrowth, x = "dose", y = "len",
+          color = "dose", palette = "jco")+ 
+  stat_compare_means(comparisons = my_comparisons)+ # Add pairwise comparisons p-value
+  stat_compare_means(label.y = 50)     # Add global p-value
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Sơ kết
+
+Trên đây là ví dụ minh họa cách vẽ đồ thị trong <span style="color: green">**khóa học "HDSD R để xử lý dữ liệu"**<span style="color: blue">, **sau khi học xong bạn sẽ có nền tảng vững chắc về R!**
+
+<span style="color: red">**Nội dung khóa học: `www.tuhocr.com` **</span>
+
+<span style="color: red">**Hành trình ngàn dặm bắt đầu từ bước chân đầu tiên.**</span>
+
+<span style="color: blue">**ĐĂNG KÝ NGAY: `https://www.tuhocr.com/register`**</span>
+
+![](D:/tuhocr/tuhocr.png)

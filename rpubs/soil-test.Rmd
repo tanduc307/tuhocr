@@ -1,0 +1,252 @@
+Hướng dẫn vẽ biểu đồ cột trong R
+===============================================
+
+<span style="color: green">**Biên soạn: Duc Nguyen | Chuyên đào tạo kỹ năng xử lý dữ liệu sử dụng phần mềm R | Website: `www.tuhocr.com`**</span> 
+
+# Tình huống
+Bạn có 1 file Excel ghi lại kết quả phân tích mẫu đất ở 9 địa điểm như sau. 
+[`ket_qua_phan_tich_dat_full.xlsx`](https://docs.google.com/spreadsheets/d/12boxVzW9FeV7LwOcneohAbPtMgS1bVjq/edit?usp=sharing&ouid=113565220557131356148&rtpof=true&sd=true)
+
+Yêu cầu xuất ra báo cáo ở dạng đồ thị cột, tính `mean` và `sd` cho từng chỉ tiêu.
+
+# Cách thực hiện
+
+## Xử lý dữ liệu đầu vào (clean dataset)
+Các bạn download file Excel về để trong thư mục project (working directory) rồi áp dụng code mẫu như sau.
+
+```{r, message=F}
+# Đọc file Excel ở range chứa dữ liệu tương ứng
+library(readxl)
+ket_qua <- read_excel("D:/tuhocr/ket_qua_phan_tich_dat_full.xlsx", range = "B6:O15")
+
+# Kiểm tra dataset
+str(ket_qua)
+
+# Kiểm tra tên cột
+names(ket_qua)
+
+# Tính `mean` và `sd` ở từng chỉ tiêu tương ứng
+library(tidyverse)
+
+ket_qua_clean <- ket_qua %>% group_by(location) %>% # tính theo địa điểm
+    
+    # tính mean và sd cho pH
+    mutate(pH_mean = mean(c(`pH-1`,`pH-2`,`pH-3`))) %>% 
+    mutate(pH_sd = sd(c(`pH-1`,`pH-2`,`pH-3`))) %>%
+    
+    # tính mean và sd cho salinity
+    mutate(salinity_mean = mean(c(`salinity-1`,`salinity-2`,`salinity-3`))) %>%
+    mutate(salinity_sd = sd(c(`salinity-1`,`salinity-2`,`salinity-3`))) %>%
+    
+    # tính mean và sd cho organic matter
+    mutate(organic_mean = mean(c(`organic-1`,`organic-2`,`organic-3`))) %>%
+    mutate(organic_sd = sd(c(`organic-1`,`organic-2`,`organic-3`))) %>%
+    
+    # tính mean và sd cho nitrogen
+    mutate(nitrogen_mean = mean(c(`nitrogen-1`,`nitrogen-2`,`nitrogen-3`))) %>%
+    mutate(nitrogen_sd = sd(c(`nitrogen-1`,`nitrogen-2`,`nitrogen-3`))) %>%
+    
+    # chọn ra các cột đưa vào dataset clean
+    select(location,
+           pH_mean, pH_sd,
+           salinity_mean, salinity_sd,
+           organic_mean, organic_sd,
+           nitrogen_mean, nitrogen_sd)
+
+# Dataset sau xử lý
+ket_qua_clean <- as.data.frame(ket_qua_clean)
+ket_qua_clean 
+
+```
+
+## Tách dữ liệu phục vụ vẽ đồ thị
+
+Ý tưởng là từ dataset `ket_qua_clean` đã thu được gồm các cột đã tính `mean` và `sd` tương ứng cho từng chỉ tiêu. Ta cần tách ra thành các bộ dữ liệu nhỏ để vẽ riêng từng đồ thị.
+
+### Chỉ tiêu pH
+
+```{r}
+
+# PH MEAN
+ph_mean_data <- ket_qua_clean %>% select(location, pH_mean) 
+rownames(ph_mean_data) <- ph_mean_data[, 1]
+ph_mean_data <- as.matrix(ph_mean_data[, -1, drop = FALSE])
+ph_mean_data 
+
+# PH SD
+ph_sd_data <- ket_qua_clean %>% select(location, pH_sd) 
+rownames(ph_sd_data) <- ph_sd_data[, 1]
+ph_sd_data <- as.matrix(ph_sd_data[, -1, drop = FALSE])
+ph_sd_data
+
+```
+
+### Chỉ tiêu độ mặn (‰)
+
+```{r}
+
+# SALINITY MEAN
+salinity_mean_data <- ket_qua_clean %>% select(location, salinity_mean) 
+rownames(salinity_mean_data) <- salinity_mean_data[, 1]
+salinity_mean_data <- as.matrix(salinity_mean_data[, -1, drop = FALSE])
+salinity_mean_data 
+
+# SALINITY SD
+salinity_sd_data <- ket_qua_clean %>% select(location, salinity_sd) 
+rownames(salinity_sd_data) <- salinity_sd_data[, 1]
+salinity_sd_data <- as.matrix(salinity_sd_data[, -1, drop = FALSE])
+salinity_sd_data
+
+```
+
+### Chỉ tiêu hữu cơ (%)
+
+```{r}
+
+# ORGANIC MEAN
+organic_mean_data <- ket_qua_clean %>% select(location, organic_mean) 
+rownames(organic_mean_data) <- organic_mean_data[, 1]
+organic_mean_data <- as.matrix(organic_mean_data[, -1, drop = FALSE])
+organic_mean_data
+
+# ORGANIC SD
+organic_sd_data <- ket_qua_clean %>% select(location, organic_sd) 
+rownames(organic_sd_data) <- organic_sd_data[, 1]
+organic_sd_data <- as.matrix(organic_sd_data[, -1, drop = FALSE])
+organic_sd_data
+
+```
+
+### Chỉ tiêu nitrogen (%)
+
+```{r}
+
+# NITROGEN MEAN
+nitrogen_mean_data <- ket_qua_clean %>% select(location, nitrogen_mean) 
+rownames(nitrogen_mean_data) <- nitrogen_mean_data[, 1]
+nitrogen_mean_data <- as.matrix(nitrogen_mean_data[, -1, drop = FALSE])
+nitrogen_mean_data
+
+# NITROGEN SD
+nitrogen_sd_data <- ket_qua_clean %>% select(location, nitrogen_sd) 
+rownames(nitrogen_sd_data) <- nitrogen_sd_data[, 1]
+nitrogen_sd_data <- as.matrix(nitrogen_sd_data[, -1, drop = FALSE])
+nitrogen_sd_data
+
+```
+
+
+## Vẽ đồ thị
+
+### Thiết kế hàm để vẽ error bar
+Tham khảo: https://r-graph-gallery.com/4-barplot-with-error-bar.html
+
+```{r}
+
+error.bar <- function(x, y, upper, lower = upper, length = 0.035, ...) {
+    arrows(x , y + upper, x, y - lower, angle = 90, code = 3, length = length, ...)
+}
+
+# length là độ dài của error bar
+# code 1, 2, 3 là các style khác nhau của error bar
+
+```
+
+### Vẽ nhiều đồ thị trên cùng 1 hình
+
+```{r}
+
+old.par <- par(mfrow = c(2, 2),
+               # chỉnh khoảng cách inside từng đồ thị [bottom, left, top, right]
+               mar = c(1, 4, 3, 2), 
+               # chỉnh khoảng cách multiple plot
+               oma = c(2, 2, 0, 7),
+               xpd = NA)
+
+### VẼ ĐỒ THỊ CHO PH
+ph_barplot <- barplot(ph_mean_data, 
+                      beside = TRUE,
+                      # chọn dãy màu cho cột
+                      col = hsv(seq(0,1 - 1/12, length.out = 12), 0.5 , 1), 
+                      ylim = c(0, 10), space = 0.5, ylab = "pH", 
+                      axisnames = FALSE)
+
+error.bar(ph_barplot, ph_mean_data, ph_sd_data) # đưa error bar vào
+
+### VẼ ĐỒ THỊ CHO SALINITY
+salinity_barplot <- barplot(salinity_mean_data, 
+                            beside = TRUE,
+                            col = hsv(seq(0,1 - 1/12, length.out = 12), 0.5 , 1),
+                            ylim = c(0, 5), space = 0.5, ylab = "Độ mặn (‰)", 
+                            axisnames = FALSE)
+
+error.bar(salinity_barplot, salinity_mean_data, salinity_sd_data)
+
+### VẼ ĐỒ THỊ CHO ORGANIC
+organic_barplot <- barplot(organic_mean_data, 
+                           beside = TRUE,
+                           col = hsv(seq(0,1 - 1/12, length.out = 12), 0.5 , 1),
+                           ylim = c(0, 30), space = 0.5, ylab = "Hữu cơ (%)", 
+                           axisnames = FALSE)
+
+error.bar(organic_barplot, organic_mean_data, organic_sd_data)
+
+### VẼ ĐỒ THỊ CHO NITROGEN
+nitrogen_barplot <- barplot(nitrogen_mean_data, 
+                            beside = TRUE,
+                            col = hsv(seq(0,1 - 1/12, length.out = 12), 0.5 , 1),
+                            ylim = c(0, 4), space = 0.5, ylab = "Nitrogen (%)", 
+                            axisnames = FALSE)
+
+error.bar(nitrogen_barplot, nitrogen_mean_data, nitrogen_sd_data)
+
+### BẢNG CHÚ THÍCH
+legend(15, 5, # trục x, trục y
+       y.intersp = 1.5, # vertical spacing
+       legend = ket_qua_clean$location,
+       title = "Địa điểm lấy mẫu",
+       horiz = FALSE,
+       # dãy màu tương ứng từng cột
+       fill = hsv(seq(0,1 - 1/12, length.out = 12), 0.5 , 1),
+       box.lty = 1,
+       cex = 0.8)
+
+### TIÊU ĐỀ ĐỒ THỊ
+mtext("Kết quả phân tích đất tháng 9/2022 | tuhocr.com",
+      side = 3,
+      line = -2,
+      outer = TRUE)
+
+### Close par
+par(old.par)
+
+### Right-click để xem hình độ phân giải cao
+
+```
+
+## Sơ kết
+
+Trên đây là ví dụ minh họa ứng dụng R để vẽ đồ thị. Bạn có thể tham gia **khóa học "HDSD R để xử lý dữ liệu | Chuyên đề Coding in R"**<span style="color: blue">, **sau 20 giờ học, bạn sẽ có nền tảng vững chắc về R căn bản để xử lý dữ liệu cho nhu cầu của mình một cách chuyên nghiệp!**
+
+<span style="color: red">**Nội dung khóa học: `www.tuhocr.com` **</span>
+
+<span style="color: red">**Hành trình ngàn dặm bắt đầu từ bước chân đầu tiên.**</span>
+
+<span style="color: blue">**ĐĂNG KÝ NGAY: `https://www.tuhocr.com/register`**</span>
+
+![](D:/tuhocr/tuhocr.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

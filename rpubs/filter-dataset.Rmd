@@ -1,0 +1,293 @@
+Hướng dẫn xây dựng hàm filter dataset theo `Month` và `Day`
+===============================================
+
+<span style="color: green">**Biên soạn: Duc Nguyen | Chuyên đào tạo kỹ năng xử lý dữ liệu sử dụng phần mềm R | Website: `www.tuhocr.com`**</span> 
+
+# Nhu cầu
+
+File có cấu trúc gồm 6 cột và 365 ngày, chia theo ngày tháng tương ứng (đây là file ví dụ, số liệu được tạo ra ngẫu nhiên). Xem format file ở đây: 
+
+- [File 2022](https://docs.google.com/spreadsheets/d/1bJklPjNxSa1_EfsaTFYB6530tLQMY5Q4J2jfM4S8SdY/edit#gid=1577274406)
+
+- [File 1992](https://docs.google.com/spreadsheets/d/113PVGIsvZZk0VEync1jrTn3pxcHuBAlmLqME7Ya51HA/edit?usp=sharing)
+
+Download file đưa vào thư mục project để xử lý [`chat_luong_khong_khi_1992.csv`](https://tuhocr.netlify.app/chat_luong_khong_khi_1992.csv) và [`chat_luong_khong_khi_2022.csv`](https://tuhocr.netlify.app/chat_luong_khong_khi_2022.csv) 
+
+## Câu hỏi
+
+Làm sao để biết được mức độ ô nhiễm (%) thể hiện ở cột `POLLUTION` ở ngày, tháng bất kỳ trong năm 1992 và 2022 để so sánh và vẽ đồ thị, không cần phải filter và sort thủ công như trên Excel.
+
+## <span style="color: blue">Cách tiếp cận</span>
+
+<mark>Xây dựng một hàm filter theo cột `Month` và `Day` trong dataset</mark>, <span style="color: green">**sau đó gán vào các code template có sẵn**</span> cho đồ thị dạng đường, cột, boxplot để xuất ra *kết quả nhanh chóng đưa vào báo cáo.*
+
+# Xây dựng function filter dataset
+
+Hàm này có chức năng:
+
+* Filter theo ngày và tháng trong các dataset với tên khác nhau (dataset mặc định là `airquality`)
+
+* Tùy chọn `TRUE/FALSE` xử lý loại missing value trong kết quả xuất ra.
+
+Yêu cầu dataset để ứng dụng hàm filter:
+
+* Dataset cần có 2 cột `Month` và `Day` (viết hoa viết thường kiểu gì cũng được, vì function có chức năng tự động theo regular expression để chuyển tên cột về dạng quy chuẩn thực hiện filter).
+
+<mark>**Do vậy, khi các bạn có dataset về doanh thu hàng tháng hay theo dõi chỉ tiêu sinh trưởng cây trồng, ... thì khi trình bày theo kiểu file format ví dụ này thì hoàn toàn áp dụng được để lọc dữ liệu và tùy biến vẽ đồ thị rất nhanh chóng.**</mark>
+
+## Code function
+
+```{r}
+
+# FUNCTION HOÀN CHỈNH 1
+
+filter_theo_ngay_thang <- function(ngay = 1:31, thang = 0, name_dataset = airquality) {
+  data_xuly <- name_dataset
+
+  colnames(data_xuly) <- gsub(
+    pattern = "^([Mm]{1})([Oo]{1})([Nn]{1})([Tt]{1})([Hh]{1})$",
+    colnames(data_xuly),
+    replacement = "Month"
+  )
+
+  colnames(data_xuly) <- gsub(
+    pattern = "^([Dd]{1})([Aa]{1})([Yy]{1})$",
+    colnames(data_xuly),
+    replacement = "Day"
+  )
+
+  if (!(0 %in% thang)) {
+    data_1 <- data_xuly[data_xuly$Month %in% thang, ]
+    kq <- data_1[data_1$Day %in% ngay, ]
+    return(kq)
+  } else {
+    kq_2 <- data_xuly[data_xuly$Day %in% ngay, ]
+    return(kq_2)
+  }
+}
+
+# FUNCTION HOÀN CHỈNH 2
+
+filter_theo_ngay_thang_final <- function(ngay = 1:31,
+                                         thang = 0,
+                                         name_dataset = airquality,
+                                         clean_na = FALSE # thêm tham số
+) {
+  data_raw <- filter_theo_ngay_thang(ngay, thang, name_dataset)
+
+  if (clean_na == FALSE) {
+    return(data_raw)
+  } else {
+    complete.cases(data_raw)
+    data_clean <- data_raw[complete.cases(data_raw), ]
+    return(data_clean)
+  }
+}
+
+```
+
+## Test hàm
+
+```{r}
+
+# Import dataset
+chat_luong_khong_khi_2022 <- read.csv("D:/tuhocr/chat_luong_khong_khi_2022.csv")
+chat_luong_khong_khi_1992 <- read.csv("D:/tuhocr/chat_luong_khong_khi_1992.csv")
+
+# Lọc kết quả từ ngày 12 đến 28 tháng 6 trong năm 2022 và 1992
+filter_theo_ngay_thang_final(ngay = 12:28, thang = 6, chat_luong_khong_khi_2022, clean_na = TRUE)
+filter_theo_ngay_thang_final(ngay = 12:28, thang = 6, chat_luong_khong_khi_1992, clean_na = TRUE)
+
+```
+
+# Ứng dụng vẽ đồ thị
+
+## Line chart
+
+So sánh mức độ ô nhiễm trong tháng 8 của năm 2022 và 1992 qua đồ thị đường.
+
+**Bước 1: Sắp xếp dữ liệu**
+
+```{r}
+
+# Lọc dữ liệu theo yêu cầu đề bài, tách ra theo tháng 8
+ok_1 <- filter_theo_ngay_thang_final(, thang = 8, chat_luong_khong_khi_2022)
+ok_2 <- filter_theo_ngay_thang_final(, thang = 8, chat_luong_khong_khi_1992)
+
+```
+
+**Bước 2: Vẽ đồ thị**
+
+```{r}
+
+# Plotting line chart
+
+plot(POLLUTION ~ Day, # Thể hiện trục Y là pollution, trục X là ngày
+  ok_1, # Lấy dữ liệu từ data frame ok_1 năm 2022
+  col = "blue", # Màu sắc cho đường là xanh dương
+  type = "l", # Thể hiện loại line chart
+  xlab = "Ngày", # Tên của trục X
+  ylab = "Chỉ số ô nhiễm (%)", # Tên của trục Y
+  ylim = c(0, 25), # Giới hạn của trục Y
+  main = "Mức độ ô nhiễm không khí" # Tiêu đề đồ thị
+) 
+
+# Đưa thêm dữ liệu từ ok_2 năm 1992
+points(POLLUTION ~ Day,
+  ok_2,
+  col = "red",
+  type = "l",
+  ylim = c(0, 30)
+)
+
+# Tạo bảng chú thích
+legend("topright", # Vị trí của bảng
+  lty = 1, # Tạo viền cho bảng
+  col = c("blue", "red"), # Chú thích màu
+  legend = c("8/2022", "8/1992"), # Ghi chú
+  cex = 1 # Độ lớn font chữ
+) 
+
+```
+
+## Bar chart
+
+So sánh mức độ ô nhiễm trong ngày 15 ở các tháng 8 đến 12 trong năm 2022 và 1992 qua đồ thị cột.
+
+**Bước 1: Sắp xếp dữ liệu**
+
+```{r}
+
+# Lọc dữ liệu theo yêu cầu đề bài
+ok_3 <- filter_theo_ngay_thang_final(ngay = 15, thang = 8:12, chat_luong_khong_khi_2022)
+ok_4 <- filter_theo_ngay_thang_final(ngay = 15, thang = 8:12, chat_luong_khong_khi_1992)
+
+# Xử lý dữ liệu ok_3 và ok_4 vào cùng 1 data frame
+
+ok_3_2022 <- ok_3[ , c(3, 5)]
+colnames(ok_3_2022) <- c(2022, "Month")
+
+ok_4_1992 <- ok_4[ , c(3, 5)]
+colnames(ok_4_1992) <- c(1992, "Month")
+
+barplot_data <- cbind(ok_3_2022[1], ok_4_1992[1])
+
+rownames(barplot_data) <- c("tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12")
+
+barplot_data <- as.matrix(barplot_data) # Chuyển qua dạng matrix
+
+# Kiểm tra data frame dùng để vẽ đồ thị
+print(barplot_data)
+
+```
+
+**Bước 2: Vẽ đồ thị**
+
+```{r}
+
+# Define a set of colors
+my_colors <- c("lightblue", "mistyrose", "lightcyan", "lavender", "cornsilk")
+
+# Bar plot
+barplot(barplot_data, # Đồ thị cột sử dụng data dạng matrix thay vì data frame
+  col = my_colors,
+  beside = TRUE, # Đặt các cột từng năm cạnh nhau
+  ylim = c(0, 20),
+  xlab = "Năm",
+  ylab = "Chỉ số ô nhiễm (%)",
+  main = "Mức độ ô nhiễm không khí ở ngày 15 hằng tháng"
+)
+
+# Add legend
+legend("top",
+  legend = rownames(barplot_data),
+  horiz = TRUE,
+  fill = my_colors,
+  box.lty = 0,
+  cex = 1
+)
+
+# Đưa đường baseline cảnh báo mức độ ô nhiễm
+abline(h = 10, col = "red", lty = 2, lwd = 2)
+
+```
+
+## Boxplot
+
+Đánh giá trung bình mức độ ô nhiễm trong các tháng 4, 5, 6 giữa hai năm 2022 và 1992, thể hiện phân bố ô nhiễm của các ngày quan trắc ở dạng đồ thị hộp.
+
+**Bước 1: Sắp xếp dữ liệu**
+
+```{r}
+
+# Lọc dữ liệu theo yêu cầu đề bài
+ok_5 <- filter_theo_ngay_thang_final(, thang = 4:6, chat_luong_khong_khi_2022)
+
+ok_6 <- filter_theo_ngay_thang_final(, thang = 4:6, chat_luong_khong_khi_1992)
+
+```
+
+**Bước 2: Vẽ đồ thị**
+
+```{r}
+
+# Tạo khung cho 2 đồ thị
+old.par <- par(mfrow = c(1, 2))
+
+boxplot(POLLUTION ~ Month, # Vẽ đồ thị cho năm 2022
+  data = ok_5,
+  lwd = 1,
+  ylab = "Chỉ số ô nhiễm (%)",
+  xlab = "2022",
+  col = terrain.colors(5) # Chọn dãy màu
+)
+
+stripchart(POLLUTION ~ Month,
+  vertical = TRUE,
+  data = ok_5,
+  method = "jitter", # Thể hiện data point năm 2022
+  add = TRUE,
+  pch = 20,
+  col = "blue"
+)
+
+boxplot(POLLUTION ~ Month, # Vẽ đồ thị cho năm 1992
+  data = ok_6,
+  lwd = 1,
+  ylab = NULL,
+  xlab = "1992",
+  col = 4:6
+)
+
+stripchart(POLLUTION ~ Month,
+  vertical = TRUE,
+  data = ok_6,
+  method = "jitter", # Thể hiện data point năm 1992
+  add = TRUE,
+  pch = 20,
+  col = "red"
+)
+
+# Tạo tiêu đề chung cho 2 đồ thị
+mtext("Mức độ ô nhiễm không khí theo tháng giữa các năm",
+  side = 3,
+  line = -2,
+  outer = TRUE
+)
+
+# Tắt khung cho 2 đồ thị
+par(old.par)
+
+```
+
+### Sơ kết
+
+Trên đây là ví dụ minh họa cho bài giảng ***Cách xây dựng hàm số*** trong <span style="color: green">**khóa học "HDSD R để xử lý dữ liệu | Chuyên đề Coding in R"**<span style="color: blue">, **sau 20 giờ học, bạn sẽ có nền tảng vững chắc về R căn bản và cách xây dựng function cho riêng mình!**
+
+<span style="color: red">**Nội dung khóa học: `www.tuhocr.com` **</span>
+
+<span style="color: red">**Hành trình ngàn dặm bắt đầu từ bước chân đầu tiên.**</span>
+
+<span style="color: blue">**ĐĂNG KÝ NGAY: `https://www.tuhocr.com/register`**</span>
+
+![](D:/tuhocr/tuhocr.png)

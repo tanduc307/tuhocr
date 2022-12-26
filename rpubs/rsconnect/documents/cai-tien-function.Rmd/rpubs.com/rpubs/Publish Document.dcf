@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/981633/5b1750b358234999a72cd3976288f93f
+bundleId: https://api.rpubs.com/api/v1/document/981633/5b1750b358234999a72cd3976288f93f
+url: http://rpubs.com/tuhocr/981633
+when: 1670609926.60961
+lastSyncTime: 1670609926.60963
