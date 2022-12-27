@@ -193,7 +193,7 @@ https://rpubs.com/tuhocr/projectcdr
 68. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R
 https://rpubs.com/tanduc307/projectcdr-solution
 
-69. KẾT THÚC KHÓA HỌC CODING IN R ~ nói các bạn làm survey!!!	1PH30S
+69. CÂU CHUYỆN TIẾP THEO					1PH30S
 
 dplyr
 lubridate vignette

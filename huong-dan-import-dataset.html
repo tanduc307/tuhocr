@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Cách nhập dữ liệu vào R (tabular data)</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Biên soạn: Duc Nguyen (Tự học R chấm com)" />
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nhsr.css" type="text/css" />
+    <link rel="stylesheet" href="css/nhsr-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide, left, bottom
+
+# Cách nhập dữ liệu vào R (tabular data)
+----
+## **Khóa học: Hướng dẫn sử dụng R để xử lý dữ liệu**
+### Biên soạn: Duc Nguyen (Tự học R chấm com)
+### Đăng ký: tuhocr.com@gmail.com - Website: www.tuhocr.com
+
+---
+
+class: inverse, middle, center
+
+# Import file Excel `.xlsx` into R
+
+Có nhiều hơn một cách để nhập dữ liệu.  
+Hãy chọn cách mà bạn cảm thấy quen thuộc, dễ hiểu, thuận tiện.
+
+---
+
+# Lệnh `library(readxl)` và `read_excel()`
+
+[Cách thực hiện](https://tanduc307.github.io/tuhocr/cach-nhap-du-lieu.htm) 
+
+---
+
+# Kiểm tra dữ liệu đầu vào
+
+[Cách thực hiện](https://tanduc307.github.io/tuhocr/kiem-tra-du-lieu.htm) 
+
+---
+
+class: inverse, middle, center
+
+# Import file text `.txt` into R
+
+Đáp ứng các nhu cầu nhập liệu khác nhau
+
+---
+
+# Lệnh `read.table()`
+
+Minimal working example
+
+
+```r
+dulieu &lt;- read.table(file = "dulieu.txt", # Tên file .txt chứa dữ liệu
+                     header = TRUE, # Dòng đầu tiên có phải là tiêu đề hay không
+                     sep = "", # Ngăn cách giữa các cột là khoảng trắng
+                     quote = "\"'", # Xem các ký tự nháy đơn, nháy kép là string/text
+                     dec = ".", # Số thập phân trong file gốc sử dụng dấu chấm  
+                     col.names = c("khoi_luong_cay", "nghiem_thuc"), # Đổi tên cột 
+                     na.strings = "NA", # Ký hiệu missing value trong file gốc là NA
+                     colClasses = c("numeric", "character"), # Xác định đặc điểm dữ liệu
+                     nrows = -1, # Số hàng sẽ nhập dữ liệu (mặc định -1 là chọn hết toàn bộ)
+                     skip = 0, # Số lượng hàng dữ liệu được bỏ qua tính từ hàng đầu tiên
+                     comment.char = "#", # Ký hiệu chú thích trong file gốc
+                     stringsAsFactors = FALSE # Các biến `character` là dạng `factor` 
+                     )
+```
+
+---
+
+# Lệnh `read.table()`
+
+Thông thường, ta chỉ cần các thông số/argument này là đủ. Sau đó tính tiếp. 
+
+
+```r
+getwd() # Kiểm tra thư mục làm việc
+        # setwd() # → Có thể thiết lập thư mục làm việc (nếu cần)
+```
+
+
+```
+## [1] "D:/GITHUB/book"
+```
+
+
+```r
+dulieu &lt;- read.table(file = "rbasics/full/dulieu.txt", header = TRUE, 
+                     col.names = c("khoi_luong_cay", "nghiem_thuc"), 
+                     na.strings = "NA", 
+                     colClasses = c("numeric", "character")
+                     )
+```
+
+---
+
+class: inverse, middle, center
+
+# Import file CSV `.csv` into R
+
+CSV = Comma Separated Values
+
+---
+
+# Lệnh `read.csv()`
+
+Các tham số tương tự như lệnh `read.table()`
+
+
+```r
+ketqua &lt;- read.csv(file = "ketqua.csv", 
+                   header = TRUE, 
+*                  sep = ",", # Các cột phân cách bởi dấu phẩy
+                   quote = "\"'", 
+                   dec = ".", 
+                   #col.names = c("khoi_luong_cay", "nghiem_thuc"), 
+                   na.strings = "NA",
+                   #colClasses = c("numeric", "character"), # Turn off thông số không dùng 
+                   nrows = -1, 
+                   skip = 0, 
+                   comment.char = "#", 
+                   stringsAsFactors = FALSE, 
+                   fill = TRUE # Nếu các hàng không bằng nhau sẽ để khoảng trống
+                   )
+```
+
+---
+
+# Tham số mặc định
+
+Nếu dữ liệu đơn giản, ta có thể dùng câu lệnh ngắn gọn mà không cần thiết lập tham số.
+
+`dulieu &lt;- read.table("dulieu.txt")`
+
+R sẽ tự động (mặc định) cho các tham số:
+
+- Bỏ qua các dòng có comment `#` trong dữ liệu gốc
+
+- Tính xem có bao dòng và bộ nhớ RAM cần sử dụng
+
+- Tự xác định các cột trong file dữ liệu thuộc `class` nào (type of variable)
+
+---
+
+# Làm việc với file dữ liệu lớn (large dataset)
+
+Ví dụ: Ta có 1 data frame gồm 2,500,000 hàng và 120 cột. Tính bộ nhớ RAM của máy tính đáp ứng được nhu cầu?
+
+Cách tính: 
+
+&lt;span style="color: blue"&gt; 2,500,000 × 120 × 8 byte/numeric &lt;/span&gt;
+
+&lt;span style="color: blue"&gt; = 2,400,000,000 bytes &lt;/span&gt;
+  
+&lt;span style="color: blue"&gt; = 2,400,000,000 / 2&lt;sup&gt;20&lt;/sup&gt; &lt;/span&gt;  
+  
+&lt;span style="color: blue"&gt; = 2,288.82 MB &lt;/span&gt; 
+
+&lt;span style="color: blue"&gt; = 2.24 GB &lt;/span&gt;
+
+* 1 MB (megabye) = 2&lt;sup&gt;10&lt;/sup&gt; KB (kilobyte) = 2&lt;sup&gt;20&lt;/sup&gt; B (byte) [https://www.gbmb.org/mb-to-kb](https://www.gbmb.org/mb-to-kb)
+
+* 1 GB (gigabyte) = 2&lt;sup&gt;10&lt;/sup&gt; MB = 1024 MB
+
+---
+
+# Tăng tốc độ đọc dữ liệu (large dataset)
+
+Khi nhập dữ liệu thì R sẽ tự động xác định `colClasses` tương ứng với từng cột bằng cách rà soát toàn bộ các dòng dữ liệu trong đó rồi chọn `class` nào phù hợp. Ví dụ `interger` (nếu toàn bộ giá trị trong cột là số nguyên), `numeric` (nếu giá trị trong cột là số thực) hay `character`.
+
+Nếu chúng ta biết rõ đặc điểm của từng cột thì ta sẽ ghi tham số ngay từ đầu. Ví dụ, ta biết *chắc chắn* các cột trong bảng dữ liệu là `numeric` thì chỉ cần set tham số `colClasses = "numeric"`. Tuy nhiên trong bảng dữ liệu với rất nhiều cột với các `class` khác nhau thì việc này mất thời gian. 
+
+Sử dụng cách tiếp cận sau giúp tăng tốc độ nhập dữ liệu gấp đôi so với bình thường.
+
+
+```r
+data_small &lt;- read.table("data_full.txt", nrows = 100) # Đọc trước 100 dòng đầu tiên
+
+data_small_class &lt;- sapply(data_small, class) # Tách các `class` trong dữ liệu
+
+data_full &lt;- read.table("data_full.txt", # Đọc lại file dữ liệu lớn, lấy toàn bộ
+                        colClasses = classes) # Gán lại các `class` được R xác định 
+                                              # từ bộ dữ liệu nhỏ
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(img/logo-blue.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
