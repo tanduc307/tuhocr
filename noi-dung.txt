@@ -6,8 +6,6 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-01. GIỚI THIỆU R VÀ KHÓA HỌC CODING IN R			1PH30S
-	
 02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
 
 03. HƯỚNG DẪN CÁCH TẠO PROJECT 					XONG
@@ -195,9 +193,7 @@ https://rpubs.com/tanduc307/projectcdr-solution
 
 69. CÂU CHUYỆN TIẾP THEO					1PH30S
 
-dplyr
-lubridate vignette
-swirl package
+
 ========================================================================
 
 ========================================================================
