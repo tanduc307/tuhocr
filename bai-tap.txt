@@ -4,7 +4,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 Kính nhờ Anh/Chị Học Viên báo giúp em khi link không hoạt động hoặc bị thiếu dataset để em kịp thời bổ sung. Trân trọng.
 
 ========================================
-SCRIPT CODE
+SCRIPT CODE R
 https://github.com/tanduc307/tuhocr/tree/main/code
 
 ========================================
