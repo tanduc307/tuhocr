@@ -12,6 +12,8 @@ https://tinyurl.com/mw933afs
 2/ CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1) 
 • File excel dummy
 https://tinyurl.com/4mr6abjc
+3/ VECTOR NGÀY THÁNG VÀ THỜI GIAN
+• https://tinyurl.com/3uffm2kh | dataset household_power_consumption.txt
 
 BÀI TẬP KÈM LỜI GIẢI
 

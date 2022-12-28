@@ -6,7 +6,9 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-02. CÁCH CÀI ĐẶT R VÀ RSTUDIO 					XONG
+01+2. CÁCH CÀI ĐẶT R VÀ RSTUDIO 				XONG
+CHECK: OK 
+
 
 03. HƯỚNG DẪN CÁCH TẠO PROJECT 					XONG
 
@@ -32,14 +34,17 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		XONG
 
 12. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 1)				XONG
+CHECK: OK
 	• Khái niệm environment, namespace
 	• Dấu :: và :::
 
 13. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 2)				XONG
+CHECK: OK
 	• Lệnh attach(), detach()
 	• Lệnh system.time, getAnywhere(), argsAnywhere()
 
 14. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 3)				XONG
+CHECK: OK
 	• Lệnh thay đổi dấu prompt
 	• Lệnh save(), load(), source()
 
@@ -68,6 +73,10 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		XONG
 
 24. BÀI TẬP - CÁCH SẮP XẾP HỌ TÊN THEO ALPHABET			XONG
+CHECK: OK
+
+
+
 
 25. REGULAR EXPRESSION TRONG R (PHẦN 1)				XONG
 
@@ -76,8 +85,13 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 27. METACHARACTER VÀ ESCAPE CHARACTER				XONG
 
 28. BIẾN YẾU TỐ - FACTOR TRONG R 				XONG
+CHECK: OK
+
+
 
 29. CÁCH CHUYỂN ĐỔI CLASS TRONG R				XONG
+CHECK: OK
+
 
 30. CÁC LỆNH SUBSET VECTOR (PHẦN 1)				XONG
 
@@ -88,10 +102,12 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 32. MATRIX TRONG R						XONG
 
 33. CÁC LỆNH CẤU TRÚC MATRIX					XONG  
+CHECK: OK
 
 34. CÁC LỆNH SUBSET MATRIX					XONG
 
 35. BÀI TẬP MATRIX						XONG
+CHECK: OK
 
 36. GIẢI BÀI TẬP MATRIX						XONG
 
@@ -103,6 +119,7 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 	• Lệnh dput()
 
 39. CÁC LỆNH SUBSET DATA FRAME					XONG
+CHECK: OK
 	• Sử dụng toán tử == và %in%
 
 =========================================================================
@@ -114,18 +131,26 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 =========================================================================
 
 42. BÀI TẬP SUBSET						XONG
+CHECK: OK
 
 =========================================================================
 
-43. DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN (PHẦN 1)	XONG	
+43. DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN (PHẦN 1)	XONG
+CHECK: OK	 
 
 44. DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN (PHẦN 2)	XONG	
+CHECK: OK
 
 45. HƯỚNG DẪN GỘP CỘT VECTOR NGÀY THÁNG TRONG DATASET		XONG
+CHECK: OK
 
 =========================================================================
 
 46. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 1)		XONG
+CHECK: OK
+
+
+
 
 47. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 2)		XONG
 
@@ -188,10 +213,86 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 67. BÀI TẬP CHUYÊN ĐỀ CODING IN R			        XONG
 https://rpubs.com/tuhocr/projectcdr
 
-68. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R
+
+
+
+
+
+
+
+
+
+
+68. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 1)
+CHECK: OK 
 https://rpubs.com/tanduc307/projectcdr-solution
 
+
+
+
+
+
+
+69. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 2)
+
+
+
+
+
+
+
 69. CÂU CHUYỆN TIẾP THEO					1PH30S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ========================================================================
