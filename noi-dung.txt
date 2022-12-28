@@ -94,8 +94,10 @@ CHECK: OK
 
 
 30. CÁC LỆNH SUBSET VECTOR (PHẦN 1)				XONG
+CHECK: OK
 
 31. CÁC LỆNH SUBSET VECTOR (PHẦN 2)				XONG
+CHECK: OK
 
 =========================================================================
 		
@@ -105,6 +107,7 @@ CHECK: OK
 CHECK: OK
 
 34. CÁC LỆNH SUBSET MATRIX					XONG
+CHECK: OK
 
 35. BÀI TẬP MATRIX						XONG
 CHECK: OK
@@ -112,6 +115,7 @@ CHECK: OK
 36. GIẢI BÀI TẬP MATRIX						XONG
 
 37. CÁC PHÉP TÍNH TRÊN MATRIX					XONG
+CHECK: OK
 
 =========================================================================
 
@@ -127,7 +131,7 @@ CHECK: OK
 40. CẤU TRÚC LIST						XONG
 
 41. CÁC LỆNH SUBSET LIST					XONG
-
+CHECK: OK
 =========================================================================
 
 42. BÀI TẬP SUBSET						XONG
@@ -243,7 +247,11 @@ https://rpubs.com/tanduc307/projectcdr-solution
 
 69. CÂU CHUYỆN TIẾP THEO					1PH30S
 
+chưa nói hết được về rmarkdown, notepad++, dplyr, lubridate, swirl..., github
 
+VẼ CÁI SƠ ĐỒ BỰ NHA!!! STEEP LEARNING.
+
+ĐẾN THỜI ĐIỂM NÀY THÌ CÁC BẠN CHÍNH THỨC BẮT ĐẦU VÀO CHUYỆN TỰ HỌC R.
 
 
 

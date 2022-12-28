@@ -1,22 +1,44 @@
 KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
+Kính nhờ Anh/Chị Học Viên báo giúp em khi link không hoạt động hoặc bị thiếu dataset để em kịp thời bổ sung. Trân trọng.
 
-CODE SỬ DỤNG 
+========================================
+SCRIPT CODE
 https://github.com/tanduc307/tuhocr/tree/main/code
 
-VÍ DỤ MINH HỌA
+========================================
+CHUYÊN ĐỀ CODING IN R
+
 1/ CHARACTER VECTOR - TIẾNG VIỆT TRONG R
-• File excel để test tiếng Việt
-https://tinyurl.com/mw933afs
-2/ CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1) 
-• File excel dummy
-https://tinyurl.com/4mr6abjc
-3/ VECTOR NGÀY THÁNG VÀ THỜI GIAN
+• https://tinyurl.com/mw933afs | file excel để test tiếng Việt
+
+2/ CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG
+• https://tinyurl.com/4mr6abjc | file excel dummy
+
+3/ BÀI TẬP MATRIX
+• https://tuhocr.netlify.app/code/baitap-matrix.txt
+
+
+4/ DATE-TIME VECTOR - VECTOR NGÀY THÁNG VÀ THỜI GIAN
 • https://tinyurl.com/3uffm2kh | dataset household_power_consumption.txt
 
-BÀI TẬP KÈM LỜI GIẢI
+5/ BÀI TẬP CHẤT LƯỢNG KHÔNG KHÍ
+• https://tuhocr.netlify.app/code/chat_luong_khong_khi_1992.csv
+• https://tuhocr.netlify.app/code/chat_luong_khong_khi_2022.csv
 
-1/ DATASET AIR POLLUTION
+6/ BÀI TẬP FILTER THEO CHỈ TIÊU
+• https://tuhocr.netlify.app/code/2007.rar
+• https://tuhocr.netlify.app/code/2008.rar
+
+7/ BÀI TẬP XẾP LOẠI KẾT QUẢ HỌC SINH 
+• https://tuhocr.netlify.app/code/xeploaihocsinh.xlsx
+• https://tuhocr.netlify.app/code/lop_7a.rar
+
+========================================
+DATASET KHÁC
+
+1/ AIR POLLUTION
 • Vẽ đồ thị sử dụng base-R và ggplot2
 https://tinyurl.com/2s4823d3
+
