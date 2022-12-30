@@ -9,29 +9,37 @@ BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUH
 01+2. CÁCH CÀI ĐẶT R VÀ RSTUDIO 				XONG
 CHECK: OK 
 
-
 03. HƯỚNG DẪN CÁCH TẠO PROJECT 					XONG
+CHECK: OK
 
 04. GIAO DIỆN RSTUDIO 						XONG
+CHECK: OK
 
 05. CẤU TRÚC DỮ LIỆU TRONG R  					XONG
+CHECK: OK 
 
 06. HƯỚNG DẪN CÁCH CÀI PACKAGE 					XONG
+CHECK: OK 
 
 07. CÁCH ĐẶT TÊN TRONG R 					XONG
+CHECK: OK 
 	• Cách gán giá trị
 
 08. CÁCH TÌM THÔNG TIN TRỢ GIÚP 				XONG
+CHECK: OK 
 	• Lệnh help(), example(), demo()
 
 09. CÁCH NHẬP VÀ GHI DỮ LIỆU TRONG R				XONG
+CHECK: OK 
 	• Lệnh read.table(), read.csv()
 	• Lệnh args() liệt kê tham số
 
 10. PACKAGE DATASET						XONG
+CHECK: OK
 	• Lệnh data(), write.csv()
 
 11. TÁCH RIÊNG CỬA SỔ SCRIPT VÀ PLOT TRONG RSTUDIO		XONG
+CHECK: OK 
 
 12. CÁC LỆNH PHIÊN LÀM VIỆC (PHẦN 1)				XONG
 CHECK: OK
@@ -51,47 +59,53 @@ CHECK: OK
 =========================================================================
 
 15. VECTOR TRONG R						XONG
+CHECK: OK 
 	• Các lệnh kiểm tra object
 
 16. CÁCH LÀM TRÒN SỐ TRONG R					XONG
+CHECK: OK 
 	• Lệnh round(), signif()
 
 17. NUMERIC VECTOR						XONG
+CHECK: OK 
 	• Các phép tính đại số
 	• Giá trị Inf, NaN, NA
 
 18. DOUBLE VÀ INTEGER VECTOR					XONG
+CHECK: OK
 
 19. LOGICAL VECTOR						XONG
+CHECK: OK
 
 20. CHARACTER VECTOR - TIẾNG VIỆT TRONG R			XONG
+CHECK: OK
 
 21. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 1)		XONG
+CHECK: OK
 
 22. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 2)		XONG
+CHECK: OK
 
 23. CHARACTER VECTOR - CÁC LỆNH THƯỜNG DÙNG (PHẦN 3)		XONG
+CHECK: OK
 
 24. BÀI TẬP - CÁCH SẮP XẾP HỌ TÊN THEO ALPHABET			XONG
 CHECK: OK
 
-
-
-
 25. REGULAR EXPRESSION TRONG R (PHẦN 1)				XONG
+CHECK: OK
 
 26. REGULAR EXPRESSION TRONG R (PHẦN 2)				XONG
+CHECK: OK
 
 27. METACHARACTER VÀ ESCAPE CHARACTER				XONG
+CHECK: OK 
 
 28. BIẾN YẾU TỐ - FACTOR TRONG R 				XONG
 CHECK: OK
 
-
-
 29. CÁCH CHUYỂN ĐỔI CLASS TRONG R				XONG
 CHECK: OK
-
 
 30. CÁC LỆNH SUBSET VECTOR (PHẦN 1)				XONG
 CHECK: OK
@@ -102,6 +116,7 @@ CHECK: OK
 =========================================================================
 		
 32. MATRIX TRONG R						XONG
+CHECK: OK
 
 33. CÁC LỆNH CẤU TRÚC MATRIX					XONG  
 CHECK: OK
@@ -113,6 +128,7 @@ CHECK: OK
 CHECK: OK
 
 36. GIẢI BÀI TẬP MATRIX						XONG
+CHECK: OK 
 
 37. CÁC PHÉP TÍNH TRÊN MATRIX					XONG
 CHECK: OK
@@ -120,6 +136,7 @@ CHECK: OK
 =========================================================================
 
 38. CẤU TRÚC DATA FRAME						XONG
+CHECK: OK 
 	• Lệnh dput()
 
 39. CÁC LỆNH SUBSET DATA FRAME					XONG
@@ -129,6 +146,7 @@ CHECK: OK
 =========================================================================
 
 40. CẤU TRÚC LIST						XONG
+CHECK: OK 
 
 41. CÁC LỆNH SUBSET LIST					XONG
 CHECK: OK
@@ -153,105 +171,106 @@ CHECK: OK
 46. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 1)		XONG
 CHECK: OK
 
-
-
-
 47. XỬ LÝ DỮ LIỆU TRỐNG (MISSING VALUE) (PHẦN 2)		XONG
+CHECK: OK
 
 =========================================================================
 
 48. LÝ DO HỌC CÁCH XÂY DỰNG HÀM TRONG R				XONG
+CHECK: OK
 
 49. ĐỊNH NGHĨA FUNCTION VÀ CÁC THUẬT NGỮ LIÊN QUAN		XONG
+CHECK: OK
 
 50. PHÂN LOẠI FUNCTION VÀ CÁC LỆNH PHÂN TÍCH CẤU TRÚC		XONG
+CHECK: OK
 
 51. CÁCH XÂY DỰNG FUNCTION 					XONG
+CHECK: OK
 
 52. HƯỚNG DẪN CẢI TIẾN FUNCTION TRONG R				XONG
+CHECK: OK
 
 =========================================================================
 
 53. CÁC LỆNH LOGIC IF-ELSE, FOR-LOOP				XONG
+CHECK: OK
 
 54. GIẢI BÀI TẬP XẾP LOẠI KẾT QUẢ HỌC SINH			XONG
+CHECK: OK
 
 55. HƯỚNG DẪN XỬ LÝ CÙNG LÚC NHIỀU FILE TRONG R			XONG
+CHECK: OK
 
 56. GIẢI BÀI TẬP XÂY DỰNG FUNCTION FILTER DATASET		XONG
+CHECK: OK 
 
-57. ỨNG DỤNG FUNCTION FILTER DATASET TRONG VẼ ĐỒ THỊ		XONG       		
+57. ỨNG DỤNG FUNCTION FILTER DATASET TRONG VẼ ĐỒ THỊ		XONG
+CHECK: OK        		
 
 58. MỞ RỘNG CÁC LỆNH LOGIC					XONG 
+CHECK: OK   
 	• Lệnh switch(), rank()
 
 ========================================================================= 
 
 59. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 1)		XONG
+CHECK: OK  
 
 60. XÂY DỰNG INFIX BINARY OPERATOR FUNCTION (PHẦN 2)		XONG
+CHECK: OK  
 
 61. HƯỚNG DẪN CẢI TIẾN FUNCTION STEP-BY-STEP     		XONG 
+CHECK: OK  
 
 =========================================================================
 
 62. CÁC LỆNH TOÁN HỌC THƯỜNG DÙNG | set.seed random number	XONG
+CHECK: OK 
 
 =========================================================================
 
-63. CÁC LỆNH HỌ APPLY (PHẦN 1)					XONG 
+63. CÁC LỆNH HỌ APPLY (PHẦN 1)					XONG
+CHECK: OK 
 | 5 cách tìm tên function trong R
 
 64. CÁC LỆNH HỌ APPLY (PHẦN 2) 					XONG
+CHECK: OK 
 | Lệnh apply(), lapply(), sapply(), do.call() 
 | Các phép tính trên matrix
 
 65. CÁC LỆNH HỌ APPLY (PHẦN 3) 					XONG
+CHECK: OK 
 | So sánh lệnh lapply() và do.call()
 
 66. CÁC LỆNH HỌ APPLY (PHẦN 4) 					XONG
+CHECK: OK 
 | Lệnh rapply(), vapply(), tapply(), mapply() | Cách chuyển tên class hàng loạt
 
 =========================================================================
 
 67. BÀI TẬP CHUYÊN ĐỀ CODING IN R			        XONG
+CHECK: OK
 https://rpubs.com/tuhocr/projectcdr
 
-
-
-
-
-
-
-
-
-
-
-68. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 1)
+68. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 1)			XONG
 CHECK: OK 
 https://rpubs.com/tanduc307/projectcdr-solution
 
+69. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 2)			EDIT
+CHECK: OK 
 
+70. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 3)			
 
-
-
-
-
-69. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 2)
-
-
-
-
-
-
-
-69. CÂU CHUYỆN TIẾP THEO					1PH30S
+71. CÂU CHUYỆN TIẾP THEO					
 
 chưa nói hết được về rmarkdown, notepad++, dplyr, lubridate, swirl..., github
 
 VẼ CÁI SƠ ĐỒ BỰ NHA!!! STEEP LEARNING.
 
 ĐẾN THỜI ĐIỂM NÀY THÌ CÁC BẠN CHÍNH THỨC BẮT ĐẦU VÀO CHUYỆN TỰ HỌC R.
+
+72. SURVEY
 
 
 

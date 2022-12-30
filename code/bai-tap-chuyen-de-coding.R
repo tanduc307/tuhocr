@@ -5,6 +5,12 @@
 # Giải nén ra folder specdata rồi đặt trong folder project R của bạn.
 # Folder này chứa 332 file csv tương ứng 332 cảm biến theo dõi chỉ tiêu sulfate và nitrate chất lượng nước ở các địa điểm khác nhau.
 
+#### ĐỀ BÀI
+# https://rpubs.com/tuhocr/projectcdr
+
+#### ĐÁP ÁN
+# https://rpubs.com/tanduc307/projectcdr-solution
+
 ############
 
 ### CÂU 1: Ở dataset 020.csv có 
@@ -37,7 +43,8 @@ str(data_020)
 summary(data_020)
 
 # Chuyển cột Date character thành Date chuẩn
-data_020$Date <- as.Date(data_020$Date, format = "%Y-%m-%d")
+data_020$Date <- as.Date(data_020$Date, 
+                         format = "%Y-%m-%d")
 sapply(data_020, class)
 
 #####
@@ -88,7 +95,7 @@ sum(is.na(data_020$nitrate)) + sum(!is.na(data_020$nitrate))
 ###################
 
 # d) bao nhiêu giá trị missing value ở cả 2 cột sulfate và nitrate
-
+summary(data_020)
 data_020$sulfate
 data_020$nitrate
 
@@ -216,6 +223,15 @@ intersect(which(!is.na(data_020$nitrate)), which(!is.na(data_020$sulfate)))
 length(intersect(which(!is.na(data_020$nitrate)), which(!is.na(data_020$sulfate))))
 # [1] 124
 
+### cách 3:
+
+dim(na.omit(data_020))
+
+str(na.omit(data_020))
+
+sum(complete.cases(data_020))
+
+
 # f) Tìm giá trị trung bình, max, min ở từng cột cho 2 trường hợp:
 # f.1) loại missing value riêng từng cột
 mean(data_020$sulfate, na.rm = TRUE)
@@ -261,6 +277,14 @@ nitrate_all <- c(na.omit(data_020)$nitrate, data_020[ko_do_sulfate, ]$nitrate)
 
 mean(nitrate_all)
 
+
+
+
+
+
+
+
+
 ###########################################################
 
 ### CÂU 2: XÂY DỰNG FUNCTION TRẢ KẾT QUẢ GIÁ TRỊ COMPLETE OBSERVATION CHO CÁC DATASET
@@ -269,13 +293,24 @@ mean(nitrate_all)
 # id    full_quan_sat
 # 1 18   84
 # 2 19  353
-# 3 20  124 ← đây chính là kết quả câu 1e) tính thủ công
+# 3 20  124 ← đây chính là câu 1e) tính thủ công
 # 4 21  426
 # 5 22  135
 
 # chú thích: full_quan_sat là number of observations, tức là số ngày quan sát đủ cả 2 chỉ tiêu.
 
 ###########################################################
+
+
+
+
+
+
+
+
+
+
+
 
 ### ĐÁP ÁN CÂU 2)
 
@@ -335,14 +370,33 @@ complete_2 <- function(directory = "specdata", id){
         length(ra_soat)
     }
     
-    full_quan_sat <- sapply(id, check_full_quan_sat)
+    full_quan_sat <- sapply(seq_along(tmp_working), check_full_quan_sat)
     
     full_quan_sat <- as.data.frame(full_quan_sat)
 
-    ket_qua <- cbind(full_quan_sat, cam_bien = id)
+    ket_qua <- cbind(cam_bien = id, full_quan_sat)
 
     return(ket_qua)
 }
+
+## test
+complete_2("specdata", id = 1:10)
+complete_1("specdata", id = 1:10)
+
+complete_2("specdata", id = 2)
+complete_1("specdata", id = 2)
+
+complete_2("specdata", id = c(2, 33:39, 192:194))
+complete_1("specdata", id = c(2, 33:39, 192:194))
+
+
+
+
+
+
+
+
+
 
 # > complete_2(, 1:4)
 # full_quan_sat cam_bien
@@ -356,59 +410,59 @@ complete_2 <- function(directory = "specdata", id){
 # Error in tmp_working[[id]] : subscript out of bounds
 
 
-################ SỬA LẠI:
-
-## cách 2_FINAL:
-
-complete_2_final <- function(directory = "specdata", id){
-    
-    # import dataset
-    files_list <- list.files(directory, full.names = TRUE,
-                             pattern = ".csv") # set này để chọn riêng file .csv
-    
-    tmp_working <- lapply(files_list[id], read.csv) 
-    
-    # FUNCTION
-    check_full_quan_sat <- function(check_id){
-        
-        raw <- tmp_working[[check_id]] 
-        
-        check_1 <- which(!is.na(raw$nitrate))
-        check_2 <- which(!is.na(raw$sulfate))
-        
-        ra_soat <- intersect(check_1, check_2)
-        
-        length(ra_soat)
-    }
-    
-    # sửa lại chỗ sapply seq_along(tmp_working)
-    full_quan_sat <- sapply(seq_along(tmp_working), check_full_quan_sat)
-    
-    full_quan_sat <- as.data.frame(full_quan_sat)
-    
-    ket_qua <- cbind(cam_bien = id, full_quan_sat)
-    
-    return(ket_qua)
-}
+# ################ SỬA LẠI:
+# 
+# ## cách 2_FINAL:
+# 
+# complete_2_final <- function(directory = "specdata", id){
+#     
+#     # import dataset
+#     files_list <- list.files(directory, full.names = TRUE,
+#                              pattern = ".csv") # set này để chọn riêng file .csv
+#     
+#     tmp_working <- lapply(files_list[id], read.csv) 
+#     
+#     # FUNCTION
+#     check_full_quan_sat <- function(check_id){
+#         
+#         raw <- tmp_working[[check_id]] 
+#         
+#         check_1 <- which(!is.na(raw$nitrate))
+#         check_2 <- which(!is.na(raw$sulfate))
+#         
+#         ra_soat <- intersect(check_1, check_2)
+#         
+#         length(ra_soat)
+#     }
+#     
+#     # sửa lại chỗ sapply seq_along(tmp_working)
+#     full_quan_sat <- sapply(seq_along(tmp_working), check_full_quan_sat)
+#     
+#     full_quan_sat <- as.data.frame(full_quan_sat)
+#     
+#     ket_qua <- cbind(cam_bien = id, full_quan_sat)
+#     
+#     return(ket_qua)
+# }
 
 #############################
 
 # TEST HÀM
 
 complete_1("specdata", 1:10)
-complete_2_final("specdata", 1:10)
-identical(complete_1("specdata", 1:10), complete_2_final("specdata", 1:10))
+complete_2("specdata", 1:10)
+identical(complete_1("specdata", 1:10), complete_2("specdata", 1:10))
 
 complete_1(, 18:42)
-complete_2_final(, 18:42)
-identical(complete_1(, 18:42), complete_2_final(, 18:42))
+complete_2(, 18:42)
+identical(complete_1(, 18:42), complete_2(, 18:42))
 
 
 system.time(complete_1( , 1:332))
 
-system.time(complete_2_final( , 1:332))
+system.time(complete_2( , 1:332))
 
-identical(complete_1( , 1:332), complete_2_final( , 1:332))
+identical(complete_1( , 1:332), complete_2( , 1:332))
 
 ###########################################################
 
@@ -490,7 +544,6 @@ system.time(pollutantmean_v2("specdata", "sulfate", 1:332))
 # 8  2005-09-13   0.496   20.20  8 max sulfate   | 2004-02-21    5.21    4.21  8 max nitrate
 # 9  2005-09-13   0.452   16.20  9 max sulfate   | 2009-01-25    3.36    4.31  9 max nitrate
 # 10 2003-05-12   0.367    2.27 10 max sulfate   | 2002-03-18    2.39    1.04 10 max nitrate
-
 
 #########
 
@@ -650,8 +703,8 @@ filter_theo_chi_tieu_super <- function(chi_tieu = "mercury", a = "min", b = "200
 
 
 ##############################
-getOption("max.print")
-options(max.print = 2000)
+# getOption("max.print")
+# options(max.print = 2000)
 # TEST
 filter_theo_chi_tieu_super(chi_tieu = "nitrate", a = "max", b = "specdata")
 
@@ -809,10 +862,10 @@ library(dplyr)
 
 ### FUNCTION FINAL
 
-filter_theo_chi_tieu_enhanced <- function(chi_tieu = "mercury", a = "min", b = "2007"){
-    chi_tieu <<- chi_tieu ### sử dụng super assign
-    a %chi_tieu% b
-}
+# filter_theo_chi_tieu_enhanced <- function(chi_tieu = "mercury", a = "min", b = "2007"){
+#     chi_tieu <<- chi_tieu ### sử dụng super assign
+#     a %chi_tieu% b
+# }
 
 ##################
 
@@ -836,6 +889,7 @@ filter_theo_chi_tieu_super <- function(chi_tieu = "mercury", a = "min", b = "200
 }
 
 # TEST
+
 filter_theo_chi_tieu_super(chi_tieu = "nitrate", a = "max", b = "specdata")
 
 filter_theo_chi_tieu_super(chi_tieu = "sulfate", a = "max", b = "specdata")
@@ -980,7 +1034,7 @@ b <- 1:12
 bind_cols(a = a, b = b)
 
 ###########################
-
+options(digits = 2)
 ok_1 <- filter_theo_id(chi_tieu = "sulfate", a = "max", b = "specdata", id = 280:300)
 
 ok_1$note <- "max sulfate"

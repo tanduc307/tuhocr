@@ -1,0 +1,529 @@
+---
+title: Giải bài tập kết thúc chuyên đề Coding in R
+author: Duc Nguyen | Chuyên đào tạo kỹ năng R | `www.tuhocr.com`
+date: Dec 26, 2022
+output:
+  html_document:
+    highlight: pygments
+---
+
+### Đề bài
+
+Bạn có folder này chứa 332 file `.csv` tương ứng 332 cảm biến theo dõi chỉ tiêu sulfate và nitrate chất lượng nước ở các địa điểm khác nhau (số liệu mô phỏng, không có thực). Nguồn dataset từ Coursera/Data Science Specialization. 
+
+**Download dataset `https://tinyurl.com/4sm9ce76` sau đó giải nén ra folder `specdata` rồi đặt trong folder project R.**
+
+Cấu trúc 1 file `.csv` như sau:
+
+```{r}
+data_020 <- read.csv("specdata/020.csv")
+dim(data_020)
+head(data_020)
+```
+
+
+### <span style="color: blue">**Câu 1**</span>
+
+Ở dataset `020.csv` có:
+
+a) bao nhiêu dòng, bao nhiêu cột
+
+b) bao nhiêu giá trị missing value ở cột `sulfate`
+
+c) bao nhiêu giá trị missing value ở cột `nitrate`
+
+d) bao nhiêu giá trị missing value ở cả 2 cột `sulfate` và `nitrate`
+
+e) có bao nhiêu ngày quan sát nào có ĐỦ CẢ 2 giá trị theo dõi
+
+f) Tìm giá trị trung bình, max, min ở từng cột cho 2 trường hợp: 
+
+    i) loại missing value riêng từng cột
+
+    ii) loại missing value cho toàn bộ (tức là ở những cột có đủ 2 giá trị)
+    
+#### <span style="color: red">**Làm sạch dataset `020.csv` trước khi phân tích**</span>
+
+```{r}
+# Import dataset
+data_020 <- read.csv("specdata/020.csv")
+
+# Kiểm tra dataset
+sapply(data_020, class)
+str(data_020)
+summary(data_020)
+
+# Chuyển cột `Date` character thành `Date` chuẩn vector ngày tháng
+data_020$Date <- as.Date(data_020$Date, format = "%Y-%m-%d")
+sapply(data_020, class) # kiểm tra lại class dataset 020.csv
+```
+
+#### <span style="color: green">**1.a) bao nhiêu dòng, bao nhiêu cột**</span>
+
+```{r}
+dim(data_020)
+```
+
+#### <span style="color: green">**1.b) bao nhiêu giá trị missing value ở cột `sulfate`**</span>
+
+```{r}
+# Cách 1: Nhìn từ kết quả của lệnh `summary`
+summary(data_020$sulfate)
+
+# Cách 2: Đếm trực tiếp NA dùng lệnh `sum(is.na(object))`
+sum(is.na(data_020$sulfate))
+```
+
+#### <span style="color: green">**1.c) bao nhiêu giá trị missing value ở cột `nitrate`**</span>
+
+```{r}
+# Cách 1: Nhìn từ kết quả của lệnh `summary`
+summary(data_020$nitrate)
+
+# Cách 2: Đếm trực tiếp NA dùng lệnh `sum(is.na(object))`
+sum(is.na(data_020$nitrate))
+```
+
+#### <span style="color: green">**1.d) bao nhiêu giá trị missing value ở cả 2 cột `sulfate` và `nitrate`**</span>
+
+```{r}
+length(intersect(which(is.na(data_020$sulfate)), which(is.na(data_020$nitrate))))
+```
+
+#### <span style="color: green">**1.e) có bao nhiêu ngày quan sát nào có ĐỦ CẢ 2 giá trị theo dõi**</span>
+
+```{r}
+# Cách 1: Tiếp cận theo cách làm phép cộng giữa 2 vector để tách ra giá trị `NA`
+length(data_020$sulfate + data_020$nitrate) - sum(is.na(data_020$sulfate + data_020$nitrate))
+
+# Cách 2: Tiếp cận trực tiếp kiểm tra giá trị không phải là `NA` ở hai chỉ tiêu và CÓ GIAO NHAU
+length(intersect(which(!is.na(data_020$nitrate)), which(!is.na(data_020$sulfate))))
+```
+
+#### <span style="color: green">**1.f) Tìm giá trị trung bình, max, min ở từng cột cho 2 trường hợp:**</span>
+
+***i) loại missing value riêng từng cột***
+
+```{r}
+# Cách 1: Làm thủ công
+## sulfate
+mean(data_020$sulfate, na.rm = TRUE)
+max(data_020$sulfate, na.rm = TRUE)
+min(data_020$sulfate, na.rm = TRUE)
+## nitrate
+mean(data_020$nitrate, na.rm = TRUE)
+max(data_020$nitrate, na.rm = TRUE)
+min(data_020$nitrate, na.rm = TRUE)
+
+# Cách 2: Áp dụng lệnh sapply
+## tạo danh sách function để loop
+funs <- list(gia_tri_trung_binh = mean, cuc_dai = max, cuc_tieu = min)
+## trả về matrix kết quả cho cả hai chỉ tiêu
+
+##### cách 2a):
+sapply(funs, function(x) sapply(data_020[, 2:3], x, na.rm = TRUE))
+
+##### cách 2b):
+sapply(funs, mapply, data_020[, 2:3], na.rm = TRUE)
+```
+
+***ii) loại missing value cho toàn bộ (tức là ở những cột có đủ 2 giá trị)***
+
+```{r}
+sapply(funs, function(x) sapply(na.omit(data_020)[, 2:3], x))
+```
+
+### <span style="color: blue">**Câu 2**</span>
+
+Trong dataset này có hai chỉ tiêu `sulfate` và `nitrate` được cảm biến đo độc lập nhau. Có những ngày ghi nhận được giá trị `sulfate` hoặc `nitrate`, có những ngày không ghi nhận giá trị gì cả (missing value), cũng như có ngày ghi nhận đầy đủ cả 2 giá trị `sulfate` và `nitrate`. 
+
+Bạn hãy xây dựng function để tìm ra có bao nhiêu giá trị quan sát đầy đủ tương ứng ở từng cảm biến, để làm cơ sở đánh giá xem các cảm biến ở những vị trí khác nhau thì số lượng kết quả theo dõi có đồng đều nhau hay không.
+
+```{r, echo=TRUE, eval=FALSE}
+# gọi function ra, đưa tham số là các dataset id cần tìm xem có bao nhiêu ngày có đầy đủ giá trị quan sát
+
+# > complete("specdata", id = 18:22)
+
+#    id  full_quan_sat
+# 1 18   84
+# 2 19  353
+# 3 20  124 ← đây chính là kết quả câu 1e) khi tính thủ công
+# 4 21  426
+# 5 22  135
+```
+
+**Cách 1:** Function `complete_1` tìm full giá trị quan sát, <mark>xây dựng theo cách tiếp cận `for` loop và gom lại thành data frame master</mark>, sau đó subset ra, tìm giá trị `full_quan_sat` bằng phép toán giữa các chỉ tiêu với `NA` (tương tự cách 1 ở câu 1e)
+
+```{r}
+complete_1 <- function(directory = "specdata", id){
+    
+    files_list <- list.files(directory, full.names = TRUE)
+    tmp <- files_list[id] # Đây là chỗ tùy chọn
+    tmp_working <- vector(mode = "list", length = length(tmp))
+    
+    for (i in seq_along(tmp)) { 
+        tmp_working[[i]] <- read.csv(tmp[[i]]) # Kiểu subset của tmp_working là dạng list tách ra dạng bảng
+    }
+    
+    output_tmp_working <- do.call(rbind, tmp_working)
+    
+    y <- unique(output_tmp_working$ID) # Đếm số lần xuất hiện (number of occurences for each unique value)
+    
+    extract_data <- data.frame(matrix(ncol = 2, nrow = 0))
+    
+    for (uu in seq_along(y)) { 
+        happy <- output_tmp_working[which(output_tmp_working[, "ID"] == y[uu]),]
+        
+        sul <- happy[,2]
+        nit <- happy[,3]
+        tot <- sul + nit
+        sum(is.na(tot)) #Hàm đếm missing values trong vector  
+        nobs <- length(tot) - sum(is.na(tot))
+        extract_data <- rbind(extract_data, c(y[uu], nobs))
+    }
+    x <- c("cam_bien", "full_quan_sat")
+    colnames(extract_data) <- x
+    return(extract_data)
+    
+}
+```
+
+**Test function `complete_1`**
+
+```{r}
+complete_1("specdata", id = 10:20)
+```
+
+**Cách 2:** Function `complete_2` tìm full giá trị quan sát, <mark>xây dựng theo cách tiếp cận sử dụng hàm `apply`, không gom lại thành data frame master mà chỉ dừng ở list master</mark>, khi cần subset thì gọi ra theo `id`, tìm giá trị `full_quan_sat` theo kiểu trực tiếp (tương tự cách 2 ở câu 1e)
+
+```{r}
+complete_2 <- function(directory = "specdata", id){
+    
+    # import dataset
+    files_list <- list.files(directory, full.names = TRUE,
+                             pattern = ".csv") # set này để chọn riêng file .csv
+    
+    tmp_working <- lapply(files_list[id], read.csv) 
+    
+    # FUNCTION
+    check_full_quan_sat <- function(check_id){
+        
+        raw <- tmp_working[[check_id]] 
+        
+        check_1 <- which(!is.na(raw$nitrate))
+        check_2 <- which(!is.na(raw$sulfate))
+        
+        ra_soat <- intersect(check_1, check_2)
+        
+        length(ra_soat)
+    }
+    
+    # sửa lại chỗ sapply seq_along(tmp_working)
+    full_quan_sat <- sapply(seq_along(tmp_working), check_full_quan_sat)
+    
+    full_quan_sat <- as.data.frame(full_quan_sat)
+    
+    ket_qua <- cbind(cam_bien = id, full_quan_sat)
+    
+    return(ket_qua)
+    
+}
+```
+
+**Test function `complete_2`**
+
+```{r}
+complete_2("specdata", id = 10:20)
+```
+
+<span style="color: blue">**Kết quả từ cả hai function này trả về là y chang nhau.**</span>
+
+```{r}
+identical(complete_1("specdata", id = 1:332),
+          complete_2("specdata", id = 1:332))
+```
+
+<span style="color: red">**Xem thêm so sánh tốc độ hai function: `https://www.tuhocr.com/blog/danh-gia-toc-do-function`**</span>
+
+### <span style="color: blue">**Câu 3**</span>
+
+Xây dựng function trả về kết quả `mean` ở từng chỉ tiêu theo giá trị `id` của mỗi dataset.
+
+```{r}
+pollutantmean <- function(directory = "specdata", pollutant, id = 1:332) {
+    
+    # import dataset
+    files_list <- list.files(directory, full.names = TRUE,
+                             pattern = ".csv") # set này để chọn riêng file .csv
+    
+    tmp_working <- lapply(files_list[id], read.csv) 
+    
+    # gom chung 1 dataset
+    output_tmp_working <- do.call(rbind, tmp_working)
+    mean(output_tmp_working[, pollutant], na.rm = TRUE)
+}
+```
+
+**Test function `pollutantmean`**
+
+```{r}
+pollutantmean("specdata", "nitrate", 3:10)
+pollutantmean("specdata", "nitrate", 20)
+pollutantmean("specdata", "sulfate", 1:332)
+pollutantmean("specdata", "sulfate", c(1:20, 50:110))
+```
+
+### <span style="color: blue">Câu 4</span>
+
+Liệt kê giá trị `max` và `min` ở cả 2 chỉ tiêu ở các dãy cảm biến bất kỳ. 
+
+**Đầu tiên, ta tận dụng lại hàm `filter_theo_chi_tieu_super`, đã xây dựng trước đây** 
+
+**`https://www.tuhocr.com/huong-dan-cai-tien-function-step-by-step`**
+
+***Có hai cải tiến khi kế thừa function đã có và áp dụng trong bài này:***
+
+* <span style="color: red">Khi áp dụng vào trong dataset này, thì cần lưu ý chỗ cột `Date` ở dataset `001.csv` nó theo cấu trúc `MM/DD/YYYY` khác biệt so với cấu trúc `YYYY-MM-DD` ở các dataset còn lại. Do đó khi import vảo, chỗ convert qua `date-vector` thì cần có hàm `if-else` để nhận biết chuyện này để convert cho đủ cả các trường hợp có format ban đầu `Date` khác nhau.</span>
+
+* <span style="color: red">Chỉ tiêu `nitrate` có một số dataset hoàn toàn không có bất kỳ giá trị nào, vì vậy khi tìm `min` hay `max` sẽ xuất hiện *warning message* mặc dù vẫn trả ra kết quả cho những dataset còn lại. Để thuận tiện thì ta dùng lệnh `suppressWarnings()` để tắt các thông báo này.
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+
+## FUNCTION_MIN_CHI_TIEU
+
+"%min_chi_tieu%" <- function(a, b){
+    
+    # import dataset
+    files_list <- list.files(b, full.names = TRUE)
+    
+    tmp_working <- vector(mode = "list", length = length(files_list))
+    
+    for(i in seq_along(files_list)) { 
+        tmp_working[[i]] <- read.csv(files_list[i])
+        tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%Y-%m-%d")
+        if(any(is.na(tmp_working[[i]]$Date))){
+            tmp_working[[i]] <- read.csv(files_list[i])
+            tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%m/%d/%Y")    
+        }
+        
+    }
+    # find min value     
+    
+    ket_qua_min <- data.frame()
+    
+    for(min_i in seq_along(tmp_working)) { 
+        
+        if(chi_tieu %in% names(tmp_working[[min_i]])){
+            
+            gia_tri_min <- suppressWarnings(min(get(chi_tieu, tmp_working[[min_i]]), na.rm = TRUE))
+            
+            ### trích xuất ra vị trí index
+            vi_tri <- which(get(chi_tieu, tmp_working[[min_i]]) == gia_tri_min)
+            
+            ket_qua_min <- bind_rows(ket_qua_min, tmp_working[[min_i]][vi_tri, ])
+        }
+        next
+    }
+    #### THÊM DÒNG THÔNG BÁO
+    print(paste("Kết quả lọc theo giá trị MIN của", chi_tieu, "ở folder", b, "là:"))
+    #### TRẢ KẾT QUẢ
+    return(ket_qua_min)    
+}    
+
+
+## FUNCTION_MAX_CHI_TIEU
+
+"%max_chi_tieu%" <- function(a, b){
+    
+    # import dataset
+    files_list <- list.files(b, full.names = TRUE)
+    
+    tmp_working <- vector(mode = "list", length = length(files_list))
+    
+    for(i in seq_along(files_list)) { 
+        tmp_working[[i]] <- read.csv(files_list[i])
+        tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%Y-%m-%d")
+        if(any(is.na(tmp_working[[i]]$Date))){
+            tmp_working[[i]] <- read.csv(files_list[i])
+            tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%m/%d/%Y")    
+        }
+    }
+    # find max value     
+    
+    ket_qua_max <- data.frame()
+    
+    for(max_i in seq_along(tmp_working)) { 
+        
+        if(chi_tieu %in% names(tmp_working[[max_i]])){
+            
+            gia_tri_max <- suppressWarnings(max(get(chi_tieu, tmp_working[[max_i]]), na.rm = TRUE))
+            
+            ### trích xuất ra vị trí index
+            vi_tri <- which(get(chi_tieu, tmp_working[[max_i]]) == gia_tri_max)
+            
+            ket_qua_max <- bind_rows(ket_qua_max, tmp_working[[max_i]][vi_tri, ])
+        }
+        next
+    }
+    #### THÊM DÒNG THÔNG BÁO
+    print(paste("Kết quả lọc theo giá trị MAX của", chi_tieu, "ở folder", b, "là:"))
+    #### TRẢ KẾT QUẢ
+    return(ket_qua_max)    
+}
+
+
+### FUNCTION RANGE CHỈ TIÊU
+
+"%range_chi_tieu%" <- function(a, b){
+    
+    # import dataset
+    files_list <- list.files(b, full.names = TRUE)
+    
+    tmp_working <- vector(mode = "list", length = length(files_list))
+    
+    for(i in seq_along(files_list)){ 
+        tmp_working[[i]] <- read.csv(files_list[i])
+        tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%Y-%m-%d")
+        if(any(is.na(tmp_working[[i]]$Date))){
+            tmp_working[[i]] <- read.csv(files_list[i])
+            tmp_working[[i]]$Date <- as.Date(tmp_working[[i]]$Date, format = "%m/%d/%Y")    
+        }
+    }
+    
+    # tìm trong khoảng
+    
+    ket_qua_range <- data.frame()
+    
+    for(range_i in seq_along(tmp_working)){
+        
+        if(chi_tieu %in% names(tmp_working[[range_i]])) {
+            
+            ket_qua_tim_trong_khoang <- which(get(chi_tieu, tmp_working[[range_i]]) >= a[1] & 
+            get(chi_tieu, tmp_working[[range_i]]) <= a[2])
+            
+            ket_qua_range <- bind_rows(ket_qua_range, tmp_working[[range_i]][ket_qua_tim_trong_khoang, ])
+        }
+        next
+    }
+    print(paste("Kết quả lọc trong khoảng, từ", a[1], "đến", a[2], "của", chi_tieu, "ở folder", b, "là:"))
+    return(ket_qua_range ) 
+} 
+
+### function chung
+
+"%chi_tieu%" <- function(a, b){
+    
+    if(length(a) == 1){
+        switch(a, 
+               "min" = a %min_chi_tieu% b, 
+               "max" = a %max_chi_tieu% b)
+    } else {
+        a %range_chi_tieu% b
+    }
+    
+}  
+
+### FUNCTION FINAL
+
+filter_theo_chi_tieu_enhanced <- function(chi_tieu = "mercury", a = "min", b = "2007"){
+    chi_tieu <<- chi_tieu ### sử dụng super assign
+    a %chi_tieu% b
+}
+
+##################
+
+filter_theo_chi_tieu_super <- function(chi_tieu = "mercury", a = "min", b = "2007") {
+    
+    data_1 <- filter_theo_chi_tieu_enhanced(chi_tieu, a, b)
+    if(length(data_1) != 0) {
+        
+        kq_sort <- sort(names(data_1)[!(names(data_1) %in% c("Date", "ID"))])
+        
+        ok <- c("Date", kq_sort, "ID")
+        
+        data_2 <- data_1[ok]
+        
+        return(data_2)  
+        
+    }
+    
+    return("Không có kết quả tìm kiếm")
+    
+}
+```
+
+<span style="color: blue">**Để thêm chức năng tìm theo `id`** thì thay vì ta đưa câu lệnh vào trong hàm `filter_theo_chi_tieu_super` thì sẽ gây cồng kềnh. Ta sẽ làm 1 hàm mới là `filter_theo_id`, rồi *nested* hàm `filter_theo_chi_tieu_super` vào thì sẽ tiện hơn.</span>
+
+```{r}
+filter_theo_id <- function(chi_tieu = "sulfate", a = "max", b = "specdata", id_can_tim) {
+    
+    data_filter <- filter_theo_chi_tieu_super(chi_tieu, a, b)
+    
+    vi_tri <- which(get("ID", data_filter) %in% id_can_tim)
+    
+    ket_qua_chuan <- data_filter[vi_tri, ]
+    
+    return(ket_qua_chuan)
+}
+```
+
+<span style="color: blue">**Test hàm `filter_theo_id`**</span>
+
+```{r}
+filter_theo_id(chi_tieu = "sulfate", a = "max", b = "specdata", id = 280:332)
+filter_theo_id(chi_tieu = "nitrate", a = "min", b = "specdata", id = 280:332)
+filter_theo_id(chi_tieu = "nitrate", a = c(0.667, 0.700), b = "specdata", id = c(12:14, 20:22))
+```
+
+**Thực tế ở thời điểm này chúng ta có thể dùng lệnh `merge()` để ghép chung các dataset từ kết qua filter theo từng chỉ tiêu, tuy nhiên như vậy cũng còn hơi thủ công, do đó ta sẽ đưa lệnh `merge()` vào trong function mới là `filter_theo_id_so_sanh` để kết quả trả về sẽ đúng format mong muốn.**
+
+```{r}
+filter_theo_id_so_sanh <- function(chi_tieu_1, 
+                                   chi_tieu_2,
+                                   a, b, id_can_tim) {
+    
+    ok_1 <- filter_theo_id(chi_tieu = chi_tieu_1, a, b, id_can_tim)
+    ok_2 <- filter_theo_id(chi_tieu = chi_tieu_2, a, b, id_can_tim)
+    
+    if(length(a) == 1) {
+        ok_1$note <- paste(a[1], chi_tieu_1)
+        ok_2$note <- paste(a[1], chi_tieu_2)
+    } else {  
+        ok_1$note <- paste("from", a[1], "to", a[2], chi_tieu_1)
+        ok_2$note <- paste("from", a[1], "to", a[2], chi_tieu_2)
+    }
+    
+    ok_1$sep <- "|"
+    
+    ket_qua_so_sanh <- merge(ok_1, ok_2, by = "ID", all = TRUE)
+  
+    return(ket_qua_so_sanh)
+}
+```
+
+<span style="color: blue">**Test hàm `filter_theo_id_so_sanh`**</span>
+
+```{r}
+options(digits = 2)
+options(width = 200)
+filter_theo_id_so_sanh(chi_tieu_1 = "sulfate", chi_tieu_2 = "nitrate", a = "max", b = "specdata", id_can_tim = 280:300)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
