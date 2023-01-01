@@ -257,10 +257,11 @@ https://rpubs.com/tuhocr/projectcdr
 CHECK: OK 
 https://rpubs.com/tanduc307/projectcdr-solution
 
-69. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 2)			EDIT
+69. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 2)			XONG
 CHECK: OK 
 
-70. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 3)			
+70. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 3)			EDIT	
+CHECK: OK 	
 
 71. CÂU CHUYỆN TIẾP THEO					
 

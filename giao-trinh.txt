@@ -44,4 +44,6 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 	3. Leek, J. (2016). How to be a modern scientist. Leanpub.
 	4. Peng, R. D., & Matsui, E. (2018). The Art of Data Science. Leanpub.
 	5. Peng, R. D., & Parker, H. (2016). Conversations On Data Science. Leanpub.
+	6. Peng, R. D. (2020). Statistical Computing (Biostatistics 140.776). https://rdpeng.github.io/Biostat776/
+		• Data science pipeline https://rdpeng.github.io/Biostat776/lecture-the-data-science-pipeline.html
 
