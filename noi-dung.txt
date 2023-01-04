@@ -1,4 +1,199 @@
-KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU | CHUYÊN ĐỀ LẬP TRÌNH XÂY DỰNG HÀM - CODING IN R"
+KHÓA HỌC: "HƯỚNG DẪN CÁCH VẼ ĐỒ THỊ | DATA VISUALIZATION IN R"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+=========================================================================
+	NỘI DUNG						TIẾN ĐỘ
+=========================================================================
+
+01. TRỰC QUAN HÓA ĐỒ THỊ TRONG R				...
+	• Lịch sử R | Ngữ pháp đồ thị
+	
+02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R-BASE GRAPHIC			...
+https://rstudio-pubs-static.s3.amazonaws.com/7953_4e3efd5b9415444ca065b1167862c349.html
+03. CÁC LOẠI ĐỒ THỊ PHỔ BIẾN					...
+
+
+36. CÁC LỆNH CƠ BẢN 
+
+with()
+
+
+pairs()
+
+sample() 
+
+
+
+04. ĐỒ THỊ KHÔNG GIAN SPATIAL STATISTICS
+
+05. ĐỒ THỊ VẼ NHÁP VÀ ĐỒ THỊ HOÀN CHỈNH
+
+06. CÁCH SAVE ĐỒ THỊ TỪ R-BASE GRAPHIC
+
+FONT
+windowsFonts(A = windowsFont("Times New Roman"))
+thay đổi font đồ thị, nói rõ hơn lệnh windowsFonts
+install.packages("extrafont")
+
+library(xkcd)
+vignette("xkcd-intro")
+
+CÁCH SAVE PLOT CHỨA TIẾNG VIỆT
+png
+pdf
+cairo_pdf()
+
+
+07. HƯỚNG DẪN VẼ ĐỒ THỊ SỬ DỤNG LATTICE PACKAGE
+
+
+
+07. HƯỚNG DẪN VẼ ĐỒ THỊ SỬ DỤNG GGPLOT2 PACKAGE
+
+
+07. HƯỚNG DẪN VẼ ĐỒ THỊ SỬ DỤNG GGPUBR PACKAGE
+
+
+Vẽ đồ thị nhiều đường, TRÊN NHIỀU TRỤC
+RStudio ggplot2 tutorial (multi-line timeline)
+
+
+
+***49. IMPUTATION TRONG R
+
+
+
+BOD COD ĐỒ THỊ TIME SERIES
+
+COMPOST SERIES
+
+32. HEATMAP
+33. CLUSTER
+
+
+VẼ CÂY PHÁT SINH LOÀI
+
+
+
+E02. CÁCH VẼ CÂY THƯ MỤC
+
+
+
+CASE-STUDY:
+C01. BÀI TẬP AIR QUALITY
+C02. BÀI TẬP PLOTTING
+C03. BÀI TẬP STORM
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+KHÓA HỌC: "XÁC SUẤT THỐNG KÊ CƠ BẢN TRONG R"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+=========================================================================
+	NỘI DUNG						TIẾN ĐỘ
+=========================================================================
+
+
+*** 49. CÁC LỆNH THỐNG KÊ CƠ BẢN
+
+...................
+
+
+E05. COMPLEX VECTOR
+
+30. ARRAY MẢNG
+SCALAR VÔ HƯỚNG
+
+LỆNH DATA.TABLE KHI XỬ LÝ BIG DATA
+
+
+FACTOR: ĐỪNG MIXED UP (TRANG 207 DUMMIES)
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+KHÓA HỌC: "HƯỚNG DẪN SẮP XẾP DỮ LIỆU | DATA WRANGLING IN R"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+=========================================================================
+	NỘI DUNG						TIẾN ĐỘ
+=========================================================================
+
+
+***44. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
+
+***45. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
+
+
+
+PACKAGE STRINGR
+
+
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+KHÓA HỌC: "HƯỚNG DẪN VIẾT BÁO CÁO KHẢ LẬP | REPRODUCIBLE REPORT IN R"
+BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+ĐĂNG KÝ: tuhocr.com@gmail.com
+
+=========================================================================
+	NỘI DUNG						TIẾN ĐỘ
+=========================================================================
+
+LÀM ĐƯỢC
+
+01. R MARKDOWN, GITHUB		...
+	
+02. CACHED CHO NHANH			...
+
+LÀM ĐẸP
+
+HƯỚNG DẪN HIGHLIGHT CODE
+
+
+ECOSYSTEM AUTOMATE QUY TRÌNH NGHIÊN CỨU
+
+CASE STUDY BÀI BÁO HẤP PHỤ XỬ LÝ R CHUYỂN THÀNH PDF
+
+=========================================================================
+
+
+
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU DÂN CƯ
+
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NÔNG NGHIỆP
+
+CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+========================================================================
+
+KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU | CODING IN R"
 BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
@@ -260,68 +455,11 @@ https://rpubs.com/tanduc307/projectcdr-solution
 69. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 2)			XONG
 CHECK: OK 
 
-70. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 3)			EDIT	
+70. GIẢI BÀI TẬP CHUYÊN ĐỀ CODING IN R (PHẦN 3)			XONG	
 CHECK: OK 	
 
-71. CÂU CHUYỆN TIẾP THEO					
-
-chưa nói hết được về rmarkdown, notepad++, dplyr, lubridate, swirl..., github
-
-VẼ CÁI SƠ ĐỒ BỰ NHA!!! STEEP LEARNING.
-
-ĐẾN THỜI ĐIỂM NÀY THÌ CÁC BẠN CHÍNH THỨC BẮT ĐẦU VÀO CHUYỆN TỰ HỌC R.
-
-72. SURVEY
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+71. CÂU CHUYỆN TIẾP THEO					XONG	
+CHECK: OK 				
 
 ========================================================================
 
@@ -330,263 +468,3 @@ VẼ CÁI SƠ ĐỒ BỰ NHA!!! STEEP LEARNING.
 ========================================================================
 
 ========================================================================
-
-KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU | TRỰC QUAN HÓA DỮ LIỆU TRONG R - DATA VISUALIZATION IN R"
-BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
-ĐĂNG KÝ: tuhocr.com@gmail.com
-
-=========================================================================
-	NỘI DUNG						TIẾN ĐỘ
-=========================================================================
-
-01. GIỚI THIỆU R VÀ KHÓA HỌC DATA VISUALIZATION IN R		...
-	
-02. R BASE, LACTICCE, GGPLOT2, GGPUBR				...
-
-
-
-
-
-
-
-========================================================================
-
-========================================================================
-
-========================================================================
-
-========================================================================
-
-
-
-
-
-
-KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU | BÁO CÁO KHẢ LẬP TRONG R - REPRODUCIBLE REPORT IN R"
-BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
-ĐĂNG KÝ: tuhocr.com@gmail.com
-
-=========================================================================
-	NỘI DUNG						TIẾN ĐỘ
-=========================================================================
-
-LÀM ĐƯỢC
-
-01. R MARKDOWN, GITHUB		...
-	
-02. CACHED CHO NHANH			...
-
-LÀM ĐẸP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-HƯỚNG DẪN HIGHLIGHT CODE
-
-
-
-
-
-
-
-
-
-
-
-========================================================================
-61. BASE PLOT 
-
-FONT
-windowsFonts(A = windowsFont("Times New Roman"))
-thay đổi font đồ thị, nói rõ hơn lệnh windowsFonts
-install.packages("extrafont")
-
-library(xkcd)
-vignette("xkcd-intro")
-
-CÁCH SAVE PLOT CHỨA TIẾNG VIỆT
-png
-pdf
-cairo_pdf()
-
-62. BÀI TẬP
-
-
-
-
-
-
-CHUYÊN ĐỀ CÁC LỆNH THỐNG KÊ CƠ BẢN
-
-
-
-
-
-=======================================================================
-
-CÁC LỆNH CỦNG CỐ KỸ NĂNG R
-=======================================================================
-
-***44. XỬ LÝ DỮ LIỆU NGÀY THÁNG VỚI PACKAGE LUBRIDATE
-
-***45. XỬ LÝ DỮ LIỆU DẠNG BẢNG VỚI PACKAGE DPLYR
-
-
-
-
-
-
-
-
-=======================================================================
-
-
-
-*** 47. RANDOM NUMBER
-
-36. CÁC LỆNH CƠ BẢN 
-
-with(), match(), transform(), within(), table() bảng tần số
-
-sample() 
-
-
-34. E04. CÁCH ĐỌC LARGE DATASET VÀ TÍNH TOÁN RAM
-
-mẹo vặt để xếp thứ tự dataset
-https://youtu.be/4gJaFNEbxrk
-
-
-
-
-
-
-
-
-
-
-
-43. LATTICE PLOT
-
-43. BÀI TẬP
-=========================================================================
-
-
-44. GGPLOT2 
-
-43. BÀI TẬP
-=======================================================================
-
-
-
-***49. IMPUTATION TRONG R
-
-*** 49. CÁC LỆNH THỐNG KÊ CƠ BẢN
-
-=========================================================================
-
-
-BOD COD ĐỒ THỊ TIME SERIES
-
-COMPOST SERIES
-
-
-========================================================================
-
-CASE-STUDY:
-C01. BÀI TẬP AIR QUALITY
-C02. BÀI TẬP PLOTTING
-C03. BÀI TẬP STORM
-
-CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU DÂN CƯ
-
-CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NÔNG NGHIỆP
-
-CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
-
-=========================================================================
-
-ECOSYSTEM AUTOMATE QUY TRÌNH NGHIÊN CỨU
-
-CASE STUDY BÀI BÁO HẤP PHỤ XỬ LÝ R CHUYỂN THÀNH PDF
-
-
-PACKAGE STRINGR
-
-========================================================================
-
-
-KHÓA HỌC: "CỦNG CỐ KỸ NĂNG R ĐỂ XỬ LÝ DỮ LIỆU"
-
-FACTOR: ĐỪNG MIXED UP (TRANG 207 DUMMIES)
-
-MATRIX: CÁC PHÉP TÍNH TRÊN MA TRẬN
-
-E05. COMPLEX VECTOR
-
-30. ARRAY MẢNG
-SCALAR VÔ HƯỚNG
-
-
-E02. CÁCH VẼ CÂY THƯ MỤC
-
-LỆNH DATA.TABLE KHI XỬ LÝ BIG DATA
-
-
-
-
-
-DEBUG
-NÓI VỀ R KHI GẶP LỖI LÀ HƯ CẢ SESSION
-CÁCH STOP KHI LỆNH LỖI
-
-28. RPUB
-29. GITHUB
-30. RMARKDOWN
-
-32. HEATMAP
-33. CLUSTER
-
-========================================================================
-
-
-KHÓA HỌC: "HỌC XÁC SUẤT THỐNG KÊ VỚI PHẦN MỀM R"
-
-
-
-========================================================================
-
-KHÓA HỌC: "ỨNG DỤNG R TRONG PHÂN TÍCH DỮ LIỆU"
-
-
-
-========================================================================
-
-KHÓA HỌC: "NÂNG CAO KỸ NĂNG R ĐỂ XỬ LÝ DỮ LIỆU"
-
-
-
-========================================================================
-
-
-KHÓA HỌC: TRỰC QUAN HÓA DỮ LIỆU VỚI GGPLOT2
-
-Vẽ đồ thị nhiều đường
-RStudio ggplot2 tutorial (multi-line timeline)
-
-
-
-
