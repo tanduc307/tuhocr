@@ -16,7 +16,7 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 *	5. Douglas, A., Roos, D., Mancini, F., Couto, A., & Lusseau, D. (2022). An Introduction to R. https://intro2r.com/
 		• Bao quát R markdown và version control GitHub
 	6. Chambers, J. M. (2008). Software for Data Analysis: Programming with R. Springer New York. 
-		• Tài liệu do tác giả R viết
+		• Tài liệu do tác giả S viết
 *	7. Peng, R. D. (2022). R Programming for Data Science. Leanpub.
 *	8. Peng, R. D. (2020). Exploratory Data Analysis with R. Leanpub.
 
@@ -35,8 +35,20 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 		• Hướng dẫn sử dụng R markdown
 	3. Peng, R. D. (2019). Report Writing for Data Science in R. Leanpub.
 
+
+
+
+
+
+===================================================================	
+	[D] XÁC SUẤT THỐNG KÊ
+===================================================================
+
+
+
+
 ===================================================================		
-	[D] DATA SCIENCE
+	[E] DATA SCIENCE
 ===================================================================		
 *	1. Johns Hopkins University. (2022). Data Science Specialization. Coursera. https://www.coursera.org/specializations/jhu-data-science
 *	2. Leek, J. (2015). The Elements of Data Analytic Style. Leanpub.
