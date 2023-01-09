@@ -1,5 +1,5 @@
 KHÓA HỌC: "HƯỚNG DẪN CÁCH VẼ ĐỒ THỊ | DATA VISUALIZATION IN R"
-BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
 =========================================================================
@@ -94,7 +94,7 @@ C03. BÀI TẬP STORM
 ========================================================================
 
 KHÓA HỌC: "XÁC SUẤT THỐNG KÊ CƠ BẢN TRONG R"
-BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
 =========================================================================
@@ -153,7 +153,7 @@ PACKAGE STRINGR
 ========================================================================
 
 KHÓA HỌC: "HƯỚNG DẪN VIẾT BÁO CÁO KHẢ LẬP | REPRODUCIBLE REPORT IN R"
-BIÊN SOẠN: MR. DUC NGUYEN (MASTER OF BIOTECHNOLOGY | ENGINEER) FOUNDER OF TUHOCR.COM
+BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
 =========================================================================
