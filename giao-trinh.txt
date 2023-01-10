@@ -21,7 +21,7 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 *	8. Peng, R. D. (2020). Exploratory Data Analysis with R. Leanpub.
 
 ===================================================================	
-	[B] HƯỚNG DẪN R DỰA TRÊN TIDYVERSE PACKAGE
+	[B] DATA WRANGLING
 ===================================================================		
 **	1. Wickham, H., & Grolemund, G. (2022). R for Data Science. https://r4ds.had.co.nz/index.html
 		• Cách tiếp cận tập trung ở tabular data. Đi từ ví dụ minh họa plotting sau đó mới quay về lệnh căn bản.
@@ -35,20 +35,26 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 		• Hướng dẫn sử dụng R markdown
 	3. Peng, R. D. (2019). Report Writing for Data Science in R. Leanpub.
 
-
-
-
-
+===================================================================	
+	[D] DATA VISUALIZATION
+===================================================================
+**	1. Wickham, H. (2009). Ggplot2. Springer New York. https://ggplot2-book.org/
+***	2. Kassambara, A. (2013). Guide to Create Beautiful Graphics in R (2nd ed.). STHDA.
+		• Hướng dẫn về ggplot2.
+***	3. Kassambara, A. (2017). R Graphics Essentials for Great Data Visualization (1st ed.). STHDA.
+		• Hướng dẫn R-base graphic, lattice package và ggplot2.
+***	4. Jones, E., Harden, S., & Crawley, M. J. (2023). The R book (3rd edition). Wiley.
+		• Hướng dẫn R-base graphic và lattice package. Nên đọc luôn phiên bản 2nd edition.
+*	5. Wilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Springer.
+		• Tài liệu gốc về data visualization cho ggplot2 phát triển sau này.
 
 ===================================================================	
-	[D] XÁC SUẤT THỐNG KÊ
+	[E] XÁC SUẤT THỐNG KÊ
 ===================================================================
-
-
-
+**	1. Crawley, M. J. (2015). Statistics—An Introduction in R (2nd edition) (2nd ed.). Wiley.
 
 ===================================================================		
-	[E] DATA SCIENCE
+	[F] DATA SCIENCE
 ===================================================================		
 *	1. Johns Hopkins University. (2022). Data Science Specialization. Coursera. https://www.coursera.org/specializations/jhu-data-science
 *	2. Leek, J. (2015). The Elements of Data Analytic Style. Leanpub.
@@ -56,6 +62,30 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 	3. Leek, J. (2016). How to be a modern scientist. Leanpub.
 	4. Peng, R. D., & Matsui, E. (2018). The Art of Data Science. Leanpub.
 	5. Peng, R. D., & Parker, H. (2016). Conversations On Data Science. Leanpub.
-	6. Peng, R. D. (2020). Statistical Computing (Biostatistics 140.776). https://rdpeng.github.io/Biostat776/
+*	6. Peng, R. D. (2020). Statistical Computing (Biostatistics 140.776). https://rdpeng.github.io/Biostat776/
 		• Data science pipeline https://rdpeng.github.io/Biostat776/lecture-the-data-science-pipeline.html
+*	7. Kassambara, Alboukadel. Data science. https://www.datanovia.com/en/lessons/
+	8. Series sách về Use R! https://www.springer.com/series/6991
+	9. Kassambara, A. (2018). Machine Learning Essentials—Practical Guide in R. STHDA.
+	10. Kassambara, A. (2017). Practical Guide to Cluster Analysis in R - Unsupervised Machine Learning. STHDA.
+	11. Kassambara, A. (2017). Practical Guide to Principal Component Methods in R. STHDA.
+	12. Kassambara, A. (2017). Practical Guide to Principal Component Methods in R - Multivariate Analysis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
