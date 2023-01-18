@@ -5,9 +5,33 @@ BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 =========================================================================
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
+100 VIDEO
+
+PART 1: BASE GRAPHIC
+
+scatter plot: cartesian coordinate system
+
+PART 2: GRID GRAPHIC
+
+
+
+PART 3: LATTICE PACKAGE
+
+
+
+PART 4: GGPLOT2 PACKAGE
+
+
+
+
+PART 5: GGPUBR PACKAGE
+
+
 
 01. TRỰC QUAN HÓA ĐỒ THỊ TRONG R				...
 	• Lịch sử R | Ngữ pháp đồ thị
+
+LÝ THUYẾT ĐỒ THỊ
 	
 02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R-BASE GRAPHIC			...
 https://rstudio-pubs-static.s3.amazonaws.com/7953_4e3efd5b9415444ca065b1167862c349.html

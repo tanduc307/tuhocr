@@ -2,7 +2,7 @@ KHÓA HỌC: "HƯỚNG DẪN SỬ DỤNG R ĐỂ XỬ LÝ DỮ LIỆU"
 BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com | WEBSITE: www.tuhocr.com 
 
-TÀI LIỆU THAM KHẢO:
+TÀI LIỆU THAM KHẢO (APA style):
 Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa học này.
 
 ===================================================================	
@@ -24,7 +24,8 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 	[B] DATA WRANGLING
 ===================================================================		
 **	1. Wickham, H., & Grolemund, G. (2022). R for Data Science. https://r4ds.had.co.nz/index.html
-		• Cách tiếp cận tập trung ở tabular data. Đi từ ví dụ minh họa plotting sau đó mới quay về lệnh căn bản.
+		• Cách tiếp cận tập trung ở tabular data. Đi từ ví dụ minh họa plotting sau đó mới quay về lệnh căn bản.	
+	2. Osborne, J. W. (2013). Best practices in data cleaning. SAGE.
 
 ===================================================================	
 	[C] HƯỚNG DẪN R NÂNG CAO
@@ -35,8 +36,19 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 		• Hướng dẫn sử dụng R markdown
 	3. Peng, R. D. (2019). Report Writing for Data Science in R. Leanpub.
 
+
 ===================================================================	
-	[D] DATA VISUALIZATION
+	[D] SHINY APP
+===================================================================	
+	1. Moon, K.-W. (2016). Learn ggplot2 Using Shiny App. Springer International Publishing. 
+	2.	
+
+https://mastering-shiny.org/
+
+
+
+===================================================================	
+	[E] DATA VISUALIZATION
 ===================================================================
 **	1. Wickham, H. (2009). Ggplot2. Springer New York. https://ggplot2-book.org/
 ***	2. Kassambara, A. (2013). Guide to Create Beautiful Graphics in R (2nd ed.). STHDA.
@@ -47,14 +59,18 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 		• Hướng dẫn R-base graphic và lattice package. Nên đọc luôn phiên bản 2nd edition.
 *	5. Wilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Springer.
 		• Tài liệu gốc về data visualization cho ggplot2 phát triển sau này.
+	6. Maindonald, J., & Braun, W. J. (2010). Data analysis and graphics using R: an example-based approach (3rd ed.). Cambridge University Press.
 
 ===================================================================	
-	[E] XÁC SUẤT THỐNG KÊ
+	[F] XÁC SUẤT THỐNG KÊ
 ===================================================================
 **	1. Crawley, M. J. (2015). Statistics—An Introduction in R (2nd edition) (2nd ed.). Wiley.
+*	2. Little, T. M., & Hills, F. J. (1978). Agricultural experimentation: Design and Analysis. Wiley.
+		• Tài liệu tính thống kê thủ công | https://archive.org/details/thomas-m-1978-agricultural-experimentation
+
 
 ===================================================================		
-	[F] DATA SCIENCE
+	[G] DATA SCIENCE
 ===================================================================		
 *	1. Johns Hopkins University. (2022). Data Science Specialization. Coursera. https://www.coursera.org/specializations/jhu-data-science
 *	2. Leek, J. (2015). The Elements of Data Analytic Style. Leanpub.
