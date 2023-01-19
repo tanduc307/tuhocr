@@ -36,16 +36,11 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 		• Hướng dẫn sử dụng R markdown
 	3. Peng, R. D. (2019). Report Writing for Data Science in R. Leanpub.
 
-
 ===================================================================	
 	[D] SHINY APP
 ===================================================================	
 	1. Moon, K.-W. (2016). Learn ggplot2 Using Shiny App. Springer International Publishing. 
-	2.	
-
-https://mastering-shiny.org/
-
-
+	2. https://mastering-shiny.org/
 
 ===================================================================	
 	[E] DATA VISUALIZATION
@@ -67,7 +62,6 @@ https://mastering-shiny.org/
 **	1. Crawley, M. J. (2015). Statistics—An Introduction in R (2nd edition) (2nd ed.). Wiley.
 *	2. Little, T. M., & Hills, F. J. (1978). Agricultural experimentation: Design and Analysis. Wiley.
 		• Tài liệu tính thống kê thủ công | https://archive.org/details/thomas-m-1978-agricultural-experimentation
-
 
 ===================================================================		
 	[G] DATA SCIENCE
