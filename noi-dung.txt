@@ -1,11 +1,39 @@
-KHÓA HỌC: "HƯỚNG DẪN CÁCH VẼ ĐỒ THỊ | DATA VISUALIZATION IN R"
+KHÓA HỌC: "TRỰC QUAN HÓA DỮ LIỆU | DATA VISUALIZATION IN R"
 BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 ĐĂNG KÝ: tuhocr.com@gmail.com
 
 =========================================================================
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
-100 VIDEO
+
+01. LỊCH SỬ PHÁT TRIỂN GRAPHIC TRONG R				XONG
+
+02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
 
 PART 1: BASE GRAPHIC
 
