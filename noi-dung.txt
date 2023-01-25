@@ -6,11 +6,11 @@ BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-01. LỊCH SỬ PHÁT TRIỂN GRAPHIC TRONG R				XONG
+01. LỊCH SỬ PHÁT TRIỂN GRAPHIC TRONG R				EDIT
 
-02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R
+02. NGUYÊN TẮC VẼ ĐỒ THỊ (PHẦN 1)
 
-
+03. NGUYÊN TẮC VẼ ĐỒ THỊ (PHẦN 2)
 
 
 
@@ -224,6 +224,37 @@ HƯỚNG DẪN HIGHLIGHT CODE
 
 
 ECOSYSTEM AUTOMATE QUY TRÌNH NGHIÊN CỨU
+
+
+
+
+
+
+
+### LATEX TO R
+### extract equation
+# https://datalorax.github.io/equatiomatic/
+install.packages("equatiomatic")
+library("equatiomatic")
+
+extract_eq(fit, use_coefs = TRUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 CASE STUDY BÀI BÁO HẤP PHỤ XỬ LÝ R CHUYỂN THÀNH PDF
 
