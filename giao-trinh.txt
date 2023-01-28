@@ -55,6 +55,10 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 *	5. Wilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Springer.
 		• Tài liệu gốc về data visualization cho ggplot2 phát triển sau này.
 	6. Maindonald, J., & Braun, W. J. (2010). Data analysis and graphics using R: an example-based approach (3rd ed.). Cambridge University Press.
+	7. https://rc2e.com/ R Cookbook
+	8. https://r-graphics.org/ R Graphics Cookbook
+***	9. Murrell, P. (2019). R Graphics (3rd ed.). CRC Press, Taylor & Francis Group.
+	10. https://rkabacoff.github.io/datavis/
 
 ===================================================================	
 	[F] XÁC SUẤT THỐNG KÊ

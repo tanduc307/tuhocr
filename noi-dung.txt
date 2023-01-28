@@ -6,15 +6,27 @@ BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-01. LỊCH SỬ PHÁT TRIỂN GRAPHIC TRONG R				EDIT
+01. LỊCH SỬ PHÁT TRIỂN GRAPHIC TRONG R				XONG
+Giới thiệu khóa học Data visualization in R
 
-02. NGUYÊN TẮC VẼ ĐỒ THỊ (PHẦN 1)
+02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 1)			XONG
+Vẽ đồ thị trong Excel
 
-03. NGUYÊN TẮC VẼ ĐỒ THỊ (PHẦN 2)
+03. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 2)			XONG
+Vẽ đồ thị trong R
+
+04. SO SÁNH HAI ĐỒ THỊ						XONG
+Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
+
+05. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 3)			.
 
 
 
 
+HƯỚNG DẪN CHO GỐC TỌA ĐỘ 0,0
+
+
+Data visualization là gì
 
 
 
