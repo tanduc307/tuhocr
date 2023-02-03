@@ -49,9 +49,9 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 ***	2. Kassambara, A. (2013). Guide to Create Beautiful Graphics in R (2nd ed.). STHDA.
 		• Hướng dẫn về ggplot2.
 ***	3. Kassambara, A. (2017). R Graphics Essentials for Great Data Visualization (1st ed.). STHDA.
-		• Hướng dẫn R-base graphic, lattice package và ggplot2.
+		• Hướng dẫn R-base graphics, lattice package và ggplot2.
 ***	4. Jones, E., Harden, S., & Crawley, M. J. (2023). The R book (3rd edition). Wiley.
-		• Hướng dẫn R-base graphic và lattice package. Nên đọc luôn phiên bản 2nd edition.
+		• Hướng dẫn R-base graphics và lattice package. Nên đọc luôn phiên bản 2nd edition.
 *	5. Wilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Springer.
 		• Tài liệu gốc về data visualization cho ggplot2 phát triển sau này.
 	6. Maindonald, J., & Braun, W. J. (2010). Data analysis and graphics using R: an example-based approach (3rd ed.). Cambridge University Press.
