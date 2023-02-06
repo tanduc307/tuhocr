@@ -59,6 +59,8 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 	8. https://r-graphics.org/ R Graphics Cookbook
 ***	9. Murrell, P. (2019). R Graphics (3rd ed.). CRC Press, Taylor & Francis Group.
 	10. https://rkabacoff.github.io/datavis/
+	11. https://oscarperpinan.github.io/bookvis/
+	12. https://clauswilke.com/dataviz/
 
 ===================================================================	
 	[F] XÁC SUẤT THỐNG KÊ
@@ -66,6 +68,7 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 **	1. Crawley, M. J. (2015). Statistics—An Introduction in R (2nd edition) (2nd ed.). Wiley.
 *	2. Little, T. M., & Hills, F. J. (1978). Agricultural experimentation: Design and Analysis. Wiley.
 		• Tài liệu tính thống kê thủ công | https://archive.org/details/thomas-m-1978-agricultural-experimentation
+	3. https://github.com/muschellij2/biostatmethods.
 
 ===================================================================		
 	[G] DATA SCIENCE
@@ -84,6 +87,18 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 	10. Kassambara, A. (2017). Practical Guide to Cluster Analysis in R - Unsupervised Machine Learning. STHDA.
 	11. Kassambara, A. (2017). Practical Guide to Principal Component Methods in R. STHDA.
 	12. Kassambara, A. (2017). Practical Guide to Principal Component Methods in R - Multivariate Analysis.
+
+===================================================================		
+	[H] R SERIES
+===================================================================
+	1. The R Series https://www.routledge.com/Chapman--HallCRC-The-R-Series/book-series/CRCTHERSER
+	2. Use R! Series https://www.springer.com/series/6991
+
+===================================================================		
+	[I] OTHERS
+===================================================================
+	1. https://rseek.org/
+	2. https://r-universe.dev/search/
 
 
 

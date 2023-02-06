@@ -280,6 +280,33 @@ CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NÔNG NGHIỆP
 
 CÁCH TẠO DATASET DUMMY CHO XỬ LÝ DỮ LIỆU NGHIÊN CỨU
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHUYÊN ĐỀ DATA MINING https://rattle.togaware.com/
+
+
+
+
+
+
+
+
+
+
+
 ========================================================================
 
 ========================================================================
