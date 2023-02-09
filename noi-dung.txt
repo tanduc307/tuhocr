@@ -6,8 +6,14 @@ BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-01. LỊCH SỬ PHÁT TRIỂN GRAPHIC TRONG R				XONG
+PART G: LÝ THUYẾT ĐỒ THỊ
+
+SECTION 1. GIỚI THIỆU KHÓA HỌC
+
+01. LỊCH SỬ PHÁT TRIỂN GRAPHICS TRONG R				.
 Giới thiệu khóa học Data visualization in R
+
+SECTION 2. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R
 
 02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 1)			XONG
 Vẽ đồ thị trong Excel
@@ -20,6 +26,40 @@ Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
 05. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 3)			.
 
+SECTION 3. ĐỊNH NGHĨA VỀ TRỰC QUAN HÓA DỮ LIỆU
+
+06. DATA VISUALIZATION LÀ GÌ?
+
+07. CÁC LOẠI ĐỒ THỊ CĂN BẢN
+
+
+
+
+
+
+
+
+
+
+
+
+
+PART H: BASE-R GRAPHICS
+
+
+PART I: LATTICE PACKAGE
+
+
+PART J: GGPLOT2 PACKAGE
+
+
+
+
+
+
+
+
+CÁCH VẼ ĐƯỜNG CI 95% SE TRONG TREND LINE SO SÁNH GIỮA BASE R VÀ GGPLOT2
 
 
 
