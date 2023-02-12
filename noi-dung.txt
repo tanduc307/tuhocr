@@ -26,25 +26,29 @@ Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
 05. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 3)			.
 
-SECTION 3. ĐỊNH NGHĨA VỀ TRỰC QUAN HÓA DỮ LIỆU
+SECTION 3. DATA VISUALIZATION LÀ GÌ?
 
-06. DATA VISUALIZATION LÀ GÌ?
-
-07. CÁC LOẠI ĐỒ THỊ CĂN BẢN
-
-
-
-
-
-
-
-
-
-
-
-
+06. DATA VISUALIZATION LÀ GÌ?					.
 
 PART H: BASE-R GRAPHICS
+
+SECTION 4. CÁC LỆNH PLOT THƯỜNG GẶP
+
+07. LỆNH plot() TRONG BASE-R GRAPHICS
+
+08. LỆNH par() 
+
+09. MÀU SẮC
+
+10. TRỤC ĐỒ THỊ
+
+11. LINE TYPE
+
+12. POINT CHARACTER
+
+13. LAYOUT
+
+14. CÁCH SAVE ĐỒ THỊ
 
 
 PART I: LATTICE PACKAGE

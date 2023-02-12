@@ -99,6 +99,9 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 ===================================================================
 	1. https://rseek.org/
 	2. https://r-universe.dev/search/
+	3. Johnson, Paul E. “R Style. An Rchaeological Commentary.,” 2022. https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf
+		• Style viết code trong R
+
 
 
 
