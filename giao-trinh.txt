@@ -19,6 +19,7 @@ Dấu (*) cho thấy tài liệu đó được đề cập nhiều trong khóa h
 		• Tài liệu do tác giả S viết
 *	7. Peng, R. D. (2022). R Programming for Data Science. Leanpub.
 *	8. Peng, R. D. (2020). Exploratory Data Analysis with R. Leanpub.
+	9. An introduction to R. https://cran.r-project.org/doc/contrib/Lam-IntroductionToR_LHL.pdf
 
 ===================================================================	
 	[B] DATA WRANGLING
