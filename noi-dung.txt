@@ -32,9 +32,49 @@ SECTION 3. DATA VISUALIZATION LÀ GÌ?
 
 PART H: BASE-R GRAPHICS
 
-SECTION 4. CÁC LỆNH PLOT THƯỜNG GẶP
+SECTION 4. CÁC LỆNH VẼ ĐỒ THỊ THƯỜNG GẶP
 
-07. LỆNH PLOT TRONG BASE-R GRAPHICS
+07. PHÂN TÍCH LỆNH PLOT
+
+08. METHOD TRONG LỆNH PLOT
+
+09. PHÂN TÍCH LỆNH PAR()
+
+10. LỆNH PAIR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+09. CODE MẪU VẼ ĐỒ THỊ
+data-to-viz
+
+
+
+
+
+9
 
 08. LỆNH PAR
 
