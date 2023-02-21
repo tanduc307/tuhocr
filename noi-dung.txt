@@ -6,14 +6,8 @@ BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-PART G: LÝ THUYẾT ĐỒ THỊ
-
-SECTION 1. GIỚI THIỆU KHÓA HỌC
-
 01. LỊCH SỬ PHÁT TRIỂN GRAPHICS TRONG R				.
 Giới thiệu khóa học Data visualization in R
-
-SECTION 2. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R
 
 02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 1)			XONG
 Vẽ đồ thị trong Excel
@@ -26,27 +20,23 @@ Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
 05. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 3)			.
 
-SECTION 3. DATA VISUALIZATION LÀ GÌ?
-
 06. DATA VISUALIZATION LÀ GÌ?					.
 
-PART H: BASE-R GRAPHICS
+#############CÁC LỆNH HỆ THỐNG TRONG BASE-R GRAPHICS############
 
-SECTION 4. CÁC LỆNH VẼ ĐỒ THỊ THƯỜNG GẶP
+07. PHÂN TÍCH LỆNH PLOT						.
 
-07. PHÂN TÍCH LỆNH PLOT
+08. METHOD TRONG LỆNH PLOT					.
 
-08. METHOD TRONG LỆNH PLOT
+09. CÁC LOẠI ĐỒ THỊ VÀ LỆNH PLOT TƯƠNG ỨNG
+
+
+
+
 
 09. PHÂN TÍCH LỆNH PAR()
 
 10. LỆNH PAIR
-
-
-
-
-
-
 
 
 
@@ -74,7 +64,6 @@ data-to-viz
 
 
 
-9
 
 08. LỆNH PAR
 
@@ -91,16 +80,6 @@ data-to-viz
 14. CÁCH SAVE ĐỒ THỊ
 
 
-PART I: LATTICE PACKAGE
-
-
-PART J: GGPLOT2 PACKAGE
-
-
-
-
-
-
 
 
 CÁCH VẼ ĐƯỜNG CI 95% SE TRONG TREND LINE SO SÁNH GIỮA BASE R VÀ GGPLOT2
@@ -109,43 +88,9 @@ CÁCH VẼ ĐƯỜNG CI 95% SE TRONG TREND LINE SO SÁNH GIỮA BASE R VÀ GGPLO
 
 HƯỚNG DẪN CHO GỐC TỌA ĐỘ 0,0
 
-
-Data visualization là gì
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
-
-PART 1: BASE GRAPHIC
-
 scatter plot: cartesian coordinate system
-
-PART 2: GRID GRAPHIC
-
-
-
-PART 3: LATTICE PACKAGE
-
-
-
-PART 4: GGPLOT2 PACKAGE
-
-
 
 
 PART 5: GGPUBR PACKAGE
