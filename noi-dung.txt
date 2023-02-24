@@ -41,13 +41,9 @@ Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
 
 
+LỆNH WITH
 
-
-
-
-
-
-
+LỆNH 
 
 
 
