@@ -6,7 +6,7 @@ BIÊN SOẠN: MR. DUC NGUYEN | FOUNDER OF TUHOCR.COM
 	NỘI DUNG						TIẾN ĐỘ
 =========================================================================
 
-01. LỊCH SỬ PHÁT TRIỂN GRAPHICS TRONG R				.
+01. LỊCH SỬ PHÁT TRIỂN GRAPHICS TRONG R				XONG
 Giới thiệu khóa học Data visualization in R
 
 02. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 1)			XONG
@@ -18,17 +18,64 @@ Vẽ đồ thị trong R
 04. SO SÁNH HAI ĐỒ THỊ						XONG
 Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
-05. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 3)			.
+05. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 3)			XONG
 
-06. DATA VISUALIZATION LÀ GÌ?					.
+06. DATA VISUALIZATION LÀ GÌ?					XONG
 
 #############CÁC LỆNH HỆ THỐNG TRONG BASE-R GRAPHICS############
 
-07. PHÂN TÍCH LỆNH PLOT						.
+07. PHÂN TÍCH LỆNH PLOT						XONG
 
-08. METHOD TRONG LỆNH PLOT					.
+08. METHOD TRONG LỆNH PLOT					XONG
+
+09. CÁCH TẠO RANDOM DATASET ĐỂ VẼ ĐỒ THỊ			CODE R
+
+
+
+
+
+
+09. CÓ BAO			CODE R
+
+
+
 
 09. CÁC LOẠI ĐỒ THỊ VÀ LỆNH PLOT TƯƠNG ỨNG
+
+
+Abbreviations of R Commands Explained: 250+ R Abbreviations
+
+
+
+
+
+
+các lệnh trong par
+https://studyr.netlify.app/river/Murrell%20-%202019%20-%20R%20Graphics.pdf#page=76
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10. POINTS IN R
+https://stat.ethz.ch/R-manual/R-patched/library/graphics/html/points.html
+
+
+
+
+
+
+
+
 
 
 
@@ -48,7 +95,7 @@ LỆNH
 
 
 
-
+LOW LEVEL FUNCTION CỦA PLOT
 
 
 
