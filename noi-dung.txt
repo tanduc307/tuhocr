@@ -15,6 +15,8 @@ Vẽ đồ thị trong Excel
 03. NGUYÊN TẮC VẼ ĐỒ THỊ TRONG R (PHẦN 2)			XONG
 Vẽ đồ thị trong R
 
+https://rpubs.com/tuhocr/regression-in-r
+
 04. SO SÁNH HAI ĐỒ THỊ						XONG
 Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
@@ -28,14 +30,22 @@ Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
 08. METHOD TRONG LỆNH PLOT					XONG
 
-09. CÁCH TẠO RANDOM DATASET ĐỂ VẼ ĐỒ THỊ			CODE R
+09. CÁC LOẠI ĐỒ THỊ VÀ LỆNH PLOT TƯƠNG ỨNG
 
 
 
 
 
 
-09. CÓ BAO			CODE R
+
+
+
+10. CÁCH TẠO RANDOM DATASET ĐỂ VẼ ĐỒ THỊ			CODE R
+
+11. CÁCH SORT ĐỒ THỊ TRONG R
+
+
+
 
 
 
@@ -58,9 +68,10 @@ https://studyr.netlify.app/river/Murrell%20-%202019%20-%20R%20Graphics.pdf#page=
 
 
 
-
-
-
+### CHỌN ĐIỂM TRÊN ĐỒ THỊ QQ PLOT
+lệnh identify
+https://stackoverflow.com/questions/18865902/select-points-by-identify-in-multiple-plots
+https://stackoverflow.com/questions/49547679/how-to-identify-a-datapoint-in-a-qqplot
 
 
 
