@@ -30,40 +30,13 @@ Hướng dẫn cách đối chiếu hình ảnh từ hai plot khác nhau
 
 08. METHOD TRONG LỆNH PLOT					XONG
 
+
 09. CÁC LOẠI ĐỒ THỊ VÀ LỆNH PLOT TƯƠNG ỨNG
-
-
-
-
-
-
-
 
 
 10. CÁCH TẠO RANDOM DATASET ĐỂ VẼ ĐỒ THỊ			CODE R
 
 11. CÁCH SORT ĐỒ THỊ TRONG R
-
-
-
-
-
-
-
-09. CÁC LOẠI ĐỒ THỊ VÀ LỆNH PLOT TƯƠNG ỨNG
-
-
-Abbreviations of R Commands Explained: 250+ R Abbreviations
-
-
-
-
-
-
-các lệnh trong par
-https://studyr.netlify.app/river/Murrell%20-%202019%20-%20R%20Graphics.pdf#page=76
-
-
 
 
 
@@ -74,14 +47,8 @@ https://stackoverflow.com/questions/18865902/select-points-by-identify-in-multip
 https://stackoverflow.com/questions/49547679/how-to-identify-a-datapoint-in-a-qqplot
 
 
-
-
-
 10. POINTS IN R
 https://stat.ethz.ch/R-manual/R-patched/library/graphics/html/points.html
-
-
-
 
 
 
