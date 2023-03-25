@@ -1,0 +1,218 @@
+---
+title: Hướng dẫn vẽ heatmap trong R
+author: Duc Nguyen | Chuyên đào tạo kỹ năng R | `www.tuhocr.com`
+date: Mar 25, 2023
+output:
+  html_document:
+    highlight: pygments
+    # css: doc.css
+---
+
+<mark>**Heatmap là đồ thị thể hiện độ lớn của dữ liệu thông qua màu sắc. Dữ liệu vẽ heatmap thường ở dạng matrix. Để phóng lớn hình ảnh, bạn right-click vào hình và chọn Open in new tab nhé.**</mark>
+
+`https://cran.r-project.org/web/packages/plot.matrix/vignettes/plot.matrix.html`
+
+```{r, message=FALSE, warning=FALSE}
+rice_full_1 <- readRDS("rice_full_1.rds")
+
+names(rice_full_1)[4] <- "production"
+names(rice_full_1)[5] <- "area_harvested"
+
+str(rice_full_1)
+```
+
+Link dataset gốc
+
+`https://docs.google.com/spreadsheets/d/1MoR1_qRLQ1nhUrV0-2Y5YzPa8lAfebHiHp-ieBRCBqw/edit?usp=sharing`
+
+Link dataset transform
+
+`https://docs.google.com/spreadsheets/d/1v_t1-gRQpoO6S7QJEi0v9ds8TsFBvmd8jMU5HWHYqLs/edit?usp=sharing`
+
+```{r, message=FALSE, warning=FALSE, fig.width=9, fig.height=18}
+library(plot.matrix)
+
+z <- as.matrix(table(rice_full_1$area, rice_full_1$year))
+
+par(mar = c(3, 9, 6, 2))
+
+par(mgp = c(0, 0.7, 0))
+
+par("cex.axis" = 0.5)
+par(xpd = TRUE) # đưa legend outside plot
+
+plot.matrix:::plot.matrix(z,
+                          las = 1, 
+                          key = NULL,
+                          col = c("gray92", "#fcc203"),
+                          main = "",
+                          axis.row = list(side = 2, font = 2, tick = FALSE),
+                          axis.col = list(side = 1, font = 2)
+                          )
+
+title(main = "Các quốc gia sản xuất lúa gạo trên thế giới (1961–2021) | Nguồn: FAOSTAT | Đồ họa: tuhocr.com",
+      adj = 0, col.main = "blue", cex.main = 0.9, line = 3.5)
+
+mysubtitle <- expression(italic("Sắp xếp theo alphabet"))
+mtext(side = 3, line = 1.8, adj = 0, cex = 0.8, mysubtitle, col = "red")
+
+legend("topright",
+       legend = c("Có dữ liệu sản xuất gạo", "Không có dữ liệu"),
+       fill = c("#fcc203", "gray92"),
+       # lty = c(1, 2), cex = 1,
+       # pch = c(NA, 21),
+       # lwd = 2,
+       x.intersp = 1,
+       y.intersp = 2,
+       xjust = 2,
+       yjust = 0,
+       inset = -0.045,
+       box.lty = 0,
+       horiz = TRUE, 
+       cex = 0.8,
+       bg = "transparent")
+
+par(new = TRUE)
+
+par(yaxt = "none")
+
+par(mgp = c(0, 0.7, 0))
+
+plot.matrix:::plot.matrix(z,
+                          las = 1,
+                          key = NULL,
+                          col = c("gray92", "#fcc203"),
+                          main = "",
+                          # axis.row = list(side = 2, font = 2),
+                          axis.col = list(side = 3, font = 2)
+                          )
+
+library(png) ## dùng đề chèn file ảnh
+library(grid) ## canh chỉnh vị trí ảnh
+logor <- readPNG("logo-blue.png")
+grid.raster(logor, x = 0.12, y = 0.97, width = 0.1)
+
+```
+
+**Khi ta đưa giá trị vào heatmap sẽ trở nên nhiều thông tin hơn.**
+
+```{r, message=FALSE, warning=FALSE, fig.width=9, fig.height=18}
+####### sắp xếp big matrix
+
+matrix_rice <- rice_full_1[, c(1, 3, 4)]
+
+#spread
+
+library(dplyr)
+
+matrix_rice <- matrix_rice |> dplyr::arrange(area, year)
+
+matrix_1 <- reshape(data = matrix_rice,
+                     idvar = c("area"),
+                     v.names = "production",
+                     timevar = "year",
+                     direction = "wide") 
+
+colnames(matrix_1)[2:62] <- unique(matrix_rice$year)
+
+matrix_2 <- matrix_1[, 2:62]
+
+rownames(matrix_2) <- matrix_1[, 1]
+
+head(matrix_2)
+```
+
+** Vẽ heatmap**
+
+Link dataset heatmap
+
+`https://docs.google.com/spreadsheets/d/1CG0z3FPQKzfeSt2_apIMoI54_y4N0ivsGpQlZdjbiMo/edit?usp=sharing`
+
+```{r, message=FALSE, warning=FALSE, fig.width=9, fig.height=18}
+library(plot.matrix)
+library(RColorBrewer)
+options(scipen = 6, digits = 2)
+v <- matrix_2
+## convert qua matrix
+v <- as.matrix(v)
+
+z <- v/1000000
+
+par(mar = c(3, 9, 6, 4))
+
+par(mgp = c(0, 0.7, 0))
+
+par("cex.axis" = 0.5)
+par(xpd = TRUE) # đưa legend outside plot
+
+plot.matrix:::plot.matrix(z,
+                          las = 1, 
+                          key = list(side = 4, font = 2),
+                          col = brewer.pal(n = 9, name = "YlOrRd"),
+                          na.col = "white",
+                          main = "",
+                          axis.row = list(side = 2, font = 2, tick = FALSE),
+                          axis.col = list(side = 1, font = 2),
+                          xlab = "", ylab = "",
+                          # breaks = 12
+                          )
+
+title(main = "Các quốc gia sản xuất lúa gạo trên thế giới (1961–2021) | Nguồn: FAOSTAT | Đồ họa: tuhocr.com",
+      adj = 0, col.main = "blue", cex.main = 0.9, line = 3.5)
+
+mysubtitle <- expression(italic("Sắp xếp theo alphabet"))
+mtext(side = 3, line = 1.8, adj = 0, cex = 0.8, mysubtitle, col = "red")
+
+legend("topright",
+       legend = c("Không có dữ liệu"),
+       fill = c("white"),
+       # lty = c(1, 2), cex = 1,
+       # pch = c(NA, 21),
+       # lwd = 2,
+       x.intersp = 1,
+       y.intersp = 2,
+       inset = -0.045,
+       box.lty = 0,
+       horiz = TRUE, 
+       cex = 0.8,
+       bg = "transparent")
+
+par(new = TRUE)
+
+par(yaxt = "none")
+
+par(mgp = c(0, 0.7, 0))
+
+plot.matrix:::plot.matrix(z,
+                          las = 1,
+                          key = list(side = 4, font = 2),
+                          col = brewer.pal(n = 9, name = "YlOrRd"),
+                          na.col = "white",
+                          main = "",
+                          # axis.row = list(side = 2, font = 2),
+                          axis.col = list(side = 3, font = 2),
+                          xlab = "", ylab = "",
+                          )
+
+par(lheight = 1.15) # chỉnh khoảng cách giữa hai dòng text
+
+text(x = 66, y = 120, 
+     substitute(paste(bold("Đơn vị: \ntriệu tấn"))), cex = 0.7,
+     col = "red")
+
+library(png) ## dùng đề chèn file ảnh
+library(grid) ## canh chỉnh vị trí ảnh
+logor <- readPNG("logo-blue.png")
+grid.raster(logor, x = 0.12, y = 0.97, width = 0.1)
+
+```
+
+### **Sơ kết**
+
+Trên đây là hướng dẫn vẽ heatmap trong R. Để học R bài bản từ A đến Z, thân mời Bạn tham gia <span style="color: green">**khóa học "HDSD R để xử lý dữ liệu"**<span style="color: blue"> **để có nền tảng vững chắc về R nhằm tự tay làm các câu chuyện dữ liệu của riêng mình!**
+
+<span style="color: blue">**ĐĂNG KÝ NGAY: `https://www.tuhocr.com/register`**</span>
+
+<mark>**Hướng dẫn cài đặt package `tuhocr` `https://tuhocr.github.io/`**</mark>
+
+<img src="E:/tuhocr/tuhocr.png"  width=20% height=20%>
