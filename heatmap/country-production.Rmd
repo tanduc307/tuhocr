@@ -1,0 +1,486 @@
+---
+title: Hướng dẫn vẽ heatmap theo khu vực địa lý
+author: Duc Nguyen | Chuyên đào tạo kỹ năng R | `www.tuhocr.com`
+date: Mar 25, 2023
+output:
+  html_document:
+    highlight: pygments
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+```
+
+**Tiếp nối từ câu chuyện vẽ heatmap cho bản đồ thế giới theo sản lượng các loại nông sản ở link này**
+
+`https://rpubs.com/tuhocr/huong-dan-ve-world-map`
+
+**Hôm nay mình sẽ hướng dẫn các bạn các extract thông tin world ra region để vẽ về tình hình sản xuất lúa gạo ở khu vực Đông Nam Á nhé.**
+
+### <span style="color: blue">**Import dataset**</span>
+
+* [Rice production](https://docs.google.com/spreadsheets/d/11EU8qJt14EflHgU2cCENQnIJUZKIClAMWHaFa_CEchk/edit?usp=share_link)
+
+<span style="color: green">**Load dataset vào R**</span>
+
+```{r, message=FALSE, warning=FALSE}
+library("googlesheets4")
+options(scipen = 15, digits = 15, width = 200)
+
+rice_production <- read_sheet('11EU8qJt14EflHgU2cCENQnIJUZKIClAMWHaFa_CEchk')
+
+```
+
+### <span style="color: blue">**Clean dataset**</span>
+
+Dataset khi import vào R có một số chỗ nho nhỏ cần làm sạch để gom vào dataset master trước khi dùng để vẽ đồ thị world map. Đơn vị quy chuẩn là *metric ton* (1000 kg).
+
+```{r}
+### Cleaning dataset rice_production
+rice_production_df <- as.data.frame(rice_production)
+rice_production_2020 <- rice_production_df[, c(2, 3)] # chọn những cột quan tâm
+
+### Loại NA
+rice_production_2020 <- na.omit(rice_production_2020)
+
+names(rice_production_2020) <- c("country", "rice_2020")
+
+### In dataset
+head(rice_production_2020, n = 10)
+```
+
+### <span style="color: red">**Merge dataset**</span>
+
+Sau khi đã có các dataset con, ta sẽ gộp các dataset này căn cứ theo cột `country`.
+
+```{r, message=FALSE, warning=FALSE}
+options("max.print" = 5000)
+
+rice_production_2020 -> data_4
+
+### In dataset master
+dim(data_4) # có 113 quốc gia có thông tin sản xuất lúa gạo
+data_4
+
+```
+
+### <span style="color: red">**Chuẩn bị dataset `world`**</span>
+
+Để vẽ đồ thị world map, chúng ta sẽ đưa dataset master này vào data frame `world` vốn là dữ liệu chứa thông tin địa lý các quốc gia trên thế giới. 
+
+```{r, message=FALSE, warning=FALSE}
+
+library(ggplot2)
+library(sf)
+library(tidyverse)
+library(ggrepel)
+library(rnaturalearth)
+library(rnaturalearthhires)
+library(viridis)
+library(ggspatial)
+library(maps)
+library(ggsn)
+
+### Load dataset `world`
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+### Trong dataset `world` có một số quốc gia nhỏ chưa được update thông tin, vì vậy ta tách ra trong data_5
+abcd <- c("East Timor", "Eswatini", "Ivory Coast", "Saint Kitts and Nevis", "Saint Vincent and the Grenadines", "Tokelau", "Tuvalu")
+sep <- match(abcd, data_4$country)
+data_5 <- data_4[-c(109, 31), ]
+
+### Khớp lại tên các quốc gia trong `data_5` và `world`
+
+# grep(pattern = "Antigua", world$name)
+world$name[15] <- "Antigua and Barbuda"
+
+# grep(pattern = "Bosnia", world$name)
+world$name[27] <- "Bosnia and Herzegovina"
+
+# grep(pattern = "Cook", world$name)
+world$name[38] <- "Central African Republic"
+
+# grep(pattern = "Central African", world$name)
+world$name[47] <- "Cook Islands"
+
+# grep(pattern = "Czech", world$name)
+world$name[57] <- "Czech Republic" 
+
+# grep(pattern = "Congo", world$name)
+world$name[45] <- "Democratic Republic of the Congo"
+world$name[46] <- "Republic of the Congo"
+
+# grep(pattern = "Dominican", world$name)
+world$name[62] <- "Dominican Republic" 
+
+# grep(pattern = "Guinea", world$name)
+world$name[84] <- "Equatorial Guinea"  
+
+# grep(pattern = "Micronesia", world$name)
+world$name[75] <- "Federated States of Micronesia"
+
+# grep(pattern = "Polynesia", world$name)
+world$name[181] <- "French Polynesia" 
+
+# grep(pattern = "Lao", world$name)
+world$name[122] <- "Laos"
+
+# grep(pattern = "Korea", world$name)
+world$name[177] <- "North Korea"
+world$name[119] <- "South Korea"
+
+# grep(pattern = "Macedonia", world$name) 
+world$name[142] <- "North Macedonia"
+
+# grep(pattern = "São", world$name) 
+world$name[202] <- "São Tomé and Príncipe"
+
+# grep(pattern = "Solomon", world$name) 
+world$name[194] <- "Solomon Islands" 
+
+# grep(pattern = "Sudan", world$name) 
+world$name[189] <- "South Sudan"
+
+### Kiểm tra toàn bộ tên các quốc gia trong `data_5` đã nằm trong `world` chưa? Kết quả là character(0) là OK.
+setdiff(data_5$country, world$name)
+
+```
+
+**Merge toàn bộ `data_5` vào trong `world` để có thêm các cột liên quan đến sản lượng thực phẩm.**
+
+```{r, message=FALSE, warning=FALSE}
+names(data_5)[1] <- "name"
+merge(world, data_5, by = "name", all = TRUE) -> world_production
+```
+
+### <span style="color: red">**Vẽ đồ thị world map**</span>
+
+**Để xem hình độ phân giải cao, các bạn right-click vào hình, chọn Open image in new tab.**
+
+<span style="color: green">**Sản lượng lúa gạo trên thế giới năm 2020**</span>
+
+```{r, message=FALSE, warning=FALSE, fig.height = 7, fig.width = 15}
+
+ggplot(data = world_production) +
+    geom_sf(aes(fill = rice_2020/1000)) +
+    xlab("Longitude") + ylab("Latitude") +
+    scale_fill_viridis_c(name = "Đơn vị (nghìn tấn)",
+                         option = "D", 
+                         trans = "sqrt",
+                         direction = 1,
+                         na.value = "grey90",
+                         guide = "colourbar") +
+    ggtitle("Sản lượng lúa gạo trên thế giới năm 2020", subtitle = paste0("Nguồn: Wikipedia | Thực hiện: www.tuhocr.com")) +
+    theme(legend.position = "right") +
+    guides(fill = guide_colourbar(barwidth = 1, barheight = 20))
+
+```
+
+### <span style="color: red">**Vẽ đồ thị South-East Asia map**</span>
+
+**Danh sách region**
+
+```{r}
+t(t(table(world_production$subregion)))
+```
+
+**Tách dữ liệu theo region**
+
+```{r, message=FALSE, warning=FALSE}
+
+south_asia <- subset(world_production, subregion == "South-Eastern Asia")
+
+```
+
+
+```{r, message=FALSE, warning=FALSE, fig.height = 7, fig.width = 15}
+
+ggplot(data = south_asia) +
+    geom_sf(aes(fill = rice_2020/1000)) +
+    xlab("Longitude") + ylab("Latitude") +
+    scale_fill_viridis_c(name = "Đơn vị (nghìn tấn)",
+                         option = "D", 
+                         trans = "sqrt",
+                         direction = 1,
+                         na.value = "grey90",
+                         guide = "colourbar") +
+    ggtitle("Sản lượng lúa gạo trên thế giới năm 2020", subtitle = paste0("Nguồn: Wikipedia | Thực hiện: www.tuhocr.com")) +
+    theme(legend.position = "right") +
+    guides(fill = guide_colourbar(barwidth = 1, barheight = 20))
+
+# ggsave("img.png", height = 18, width = 30, units = 'in', dpi= 200, type = "cairo")
+
+```
+
+### <span style="color: red">**Làm đồ thị SEA map đẹp hơn**</span>
+
+**Chuẩn bị dữ liệu**
+
+```{r, message=FALSE, warning=FALSE}
+# library(dplyr)
+south_asia <- world_production %>% filter(subregion == "South-Eastern Asia") %>%
+    select(name, subunit, geometry, rice_2020)
+
+### tên quốc gia
+
+library("sf")
+world_points <- st_point_on_surface(world)
+
+world_points <- cbind(world, st_coordinates(st_point_on_surface(world$geometry)))
+
+world_points <- world_points %>% filter(subregion == "South-Eastern Asia")
+
+## chỉnh vị trí tên quốc gia
+world_points[9, "Y"] <- 16
+
+world_points[11, "X"] <- 110
+
+world_points[5, "Y"] <- 21
+
+world_points[8, "Y"] <- 2
+world_points[8, "X"] <- 107.5
+
+world_points[10, "X"] <- 129
+world_points[10, "Y"] <- -9.5
+
+world_points[1, "Y"] <- 6
+
+world_points[2, "X"] <- 109
+world_points[2, "Y"] <- -4.5
+
+world_points[7, "Y"] <- 12
+
+# thailand <- subset(world_points, name == "Thailand")
+# thailand$Y <- 15 
+
+```
+
+**Lấy dữ liệu lúa gạo của các quốc gia Đông Nam Á**
+
+```{r}
+print(south_asia[, c(1, 3)], n = 30)
+
+rice_full_1 <- readRDS(file = "rice_full_1.rds")
+
+unique(rice_full_1$area)
+
+gsub(pattern = "Brunei Darussalam", replacement = "Brunei", rice_full_1$area, fixed = TRUE) -> rice_full_1$area
+
+gsub(pattern = "Lao People's Democratic Republic", replacement = "Laos", rice_full_1$area, fixed = TRUE) -> rice_full_1$area
+
+gsub(pattern = "Viet Nam", replacement = "Vietnam", rice_full_1$area, fixed = TRUE) -> rice_full_1$area
+
+unique(rice_full_1$area)
+
+######### rice in SEA
+
+sea_rice_data <- rice_full_1 |> subset(area == "Brunei" |
+                                       area == "Cambodia" |
+                                       area == "Indonesia" |
+                                       area == "Laos" |
+                                       area == "Malaysia" |
+                                       area == "Myanmar" |       
+                                       area == "Philippines" |
+                                       area == "Thailand" |
+                                       area == "Timor-Leste" |
+                                       area == "Vietnam" 
+                                       )
+
+#####
+
+sea_rice_data_2000 <- sea_rice_data |> subset(year == 2000) 
+
+singapore_2000 <- data.frame(area = "Singapore", item = "Rice", year = 2000, 
+                        value.production = NA,
+                        value.area_harvested = NA)
+
+sea_rice_data_2000 <- rbind(sea_rice_data_2000, singapore_2000)
+
+sea_rice_data_2000 <- sea_rice_data_2000 |> dplyr::arrange(area)
+
+row.names(sea_rice_data_2000) <- NULL
+
+south_asia$rice_2000 <- sea_rice_data_2000$value.production
+
+###############
+
+sea_rice_data_2021 <- sea_rice_data |> subset(year == 2021) 
+
+singapore_2021 <- data.frame(area = "Singapore", item = "Rice", year = 2021, 
+                        value.production = NA,
+                        value.area_harvested = NA)
+
+sea_rice_data_2021 <- rbind(sea_rice_data_2021, singapore_2021)
+
+sea_rice_data_2021 <- sea_rice_data_2021 |> dplyr::arrange(area)
+
+row.names(sea_rice_data_2021) <- NULL
+
+south_asia$rice_2021 <- sea_rice_data_2021$value.production
+
+```
+
+```{r}
+# extracting the capitals of SE Asia
+capital <- maps::world.cities %>% 
+    filter(country.etc %in% south_asia$subunit, capital == 1)
+
+
+# convert capital to sf object
+capital <- st_as_sf(capital, coords = c("long", "lat"), crs = 4326)
+```
+
+
+
+```{r, message=FALSE, warning=FALSE, fig.height = 7, fig.width = 10, eval=TRUE}
+
+ggplot(data = world_production) +
+    geom_sf() +
+    geom_sf(data = south_asia, aes(fill = rice_2000/1000)) +
+    xlab("Longitude") + ylab("Latitude") +
+    scale_fill_distiller(palette = "YlGn", direction = 1,
+                         name = "Đơn vị (nghìn tấn)",
+                         na.value = "grey90",
+                         guide = "colourbar") +
+    # scale_fill_viridis_c(name = "Đơn vị (nghìn tấn)",
+    #                      option = "plasma", 
+    #                      trans = "sqrt",
+    #                      direction = 1,
+    #                      na.value = "grey90",
+    #                      guide = "colourbar") +
+    ggtitle("Sản lượng lúa gạo khu vực Đông Nam Á vào năm 2000", subtitle = paste0("Nguồn: FAOSTAT | Thực hiện: Duc Nguyen | tuhocr.com")) +
+    theme(legend.position = "right") +
+    theme(plot.title = element_text(face = "bold", colour = "darkgreen"),
+          plot.subtitle = element_text(face = "bold", colour = "blue")) +
+    guides(fill = guide_colourbar(barwidth = 1, barheight = 20)) +
+    
+    # adding capital cities as points
+    geom_sf(data = capital, size = 1, color = "red") +
+    
+    geom_text(data = world_points, aes(x = X, y = Y, label = name),
+              color = "darkblue", fontface = "bold", check_overlap = FALSE) +
+    
+    # setting the limits for South East Asia region
+    coord_sf(xlim = c(88.594382881345, 152.93774260658),
+             ylim = c(31.29186472309,-12.375471986864), expand = FALSE) +
+    
+    # adding scale and compass
+    annotation_scale(location = "tr", pad_x = unit(0.5, "cm"), pad_y = unit(0.5, "cm")) +
+  #   scalebar(data = south_asia, location = "topleft", dist = 500,
+  # dist_unit = "km", transform = TRUE,  model = "International") +
+    # annotation_north_arrow(location = "tr", which_north = "true", 
+    #                        pad_x = unit(0.3, "in"), pad_y = unit(0.5, "in"),
+    #                        style = north_arrow_fancy_orienteering) +
+    ggspatial::annotation_north_arrow(
+    location = "tr", which_north = "true",
+    pad_x = unit(0.4, "in"), pad_y = unit(0.4, "in"),
+    style = ggspatial::north_arrow_nautical(
+      fill = c("grey40", "white"),
+      line_col = "grey20",
+      text_family = "ArcherPro Book"
+    )) +
+    annotate(geom = "text", x = 113.5, y = 12, label = "South East \nAsian Sea", 
+        fontface = "italic", color = "grey22", size = 4) +
+    
+    # adding color the waters and other aesthetics
+    theme(panel.background = element_rect(fill = "aliceblue"))
+
+library(png) ## dùng đề chèn file ảnh
+library(grid) ## canh chỉnh vị trí ảnh
+logor <- readPNG("logo-blue.png")
+grid.raster(logor, x = 0.91, y = 0.89, width = 0.1)
+```
+
+
+```{r, message=FALSE, warning=FALSE, fig.height = 7, fig.width = 10, eval=TRUE}
+ggplot(data = world_production) +
+    geom_sf() +
+    geom_sf(data = south_asia, aes(fill = rice_2021/1000)) +
+    xlab("Longitude") + ylab("Latitude") +
+    scale_fill_distiller(palette = "YlGn", direction = 1,
+                         name = "Đơn vị (nghìn tấn)",
+                         na.value = "grey90",
+                         guide = "colourbar") +
+    # scale_fill_viridis_c(name = "Đơn vị (nghìn tấn)",
+    #                      option = "plasma", 
+    #                      trans = "sqrt",
+    #                      direction = 1,
+    #                      na.value = "grey90",
+    #                      guide = "colourbar") +
+    ggtitle("Sản lượng lúa gạo khu vực Đông Nam Á vào năm 2021", subtitle = paste0("Nguồn: FAOSTAT | Thực hiện: Duc Nguyen | tuhocr.com")) +
+    theme(legend.position = "right") +
+    theme(plot.title = element_text(face = "bold", colour = "red"),
+          plot.subtitle = element_text(face = "bold", colour = "blue")) +
+    guides(fill = guide_colourbar(barwidth = 1, barheight = 20)) +
+    
+    # adding capital cities as points
+    geom_sf(data = capital, size = 1, color = "red") +
+    
+    geom_text(data = world_points, aes(x = X, y = Y, label = name),
+              color = "darkblue", fontface = "bold", check_overlap = FALSE) +
+    
+    # setting the limits for South East Asia region
+    coord_sf(xlim = c(88.594382881345, 152.93774260658),
+             ylim = c(31.29186472309,-12.375471986864), expand = FALSE) +
+    
+    # adding scale and compass
+    annotation_scale(location = "tr", pad_x = unit(0.5, "cm"), pad_y = unit(0.5, "cm")) +
+  #   scalebar(data = south_asia, location = "topleft", dist = 500,
+  # dist_unit = "km", transform = TRUE,  model = "International") +
+    # annotation_north_arrow(location = "tr", which_north = "true", 
+    #                        pad_x = unit(0.3, "in"), pad_y = unit(0.5, "in"),
+    #                        style = north_arrow_fancy_orienteering) +
+    ggspatial::annotation_north_arrow(
+    location = "tr", which_north = "true",
+    pad_x = unit(0.4, "in"), pad_y = unit(0.4, "in"),
+    style = ggspatial::north_arrow_nautical(
+      fill = c("grey40", "white"),
+      line_col = "grey20",
+      text_family = "ArcherPro Book"
+    )) +
+    annotate(geom = "text", x = 113.5, y = 12, label = "South East \nAsian Sea", 
+        fontface = "italic", color = "grey22", size = 4) +
+    
+    # adding color the waters and other aesthetics
+    theme(panel.background = element_rect(fill = "aliceblue"))
+
+library(png) ## dùng đề chèn file ảnh
+library(grid) ## canh chỉnh vị trí ảnh
+logor <- readPNG("logo-blue.png")
+grid.raster(logor, x = 0.91, y = 0.89, width = 0.1)
+```
+
+
+
+
+
+
+
+
+
+
+Các bạn cũng có thể đối chiếu kết quả này với các đồ thị world map từ
+
+* `https://www.visualcapitalist.com/cp/mapped-food-production-around-the-world/`
+
+* `https://www.fao.org/faostat/en/#data`
+
+### Tài liệu tham khảo
+
+1. `http://aejaffe.com/summerR_2015/modules/mapping_module.html`
+
+2. `https://blog.rwhitedwarf.com/post/map_any_region_with_ggplot2_part_ii/`
+
+3. `https://medium.com/geekculture/how-to-map-data-with-r-8333110dff5b`
+
+4. `https://r-spatial.org/r/2018/10/25/ggplot2-sf.html`
+
+### Sơ kết
+
+Trên đây là hướng dẫn vẽ heatmap theo khu vực địa lý. Để học R bài bản từ A đến Z, thân mời Bạn tham gia <span style="color: green">**khóa học "HDSD R để xử lý dữ liệu"**<span style="color: blue"> **để có nền tảng vững chắc về R nhằm tự tay làm các câu chuyện dữ liệu của riêng mình!**
+
+<span style="color: blue">**ĐĂNG KÝ NGAY: `https://www.tuhocr.com/register`**</span>
+
+<mark>**Hướng dẫn cài đặt package `tuhocr` `https://tuhocr.github.io/`**</mark>
+
+<img src="E:/tuhocr/tuhocr.png"  width=20% height=20%>
