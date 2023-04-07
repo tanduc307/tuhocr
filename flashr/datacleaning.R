@@ -178,6 +178,7 @@ head(rice_country, n = 100)
 
 #############
 
+#  cleaning tập 2
 
 
 
@@ -187,7 +188,25 @@ head(rice_country, n = 100)
 
 
 
+##########
+rice_full <- reshape(data = rice_country,
+                     idvar = c("year", "area"),
+                     v.names = "value",
+                     timevar = "element",
+                     direction = "wide")
 
+
+table(rice_country$unit)
+
+
+rice_full <- reshape(data = rice_country[, c(-5)],
+                     idvar = c("year", "area"),
+                     v.names = "value",
+                     timevar = "element",
+                     direction = "wide")
+
+
+rice_full[rice_full$value.production == 0, ]
 
 
 
