@@ -177,6 +177,8 @@ save_kable(output, file = "output.pdf")
 
 ##### SẮP XẾP MATRIX
 
+rice_ready <- readRDS(file = "rice_ready.rds")
+
 rice_ready -> rice_full_1 # gán vào object để tận dụng code template
 
 matrix_rice <- rice_full_1[, c(1, 3, 4)] # chỉ lấy cột area, year, production
@@ -207,7 +209,13 @@ v <- matrix_2
 ## convert qua matrix
 v <- as.matrix(v)
 
+View(v)
+
 z <- v/1000000 # tính theo triệu tấn
+
+View(z)
+
+oldpar <- par(no.readonly = TRUE)
 
 par(mar = c(3, 9, 6, 4)) # margin
 
@@ -276,7 +284,7 @@ library(grid) ## canh chỉnh vị trí ảnh
 logor <- readPNG("logo-blue.png")
 grid.raster(logor, x = 0.12, y = 0.97, width = 0.1)
 
-
+par(oldpar)
 
 
 
