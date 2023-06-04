@@ -111,7 +111,14 @@ polygon(x = c(measures[2], exposures[exposures >= measures[2]], max(exposures)),
 ## Tham khảo
 
 1. `https://community.rstudio.com/t/loading-macros-from-external-file-into-tikz-chunks/128066`
+
 2. `https://github.com/yihui/knitr/issues/1735`
+
+## Source code
+
+1. File [`tikz.Rmd`](https://tuhocr.netlify.app/cbr/tikz/tikz.Rmd)
+
+2. File [`curve.tex`](https://tuhocr.netlify.app/cbr/tikz/curve.tex)
 
 ## Sơ kết
 
