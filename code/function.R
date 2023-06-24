@@ -522,7 +522,7 @@ names(methods:::.BasicFunsList)
 # http://adv-r.had.co.nz/C-interface.html
 
 # How to see the source code of R .Internal or .Primitive function
-
+# https://contributor.r-project.org/rdevguide/FindSource.html
 # https://contributor.r-project.org/rdevguide/finding-the-source.html?utm_campaign=Next%20%E2%80%94%20Today%20I%20Learned%20About%20R&utm_medium=email&utm_source=Revue%20newsletter
 
 # https://blog.r-hub.io/2019/05/14/read-the-source/
