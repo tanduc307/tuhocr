@@ -1,6 +1,3 @@
-# TÀI LIỆU THAM KHẢO
-# https://stackoverflow.com/questions/70942728/understanding-color-scales-in-ggplot2
-
 # BƯỚC 1: DOWNLOAD DATASET
 
 library(FAOSTAT)
@@ -351,7 +348,8 @@ dev.off()
 # Viewports are the plotting windows that you can move into and out of 
 # to customize plots using grid graphics.
 
-### Tham khảo
+# TÀI LIỆU THAM KHẢO
+# https://stackoverflow.com/questions/70942728/understanding-color-scales-in-ggplot2
 # https://stackoverflow.com/questions/13143894/how-do-i-position-two-legends-independently-in-ggplot
 # https://stackoverflow.com/questions/52060601/ggplot-multiple-legends-arrangement
 # https://kohske.wordpress.com/2010/12/25/various-position-adjustments-of-legend-in-ggplot2/
