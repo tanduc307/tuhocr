@@ -13,8 +13,8 @@ View(fao_metadata_2)
 FAOsearch(dataset = "crop", full = FALSE)
 
 search_dataset(dataset = "crop", full = FALSE)
-# 
-# ## dòng lệnh này sẽ thực thi truy vấn download full dataset nông nghiệp về máy tính
+
+## dòng lệnh này sẽ thực thi truy vấn download full dataset nông nghiệp về máy tính
 crop_production <- get_faostat_bulk(code = "QCL", 
                                     data_folder = data_folder)
 # 
