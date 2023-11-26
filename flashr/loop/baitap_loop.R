@@ -451,9 +451,6 @@ for(i in 1:length(crop_check)){
   
 }
 
-
-
-
 crop_check[19]
 
 buckwheat_v1 <- extract_item_v1(input_rds = df_1, 
@@ -479,19 +476,163 @@ identical(rice_v1, rice_v2)
 setdiff(rice_v1, rice_v2)
 setdiff(rice_v2, rice_v1)
 
+extract_faostat(input_rds = df_1,
+                input_region = df_2,
+                input_item = "Coir, raw")
+
+######################################################
+
+# install.packages("devtools")
+# devtools::install_github("tuhocr/tuhocr", force = TRUE)
+
+library(tuhocr)
+# ?tuhocr
+
+crop_production <- system.file("extdata",
+                               "crop_production_all_data.rds",
+                               package = "tuhocr")
+
+df_1 <- readRDS(crop_production)
+
+FAOSTAT_data_2023 <- system.file("extdata",
+                                 "FAOSTAT_data_3-21-2023.csv", 
+                                 package = "tuhocr")
+
+df_2 <- read.csv(FAOSTAT_data_2023)
+
+coffee_data <- filter_faostat(data_rds = df_1,
+                              data_region = df_2,
+                              item_filter = "Coffee, green",
+                              rank_filter = "all",
+                              year_filter = "all")
+
+coffee_item <- extract_faostat(input_rds = df_1,
+                               input_region = df_2,
+                               input_item = "Coffee, green")
 
 
+dim(coffee_data)
+
+dim(coffee_item)
+
+### check hoạt động của function
+
+lapply(X = crop_item, 
+       FUN = filter_faostat,
+       data_rds = df_1,
+       data_region = df_2,
+       rank_filter = 1:10, 
+       year_filter = 2021) -> a_1
+
+names(a_1) <- crop_item
+
+a_1$Buckwheat
+
+##
+
+apply(X = as.data.frame(crop_item), 
+      MARGIN = 1,
+      FUN = filter_faostat,
+      data_rds = df_1,
+      data_region = df_2,
+      rank_filter = 1:10, 
+      year_filter = 2021) -> a_2
+
+names(a_2) <- crop_item
+
+identical(a_1, a_2)
+
+##
+
+a_3 <- data.frame()
+
+for(i in 1:length(crop_item)){
+  
+  # print(i)
+  
+  filter_faostat(item_filter = crop_item[i],
+                data_rds = df_1,
+                data_region = df_2,
+                rank_filter = 1:10,
+                year_filter = 2021) -> ok
+  
+  a_3 <- rbind(a_3, ok)
+  
+}
+
+##
+
+names(a_1) <- NULL
+
+names(a_2) <- NULL
+
+do.call(rbind, a_1) -> a_1_final
+
+do.call(rbind, a_2) -> a_2_final
+
+identical(a_3, a_1_final)
+
+identical(a_1_final, a_2_final)
+
+#### check tổng thể
 
 
+time_1 <- system.time(lapply(X = crop_item, 
+                             FUN = filter_faostat,
+                             data_rds = df_1,
+                             data_region = df_2,
+                             rank_filter = "all",
+                             year_filter = "all") -> a_1_all)
+
+# > time_1
+# user  system elapsed 
+# 970.38   17.86 1013.58 
 
 
+time_2 <- system.time(apply(X = as.data.frame(crop_item), 
+                            MARGIN = 1,
+                            FUN = filter_faostat,
+                            data_rds = df_1,
+                            data_region = df_2,
+                            rank_filter = "all", 
+                            year_filter = "all") -> a_2_all)
 
+# > time_2
+# user  system elapsed 
+# 1009.10   17.73 1051.28
 
+a_3_all <- data.frame()
 
+time_3 <- system.time(
+                      
+                      for(i in 1:length(crop_item)){
+                        
+                        # print(i)
+                        
+                        filter_faostat(item_filter = crop_item[i],
+                                       data_rds = df_1,
+                                       data_region = df_2,
+                                       rank_filter = "all",
+                                       year_filter = "all") -> ok
+                        
+                        a_3_all <- rbind(a_3_all, ok)
+                        
+                      }
+                      )
 
+# > time_3
+# user  system elapsed 
+# 1037.00   20.57 1099.89 
 
+do.call(rbind, a_1_all) -> a_1_all_df
 
+do.call(rbind, a_2_all) -> a_2_all_df
 
+identical(a_1_all_df, a_2_all_df)
+
+identical(a_3_all, a_1_all_df)
+
+identical(a_3_all, a_2_all_df)
 
 
 
