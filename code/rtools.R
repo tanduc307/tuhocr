@@ -25,10 +25,13 @@ pkgbuild::check_rtools(debug = FALSE)
 
 
 #### Khi cần update thủ công vị trí đường dẫn Rtools, ta thay đổi giá trị ở file này
-.Renviron (sử dụng lệnh Sys.getenv("HOME") )
+.Renviron (sử dụng lệnh Sys.getenv("HOME") để xem file này nằm ở folder nào, thường là My Documents)
 
-# chèn dòng lệnh này vào
+# nếu không tìm thấy file .Renviron thì bạn sẽ tạo 1 file text và lưu ở tên là .Renviron nhé
+
+# sau đó chèn dòng lệnh này vào
 
 PATH="${RTOOLS43_HOME}\usr\bin;${PATH}"
 # sau đó khởi động lại RStudio
 
+### Lưu ý là phiên bản R Base 4.2 thì dùng Rtools 42, phiên bản R Base 4.3 thì dùng Rtools 43.
