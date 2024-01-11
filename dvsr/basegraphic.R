@@ -126,33 +126,6 @@ text(x = 6, y = max(mtcars$mpg)-4,
 
 ###########################################################
 
-# BÀI 7: PHÂN TÍCH LỆNH PLOT ####
-
-plot(1, pch = 19, col = 2) # vector 1 thành phần
-
-plot(1:20, pch = 19, col = 2) # vector 1 dãy số
-
-z <- rnorm(n = 20, mean = 0, sd = 1)
-z
-plot(z, pch = 19, col = 2)
-
-plot(1:10, 30:21, pch = 19, col = 2) # vector x, vector y
-
-ok <- data.frame(aaa = c(2, 3, 4, 6, 7, -1, 10, 0), bbb = c(-1, -4, 2, 5, 10, 0, 1, -2))
-ok
-
-plot(ok, pch = 19, col = 2)
-plot(ok$aaa, ok$bbb, pch = 19, col = 2)
-plot(ok$bbb, ok$aaa, pch = 19, col = 2)
-plot(x = ok$bbb, y = 1:8, pch = 19, col = 2)
-
-plot(aaa ~ bbb, ok, pch = 19, col = 2) # y ~ x, data = ok
-plot(bbb ~ aaa, ok, pch = 19, col = 2)
-plot(ok$aaa ~ ok$bbb, data = ok, pch = 19, col = 2)
-
-ok$eee <- 1:8
-ok
-plot(ok, pch = 19, col = 2)
 
 
 
