@@ -347,6 +347,23 @@ function toggleSettings(){
 
 -->
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'] ], <!-- inline math chỉ dùng 1 dấu dollar $ -->
+      processEscapes: true
+    },
+    CommonHTML: { linebreaks: { automatic: true } },
+   "HTML-CSS": { linebreaks: { automatic: true } },
+    SVG: { linebreaks: { automatic: true } }
+  });
+</script>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 <style type="text/css">
 body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
 
@@ -411,19 +428,69 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <thead><tr><th width="10%">Trang bìa</th>
 	   <th width="15%">Tác giả</th>
        <th width="20%">Tựa đề</th>
-	   <th width="20%">Ghi chú</th>
+	   <th width="25%">Ghi chú</th>
 	   <th width="5%">Năm</th>
-	   <th width="20%">Tạp chí</th>
+	   <th width="15%">Nguồn</th>
 	   <th width="5%">Loại</th>
 	   <th width="5%">URL</th></tr>
 </thead>
-<tbody><tr id="lock2020" class="entry">
+<tbody><tr id="nhh2021" class="entry">
+    <td><img src="https://applyr.netlify.app/ref/giao_trinh_xac_suat_thong_ke.png" width="100" height="150"/></td>
+	<td>Hoàng, N.H., Đông, N.T., Phong, N.V., Liên, D.T.P., Duy, N.T. and Khuê, V.T.B.</td>
+	<td>Giáo trình lý thuyết xác suất và thống kê ứng dụng <p class="infolinks">[<a href="javascript:toggleInfo('nhh2021','bibtex')">BibTeX</a>]</p></td>
+	<td>• Cách tính khoảng tin cậy (mục 3.3.3.2 trang 98) • Phân tích phương sai (chương 5 trang 188)<br/></td>
+	<td>2021</td>
+	<td>Trường Đại học Tài chính - Marketing&nbsp;</td>
+	<td>book</td>
+	<td><a href="https://applyr.netlify.app/ref/giao_trinh_xac_suat_thong_ke.pdf">[URL]</a><br>
+	<br>
+	</td>
+</tr>
+<tr id="bib_nhh2021" class="bibtex noshow">
+<td colspan="8"><b>BibTeX</b>:
+<pre>
+@book{nhh2021,
+  author = {Nguyễn Huy Hoàng and Nguyễn Trung Đông and Nguyễn Văn Phong and Dương Thị Phương Liên and Nguyễn Tuấn Duy and Võ Thị Bích Khuê},
+  title = {Giáo trình lý thuyết xác suất và thống kê ứng dụng},
+  publisher = {Trường Đại học Tài chính - Marketing},
+  year = {2021},
+  note = {• Cách tính khoảng tin cậy (mục 3.3.3.2 trang 98) • Phân tích phương sai (chương 5 trang 188)},
+  url = {https://applyr.netlify.app/ref/giao_trinh_xac_suat_thong_ke.pdf}
+}
+</pre></td>
+</tr>
+<tr id="gong2020" class="entry">
+    <td><img src="https://studyr.netlify.app/ref/network.png" width="100" height="150"/></td>
+	<td>Gong, B.-g.</td>
+	<td>Network Analysis: Theory and Concept | Practice Using igraph and Gephi <p class="infolinks">[<a href="javascript:toggleInfo('gong2020','bibtex')">BibTeX</a>]</p></td>
+	<td><br/></td>
+	<td>2020</td>
+	<td>&nbsp;</td>
+	<td>misc</td>
+	<td><a href="https://youtu.be/o5-o1EPSWZg">[URL]</a><br>
+	<a href="https://studyr.netlify.app/ref/vCIES2020_Network-Analysis-master.zip">[URL_1]</a><br>
+	<a href="https://drive.google.com/drive/folders/1p-SI-HshRMkpmepM3bW9L9rziHHpxcn_?usp=drive_link">[URL_2]</a></td>
+</tr>
+<tr id="bib_gong2020" class="bibtex noshow">
+<td colspan="8"><b>BibTeX</b>:
+<pre>
+@misc{gong2020,
+  author = {Byoung-gyu Gong},
+  title = {Network Analysis: Theory and Concept | Practice Using igraph and Gephi},
+  year = {2020},
+  url = {https://youtu.be/o5-o1EPSWZg},
+  url_1 = {https://studyr.netlify.app/ref/vCIES2020_Network-Analysis-master.zip},
+  url_2 = {https://drive.google.com/drive/folders/1p-SI-HshRMkpmepM3bW9L9rziHHpxcn_?usp=drive_link}
+}
+</pre></td>
+</tr>
+<tr id="lock2020" class="entry">
     <td><img src="https://studyr.netlify.app/ref/statistics_unlocking_the_power_of_data_2020.png" width="100" height="150"/></td>
 	<td>Lock, R., Lock, P., Morgan, K., Lock, E. and Lock, D.</td>
 	<td>Statistics: Unlocking the Power of Data <p class="infolinks">[<a href="javascript:toggleInfo('lock2020','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2020</td>
-	<td>&nbsp;</td>
+	<td>Wiley&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/statistics_unlocking_the_power_of_data_2020.pdf">[URL_1]</a><br>
@@ -448,7 +515,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>Statistical Rethinking <p class="infolinks">[<a href="javascript:toggleInfo('mcelreath2020','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2020</td>
-	<td>&nbsp;</td>
+	<td>CRC Press&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://applyr.netlify.app/ref/mcelreath_2020_statistical_rethinking.pdf">[URL_1]</a><br>
@@ -473,7 +540,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>Practical Guide to Principal Component Methods in R <p class="infolinks">[<a href="javascript:toggleInfo('kassambara2017','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2017</td>
-	<td>&nbsp;</td>
+	<td>STHDA&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/kassambara_principal_component_methods.pdf">[URL_1]</a><br>
@@ -495,9 +562,9 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
     <td><img src="https://studyr.netlify.app/ref/introductory_biostatistics_2016.png" width="100" height="150"/></td>
 	<td>Le, C.T. and Eberly, L.E.</td>
 	<td>Introductory Biostatistics <p class="infolinks">[<a href="javascript:toggleInfo('le2016','bibtex')">BibTeX</a>]</p></td>
-	<td><br/></td>
+	<td>• Cách tính khoảng tin cậy (trang 147 / pdf 169)<br/></td>
 	<td>2016</td>
-	<td>&nbsp;</td>
+	<td>Wiley&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/introductory_biostatistics_2016.pdf">[URL_1]</a><br>
@@ -512,6 +579,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
   publisher = {Wiley},
   year = {2016},
   edition = {2},
+  note = {• Cách tính khoảng tin cậy (trang 147 / pdf 169)},
   url_1 = {https://studyr.netlify.app/ref/introductory_biostatistics_2016.pdf},
   url_2 = {https://studyr.netlify.app/ref/introductory_biostatistics_2016_dataset.zip}
 }
@@ -523,7 +591,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>ggplot2 <p class="infolinks">[<a href="javascript:toggleInfo('wickham2016','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2016</td>
-	<td>&nbsp;</td>
+	<td>Springer&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/wickham_2016_ggplot2.pdf">[URL_1]</a><br>
@@ -548,7 +616,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>Statistics - An Introduction in R (2nd edition) <p class="infolinks">[<a href="javascript:toggleInfo('crawley2015','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2015</td>
-	<td>&nbsp;</td>
+	<td>Wiley&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/crawley_2015_statistics_an_introduction_in_r_2nd_edition.pdf">[URL_1]</a><br>
@@ -567,13 +635,37 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 }
 </pre></td>
 </tr>
+<tr id="kiem2010" class="entry">
+    <td><img src="https://applyr.netlify.app/ref/co_so_toan_hoc_cua_cac_phep_xu_ly_thong_ke.png" width="100" height="150"/></td>
+	<td>Kiếm, P.T.</td>
+	<td>Cơ sở toán học của các phép xử lý thống kê trong nghiên cứu khoa học nông nghiệp <p class="infolinks">[<a href="javascript:toggleInfo('kiem2010','bibtex')">BibTeX</a>]</p></td>
+	<td><br/></td>
+	<td>2010</td>
+	<td>NXB Nông nghiệp&nbsp;</td>
+	<td>book</td>
+	<td><a href="https://applyr.netlify.app/ref/co_so_toan_hoc_cua_cac_phep_xu_ly_thong_ke.pdf">[URL]</a><br>
+	<br>
+	</td>
+</tr>
+<tr id="bib_kiem2010" class="bibtex noshow">
+<td colspan="8"><b>BibTeX</b>:
+<pre>
+@book{kiem2010,
+  author = {Phan Thanh Kiếm},
+  title = {Cơ sở toán học của các phép xử lý thống kê trong nghiên cứu khoa học nông nghiệp},
+  publisher = {NXB Nông nghiệp},
+  year = {2010},
+  url = {https://applyr.netlify.app/ref/co_so_toan_hoc_cua_cac_phep_xu_ly_thong_ke.pdf}
+}
+</pre></td>
+</tr>
 <tr id="pttt2007" class="entry">
     <td><img src="https://studyr.netlify.app/ref/pttt_2007_giao_trinh_thong_ke.png" width="100" height="150"/></td>
 	<td>Thủy, P.T.T.</td>
 	<td>Giáo trình Thống kê - Phép thí nghiệm <p class="infolinks">[<a href="javascript:toggleInfo('pttt2007','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2007</td>
-	<td>&nbsp;</td>
+	<td>Trường Đại học Cần Thơ&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/pttt_2007_giao_trinh_thong_ke_1_to_138.pdf">[URL_1]</a><br>
@@ -596,9 +688,9 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
     <td><img src="https://studyr.netlify.app/ref/pttt_2007_giao_trinh_thong_ke_chuong_10.png" width="100" height="150"/></td>
 	<td>Thủy, P.T.T.</td>
 	<td>Giáo trình Thống kê - Phép thí nghiệm <p class="infolinks">[<a href="javascript:toggleInfo('pttt2007a','bibtex')">BibTeX</a>]</p></td>
-	<td>Áp dụng cho trường hợp số đếm<br/>Chương 10: Kiểm định Chi bình phương</td>
+	<td>• Áp dụng cho trường hợp số đếm<br/>Chương 10: Kiểm định Chi bình phương</td>
 	<td>2007</td>
-	<td>, pp. 184-191&nbsp;</td>
+	<td>Trường Đại học Cần Thơ, pp. 184-191&nbsp;</td>
 	<td>inbook</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/pttt_2007_giao_trinh_thong_ke_139_to_276.pdf#page=56">[URL_1]</a><br>
@@ -613,7 +705,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
   publisher = {Trường Đại học Cần Thơ},
   year = {2007},
   pages = {184--191},
-  note = {Áp dụng cho trường hợp số đếm},
+  note = {• Áp dụng cho trường hợp số đếm},
   url_1 = {https://studyr.netlify.app/ref/pttt_2007_giao_trinh_thong_ke_139_to_276.pdf#page=56}
 }
 </pre></td>
@@ -624,7 +716,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>Statistics at Square Two: Understanding modern statistical applications in medicine <p class="infolinks">[<a href="javascript:toggleInfo('campbell2006','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2006</td>
-	<td>&nbsp;</td>
+	<td>Blackwell Publishing&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://applyr.netlify.app/ref/campbell_2006_statistics_at_square_two.pdf">[URL_1]</a><br>
@@ -649,7 +741,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>Introductory Biostatistics <p class="infolinks">[<a href="javascript:toggleInfo('le2003','bibtex')">BibTeX</a>]</p></td>
 	<td><br/></td>
 	<td>2003</td>
-	<td>&nbsp;</td>
+	<td>Willey&nbsp;</td>
 	<td>book</td>
 	<td><br>
 	<a href="https://studyr.netlify.app/ref/introductory_biostatistics_2003.pdf">[URL_1]</a><br>
@@ -672,9 +764,9 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
     <td><img src="https://studyr.netlify.app/ref/thomas_1978_agricultural_experimentation_design_and_analysis.png" width="100" height="150"/></td>
 	<td>Little, T.M. and Hills, F.J.</td>
 	<td>Agricultural experimentation: Design and Analysis <p class="infolinks">[<a href="javascript:toggleInfo('little1978','bibtex')">BibTeX</a>]</p></td>
-	<td>Tài liệu rất hay về thống kê cơ bản ứng dụng trong nông nghiệp.<br/></td>
+	<td>• Tài liệu rất hay về thống kê cơ bản ứng dụng trong nông nghiệp.<br/></td>
 	<td>1978</td>
-	<td>&nbsp;</td>
+	<td>Wiley&nbsp;</td>
 	<td>book</td>
 	<td><a href="https://ia804707.us.archive.org/0/items/thomas-m-1978-agricultural-experimentation/Thomas%20M%20-%201978%20-%20Agricultural%20experimentation.pdf">[URL]</a><br>
 	<a href="https://studyr.netlify.app/ref/thomas_1978_agricultural_experimentation_design_and_analysis_1_to_184.pdf">[URL_1]</a><br>
@@ -688,17 +780,39 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
   title = {Agricultural experimentation: Design and Analysis},
   publisher = {Wiley},
   year = {1978},
-  note = {Tài liệu rất hay về thống kê cơ bản ứng dụng trong nông nghiệp.},
+  note = {• Tài liệu rất hay về thống kê cơ bản ứng dụng trong nông nghiệp.},
   url = {https://ia804707.us.archive.org/0/items/thomas-m-1978-agricultural-experimentation/Thomas%20M%20-%201978%20-%20Agricultural%20experimentation.pdf},
   url_1 = {https://studyr.netlify.app/ref/thomas_1978_agricultural_experimentation_design_and_analysis_1_to_184.pdf},
   url_2 = {https://studyr.netlify.app/ref/thomas_1978_agricultural_experimentation_design_and_analysis_185_to_368.pdf}
 }
 </pre></td>
 </tr>
+<tr id="nvtuan_lamsangthongke" class="entry">
+    <td><img src="https://applyr.netlify.app/ref/lam_sang_thong_ke.png" width="100" height="150"/></td>
+	<td>Tuấn, N.V.</td>
+	<td>Lâm sàng thống kê <p class="infolinks">[<a href="javascript:toggleInfo('nvtuan_lamsangthongke','bibtex')">BibTeX</a>]</p></td>
+	<td><br/></td>
+	<td></td>
+	<td>&nbsp;</td>
+	<td>misc</td>
+	<td><a href="https://ykhoa.net/baigiang/index.htm">[URL]</a><br>
+	<br>
+	</td>
+</tr>
+<tr id="bib_nvtuan_lamsangthongke" class="bibtex noshow">
+<td colspan="8"><b>BibTeX</b>:
+<pre>
+@misc{nvtuan_lamsangthongke,
+  author = {Nguyễn Văn Tuấn},
+  title = {Lâm sàng thống kê},
+  url = {https://ykhoa.net/baigiang/index.htm}
+}
+</pre></td>
+</tr>
 </tbody>
 </table>
 <footer>
- <small>Created by <a href="https://www.tuhocr.com/">Tự Học R</a> on 2024/01/25 using <a href="https://www.jabref.org/">JabRef</a>. These materials are only for educational purposes. Best view on 1920 x 1080.</small>
+ <small>Created by <a href="https://www.tuhocr.com/">Tự Học R</a> on 2024/01/27 using <a href="https://www.jabref.org/">JabRef</a>. These materials are only for educational purposes. Best view on 1920 x 1080.</small>
 </footer>
 <!-- file generated by JabRef -->
 </body>
