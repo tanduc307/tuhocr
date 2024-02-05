@@ -1,0 +1,35 @@
+---
+server: shiny
+---
+sssaaa
+
+```{r}
+dir.create("render", showWarnings = FALSE)
+file.copy(from = "ok_1.qmd", to = "render/ok_2.qmd",
+          overwrite = TRUE)
+a <- readLines(con = "render/ok_2.qmd", warn = FALSE)
+b <- a[-c(6:16)]
+writeLines(b, con = "render/ok_3.qmd")
+browseURL("http://localhost:4123/")
+system("quarto preview render/ok_3.qmd --no-browser --no-watch-inputs --port 4123")
+# file.remove("ok_2.qmd", "ok_3.qmd", "ok_3_files/")
+```
+
+```{r}
+sliderInput("bins", "Number of bins:",
+            min = 1, max = 50, value = 30)
+plotOutput("distPlot")
+```
+
+bbbbb
+
+```{r}
+#| context: server
+output$distPlot <- renderPlot({
+  x <- faithful[, 2]  # Old Faithful Geyser data
+  bins <- seq(min(x), max(x), length.out = input$bins + 1)
+  hist(x, breaks = bins, col = 'darkgray', border = 'white')
+})
+```
+
+eeeee
