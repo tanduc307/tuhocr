@@ -100,16 +100,36 @@ points(x = ozone_ok$day,
        type = "o",
        pch = 19)
 
+df_ok
+
+na.omit(df_ok) -> df_ok_2
+
+#install.packages("berryFunctions")
+library("berryFunctions")
+
+row.names(df_ok_2) <- NULL
+
+df_ok_2 <- berryFunctions::insertRows(df = df_ok_2,
+                                      r = 3,
+                                      new = NA)
+
+df_ok_2 <- berryFunctions::insertRows(df = df_ok_2,
+                                      r = 6,
+                                      new = NA)
+       
+points(x = df_ok_2$day,
+       y = df_ok_2$ozone,
+       col = "purple",
+       type = "o",
+       pch = 19)
 
 
+df_ok_3 <- berryFunctions::insertRows(df = df_ok_2,
+                                      r = 7,
+                                      new = c(999, 100))
 
 
-
-
-
-
-
-
+class(df_ok_3$day)
 
 
 
