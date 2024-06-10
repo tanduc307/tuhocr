@@ -1,0 +1,166 @@
+---
+title: R Homework 1
+author: Duc Nguyen | Chuyên đào tạo R căn bản | `www.tuhocr.com`
+---
+
+Bài tập này được thiết kế cho các câu lệnh trong chuyên đề 1 Coding in R ngay sau khi học về vector numeric và vector logical thì ta có thể làm được. Khi có thắc mắc câu lệnh trong R thì Anh Chị tham khảo hướng dẫn ở đây nhé. 
+
+`https://tuhocr.netlify.app/tim-thong-tin-tro-giup.html`
+
+### [**Bài 1**]{style="color:red"}
+
+Ta có vector `a` gồm các thành phần sau:
+
+```{r}
+a <- c(-10, 0, 5, 12, 22, 39, 50, 98, -3, 4)
+```
+
+1/ Subset vị trí thứ 1 đến thứ 5 trong vector `a`
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+a[1:5]
+```
+
+2/ Trích xuất trong vector `a` ra các số chẵn
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+a[(a %% 2) == 0]
+```
+
+3/ Thêm các số chẵn thu được ở bước 2/ vào vector `a` để tạo thành vector `a_1`
+
+Kết quả của vector `a_1` như sau:
+
+```{r, echo = FALSE}
+a[(a %% 2) == 0] -> ok
+a_1 <- c(a, ok)
+a_1
+```
+
+4/ Tính tổng của các số chẵn (lớn hơn 0) trong vector `a_1`
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+a_1[(a_1 %% 2) == 0] -> ok_1
+ok_1[ok_1 > 0] -> ok_2
+sum(ok_2)
+```
+
+5/ Có bao nhiêu *con số* nhỏ hơn 30 trong vector `a_1` (tính theo số lượng con số nhé!)
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+length(a_1[a_1 < 30])
+```
+
+### [**Bài 2**]{style="color:red"}
+
+Bạn hãy tạo ra vector `b` có đặc điểm là 1 chuỗi số từ 0 đến 100, cách nhau 3 số.
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+b <- seq(from = 0, to = 100, by = 3)
+```
+
+```{r}
+b
+```
+
+1/ Hãy tính trung bình của những con số chia hết cho 5 trong chuỗi số này
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+mean(b[(b %% 5) == 0])
+```
+
+2/ Trích xuất những 12 con số cuối của dãy số và tính lũy thừa 2 của lần lượt các con số này
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+b[(length(b)-11) : length(b)]^2
+```
+
+3/ Chia các con số thu được ở bước 2/ cho con số trung bình thu được ở bước 1, và làm tròn kết quả đến 4 con số sau dấu thập phân
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+round(((b[(length(b)-11) : length(b)]^2) / mean(b[(b %% 5) == 0])),
+      digits = 4) -> yes
+yes
+```
+
+4/ Subset ra các con số ở vị trí index số lẻ trên vector vừa thu được ở bước 3
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+yes[c(TRUE, FALSE)]
+```
+
+5/ Tìm ra các con số nhỏ hơn 120 và lớn hơn 180. Làm tròn về số nguyên cho các con số này (không có số nào sau dấu thập phân)
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+yes[c(TRUE, FALSE)] -> yes_1
+
+yes_1[yes_1 < 120 | yes_1 > 180] -> yes_3
+
+round(yes_3, digits = 0)
+```
+
+**Quý Anh Chị viết code R để thực hiện các câu hỏi như trong bài tập. Em đã để sẵn phần đáp án, còn phần code R thì Anh Chị liên hệ em qua email `tuhocr@gmail.com` để nhận file đáp án nhé. Trân trọng.**
+
+**Thảo luận về bài tập này ở Group Cộng Đồng Tự Học R**
+
+`https://www.facebook.com/groups/tuhocr/posts/1146684723070904/`
+
+<img src="tuhocr.png" width="200">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
