@@ -73,15 +73,15 @@ b <- seq(from = 0, to = 100, by = 3)
 b
 ```
 
-1/ Hãy tính trung bình của những con số chia hết cho 5 trong chuỗi số này
+1/ Hãy tính trung bình của những con số chia hết cho 7 trong chuỗi số này
 
 Kết quả như sau:
 
 ```{r, echo = FALSE}
-mean(b[(b %% 5) == 0])
+mean(b[(b %% 7) == 0])
 ```
 
-2/ Trích xuất những 12 con số cuối của dãy số và tính lũy thừa 2 của lần lượt các con số này
+2/ Trích xuất những 12 con số cuối của vector `b` và tính lũy thừa 2 của lần lượt các con số này
 
 Kết quả như sau:
 
@@ -89,12 +89,12 @@ Kết quả như sau:
 b[(length(b)-11) : length(b)]^2
 ```
 
-3/ Chia các con số thu được ở bước 2/ cho con số trung bình thu được ở bước 1, và làm tròn kết quả đến 4 con số sau dấu thập phân
+3/ Chia các con số thu được ở bước 2/ cho con số trung bình thu được ở bước 1/, và làm tròn kết quả đến 4 con số sau dấu thập phân
 
 Kết quả như sau:
 
 ```{r, echo = FALSE}
-round(((b[(length(b)-11) : length(b)]^2) / mean(b[(b %% 5) == 0])),
+round(((b[(length(b)-11) : length(b)]^2) / mean(b[(b %% 7) == 0])),
       digits = 4) -> yes
 yes
 ```
@@ -119,7 +119,11 @@ yes_1[yes_1 < 120 | yes_1 > 180] -> yes_3
 round(yes_3, digits = 0)
 ```
 
-**Quý Anh Chị viết code R để thực hiện các câu hỏi như trong bài tập. Em đã để sẵn phần đáp án, còn phần code R thì Anh Chị liên hệ em qua email `tuhocr@gmail.com` để nhận file đáp án nhé. Trân trọng.**
+**Quý Anh Chị viết code R để thực hiện các câu hỏi như trong bài tập. Em đã để sẵn phần đáp án, còn phần code R thì Anh Chị xem ở đây**
+
+`https://tuhocr.netlify.app/homework/homework_1.Rmd` 
+
+**Để trao đổi cụ thể cách giải bài tập này thì Anh Chị liên hệ em qua email `tuhocr@gmail.com` nhé. Trân trọng.**
 
 **Thảo luận về bài tập này ở Group Cộng Đồng Tự Học R**
 
