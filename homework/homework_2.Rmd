@@ -1,0 +1,196 @@
+---
+title: R Homework 2
+author: Duc Nguyen | Chuyên đào tạo R căn bản | `www.tuhocr.com`
+---
+
+Bài tập này được thiết kế cho các câu lệnh trong chuyên đề 1 Coding in R ngay sau khi học về các lệnh xử lý ký tự cho vector character. Khi có thắc mắc câu lệnh trong R thì Anh Chị tham khảo hướng dẫn ở đây nhé. 
+
+`https://tuhocr.netlify.app/tim-thong-tin-tro-giup.html`
+
+### [**Bài 1**]{style="color:red"}
+
+Ta có vector `a` gồm các thành phần sau:
+
+```{r}
+a <- "R is a free software environment for statistical computing and graphics"
+```
+
+1/ Số lượng ký tự trong vector `a`
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+nchar(a)
+```
+
+2/ Tách vector `a` ra thành các từ (word) riêng lẻ như sau, gán vào vector `a_ok`:
+
+```{r, echo = FALSE}
+strsplit(a, split = " ") -> a_ok
+a_ok[[1]] -> a_ok
+a_ok
+```
+
+3/ Trích ra cụm từ `R is a free software environment` trong vector `a`
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+strsplit(a, split = " ") -> a_1
+a_1[[1]] -> a_2
+a_2[1:5] -> a_3
+paste(a_3, collapse = " ")
+```
+
+4/ Có bao nhiêu chữ `e` trong vector `a`
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+strsplit(a, split = "") -> b_1
+b_1[[1]] -> b_2
+
+length(grep(pattern = "e", b_2))
+```
+
+5/ Trích ra những từ có từ 3 ký tự trở lên trong vector `a_ok`, trong đó và có chứa chữ `o`
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+a_ok[nchar(a_ok) >= 3] -> check_a
+
+check_a[seq_along(check_a) %in% grep(pattern = "o", check_a)]
+```
+
+### [**Bài 2**]{style="color:red"}
+
+Bạn hãy tạo ra vector `b` có đặc điểm như sau:
+
+```{r, echo = FALSE}
+b <- paste0("id", c(5, 8, 12, 19, 33, 45, 66, 80, 50, 100, 98, 923, 25, 547))
+```
+
+```{r}
+b
+```
+
+1/ Thêm dấu underscore vào giữa `id` và các con số numeric
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+gsub(pattern = "id",
+     replacement = "id_",
+     b) -> b_1
+
+b_1
+```
+
+2/ Thêm vào dấu `*` ở đằng sau mỗi mã id là số lẻ
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+gsub(pattern = "id_",
+     replacement = "",
+     b_1) -> b_num
+
+b_num <- as.numeric(b_num)
+
+b_1[which(b_num %% 2 == 1)] -> b_yes
+
+# paste0(b_yes, "*")
+
+b_1[which(b_num %% 2 == 1)] <- paste0(b_yes, "*")
+
+b_1
+```
+
+3/ Chuyển về chữ in hoa mã ID để đồng bộ các con số (lưu ý chỉ chạy cho những mã ID số chẵn) 
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+toupper(b_1) -> b_1_chuan
+gsub(pattern = "[[:punct:]]", replacement = "", b_1_chuan) -> b_2_chuan
+
+b_2_chuan[!(seq_along(b_1_chuan) %in% grep(pattern = "\\*", b_1_chuan))] -> b_2_ok
+
+b_2_ok
+
+# https://stackoverflow.com/questions/10294284/remove-all-special-characters-from-a-string-in-r
+```
+
+4/ Thêm leading zero để đồng bộ về 3 chữ số
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+as.numeric(gsub("\\D", "", b_2_ok)) -> number_ok
+
+# sprintf("%03d", number_ok)
+
+ma_id_chuan <- paste0("ID", sprintf("%03d", number_ok))
+
+ma_id_chuan 
+```
+
+5/ Sắp xếp mã ID từ nhỏ đến lớn
+
+Kết quả như sau:
+
+```{r, echo = FALSE}
+sort(ma_id_chuan)
+```
+
+
+**Quý Anh Chị viết code R để thực hiện các câu hỏi như trong bài tập. Em đã để sẵn phần đáp án, còn phần code R thì Anh Chị xem ở đây**
+
+`https://tuhocr.netlify.app/homework/homework_2.Rmd` 
+
+**Để trao đổi cụ thể cách giải bài tập này thì Anh Chị liên hệ em qua email `tuhocr@gmail.com` nhé. Trân trọng.**
+
+**Thảo luận về bài tập này ở Group Cộng Đồng Tự Học R**
+
+`https://www.facebook.com/groups/tuhocr/posts/1146684723070904/`
+
+<img src="tuhocr.png" width="200">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
