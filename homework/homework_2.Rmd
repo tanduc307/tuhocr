@@ -38,7 +38,7 @@ Kết quả như sau:
 ```{r, echo = FALSE}
 strsplit(a, split = " ") -> a_1
 a_1[[1]] -> a_2
-a_2[1:5] -> a_3
+a_2[1:6] -> a_3
 paste(a_3, collapse = " ")
 ```
 
@@ -153,7 +153,7 @@ sort(ma_id_chuan)
 
 **Thảo luận về bài tập này ở Group Cộng Đồng Tự Học R**
 
-`https://www.facebook.com/groups/tuhocr/posts/1146684723070904/`
+`https://www.facebook.com/groups/tuhocr/posts/1181482976257745/`
 
 <img src="tuhocr.png" width="200">
 
