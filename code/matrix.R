@@ -615,5 +615,5 @@ square.matrix %*% b
 
 
 # https://youtu.be/jBZCUfGGRRw
-# https://sami.hust.edu.vn/wp-content/uploads/03-Ma-tran-nghich-dao1.pdf
+# https://tuhocr.netlify.app/03-Ma-tran-nghich-dao1.pdf
 
