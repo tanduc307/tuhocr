@@ -1,0 +1,25 @@
+---
+format:
+  html:
+    theme: darkly
+    css: styles.css
+    toc: false
+    page-layout: full
+---
+
+<body style="background-color:black;">
+<video controls autoplay width="100%" height="100%">
+<source src="http://163.61.73.72/data/nhac/boi_vi_anh_yeu_em.mp4" type="video/mp4">
+<source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+
+
+
+
+
+
+
+
+

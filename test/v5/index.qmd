@@ -1,0 +1,45 @@
+---
+format:
+  html:
+    theme: darkly
+    css: styles.css
+    toc: false
+    page-layout: full
+---
+
+<body style="background-color:black;">
+<div id="post-container" class="post"></div>
+
+<script>
+// List of your post HTML files
+const postFiles = [
+'boi_vi_anh_yeu_em.html',
+'uom_mam.html'
+];
+
+// Pick one at random
+const randomPost = postFiles[Math.floor(Math.random() * postFiles.length)];
+
+// Load the random post via fetch
+fetch(randomPost)
+.then(response => {
+if (!response.ok) {
+throw new Error('');
+}
+return response.text();
+})
+.then(html => {
+document.getElementById('post-container').innerHTML = html;
+})
+.catch(error => {
+document.getElementById('post-container').innerHTML = '';
+console.error(error);
+});
+
+</script>
+
+
+
+
+
+
